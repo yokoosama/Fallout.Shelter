@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fallout.Shelter.Core", "src\Fallout.Shelter.Core\Fallout.Shelter.Core.csproj", "{05467CF0-05FA-41BD-A873-E25B0FF4B049}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fallout.Shelter.Engine", "src\Fallout.Shelter.Engine\Fallout.Shelter.Engine.csproj", "{F29F9758-9560-4F99-8C75-C341C80EEE55}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{05467CF0-05FA-41BD-A873-E25B0FF4B049}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{05467CF0-05FA-41BD-A873-E25B0FF4B049}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{05467CF0-05FA-41BD-A873-E25B0FF4B049}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{05467CF0-05FA-41BD-A873-E25B0FF4B049}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F29F9758-9560-4F99-8C75-C341C80EEE55}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F29F9758-9560-4F99-8C75-C341C80EEE55}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F29F9758-9560-4F99-8C75-C341C80EEE55}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F29F9758-9560-4F99-8C75-C341C80EEE55}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

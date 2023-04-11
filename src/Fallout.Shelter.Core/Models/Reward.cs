@@ -1,4 +1,4 @@
-namespace Fallout.Shelter.Core;
+namespace Fallout.Shelter.Core.Models;
 
 public class Reward
 {

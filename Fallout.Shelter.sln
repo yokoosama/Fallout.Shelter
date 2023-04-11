@@ -4,6 +4,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fallout.Shelter.Core", "src
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fallout.Shelter.Engine", "src\Fallout.Shelter.Engine\Fallout.Shelter.Engine.csproj", "{F29F9758-9560-4F99-8C75-C341C80EEE55}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fallout.Shelter.Utilities", "src\Fallout.Shelter.Utilities\Fallout.Shelter.Utilities.csproj", "{EA202F47-053F-4264-A35C-D9877432B9DE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +20,9 @@ Global
 		{F29F9758-9560-4F99-8C75-C341C80EEE55}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F29F9758-9560-4F99-8C75-C341C80EEE55}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F29F9758-9560-4F99-8C75-C341C80EEE55}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EA202F47-053F-4264-A35C-D9877432B9DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA202F47-053F-4264-A35C-D9877432B9DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA202F47-053F-4264-A35C-D9877432B9DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA202F47-053F-4264-A35C-D9877432B9DE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

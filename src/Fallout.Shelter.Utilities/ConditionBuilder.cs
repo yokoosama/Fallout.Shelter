@@ -4,10 +4,13 @@ namespace Fallout.Shelter.Utilities;
 
 public static class ConditionBuilder
 {
-    public static Condition BuildWithResources(CurrencyType type, int amount)
+    public static Condition BuildWithResources(ResourceType type, int amount)
     {
-        var condition = new Condition();
-        condition.Resources.TryAdd(type, amount);
+        var condition = new Condition
+        {
+            ResourceType = type,
+            ResourceAmount = amount
+        };
 
         return condition;
     }

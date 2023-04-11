@@ -10,7 +10,7 @@ public class BuildingFactory : IBuildingFactory
         {
             PriceToSpawn = new List<Condition>
             {
-                ConditionBuilder.BuildWithResources(CurrencyType.Water, 2)
+                ConditionBuilder.BuildWithResources(ResourceType.Water, 2)
             },
             Rewards = new List<Reward>
             {
@@ -23,7 +23,7 @@ public class BuildingFactory : IBuildingFactory
         {
             PriceToSpawn = new List<Condition>
             {
-                ConditionBuilder.BuildWithResources(CurrencyType.Water, 1)
+                ConditionBuilder.BuildWithResources(ResourceType.Water, 1)
             },
             Rewards = new List<Reward>
             {
@@ -56,8 +56,8 @@ public class BuildingFactory : IBuildingFactory
         {
             PriceToSpawn = new List<Condition>
             {
-                ConditionBuilder.BuildWithResources(CurrencyType.Water, 1),
-                ConditionBuilder.BuildWithResources(CurrencyType.Food, 1),
+                ConditionBuilder.BuildWithResources(ResourceType.Water, 1),
+                ConditionBuilder.BuildWithResources(ResourceType.Food, 1),
                 ConditionBuilder.BuildWithInjuredDweller()
             },
             Rewards = new List<Reward>
@@ -78,7 +78,34 @@ public class BuildingFactory : IBuildingFactory
 
     public Building CreateVaultEntrance()
     {
-        return new Building("Vault Entrance");
+        var leftSpace = new Space
+        {
+            PriceToSpawn = new List<Condition>
+            {
+                ConditionBuilder.BuildWithResources(ResourceType.Food, 3)
+            },
+            Rewards = new List<Reward>
+            {
+                RewardBuilder.BuildWithDweller()
+            }
+        };
+
+        var rightSpace = new Space
+        {
+            Rewards = new List<Reward>
+            {
+                RewardBuilder.BuildWithSpecialStat(SpecialStat.Any)
+            }
+        };
+
+        return new Building("Vault Entrance")
+        {
+            Spaces =
+            {
+                [0] = leftSpace,
+                [1] = rightSpace
+            }
+        };
     }
 
     public Building CreateElevator()

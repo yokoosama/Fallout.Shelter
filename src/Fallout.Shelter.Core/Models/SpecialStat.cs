@@ -8,5 +8,6 @@ public enum SpecialStat
     Charisma,
     Intelligence,
     Agility,
-    Luck
+    Luck,
+    Any
 }

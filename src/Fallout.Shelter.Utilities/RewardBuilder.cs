@@ -4,10 +4,13 @@ namespace Fallout.Shelter.Utilities;
 
 public static class RewardBuilder
 {
-    public static Reward BuildWithResources(CurrencyType type, int amount)
+    public static Reward BuildWithResources(ResourceType type, int amount)
     {
-        var reward = new Reward();
-        reward.Resources.TryAdd(type, amount);
+        var reward = new Reward
+        {
+            ResourceType = type,
+            ResourceAmount = amount
+        };
 
         return reward;
     }

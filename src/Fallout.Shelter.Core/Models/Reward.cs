@@ -12,12 +12,8 @@ public class Reward
     public bool ItemRefresh { get; set; }
     public bool BuildingPoolRefresh { get; set; }
     public bool ItemPoolRefresh { get; set; }
-    public KeyValuePair<CurrencyType, int> ExchangeFrom { get; set; }
-    public KeyValuePair<CurrencyType, int> ExchangeTo { get; set; }
-    public Dictionary<CurrencyType, int> Resources { get; set; }
-
-    public Reward()
-    {
-        Resources = new Dictionary<CurrencyType, int>();
-    }
+    public KeyValuePair<ResourceType, int> ExchangeFrom { get; set; }
+    public KeyValuePair<ResourceType, int> ExchangeTo { get; set; }
+    public ResourceType ResourceType { get; set; }
+    public int ResourceAmount { get; set; }
 }

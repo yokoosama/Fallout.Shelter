@@ -4,7 +4,7 @@ public class Player
 {
     public int Id { get; set; }
     public bool IsFirstPlayer { get; set; }
-    public Dictionary<ResourceType, int> Resources { get; set; }
+    public Dictionary<CurrencyType, int> Resources { get; set; }
     public int Happiness { get; set; }
     public List<Dweller> Dwellers { get; set; }
 
@@ -12,15 +12,15 @@ public class Player
     {
         Dwellers = new List<Dweller>(7)
         {
-            new (),
-            new ()
+            new(),
+            new()
         };
 
-        Resources = new Dictionary<ResourceType, int>(3)
+        Resources = new Dictionary<CurrencyType, int>(3)
         {
-            { ResourceType.Water, 0 },
-            { ResourceType.Food, 0 },
-            { ResourceType.Energy, 0 }
+            { CurrencyType.Water, 0 },
+            { CurrencyType.Food, 0 },
+            { CurrencyType.Energy, 0 }
         };
     }
 }

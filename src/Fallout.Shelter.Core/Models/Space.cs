@@ -6,7 +6,7 @@ public class Space
     public List<Reward> Rewards { get; set; }
     public Dweller? Dweller { get; set; }
     public SpecialStat? SpecialStat { get; set; }
-    
+
     public Space()
     {
         Rewards = new List<Reward>();

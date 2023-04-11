@@ -1,6 +1,6 @@
 namespace Fallout.Shelter.Core.Models;
 
-public enum ResourceType
+public enum CurrencyType
 {
     Water,
     Food,

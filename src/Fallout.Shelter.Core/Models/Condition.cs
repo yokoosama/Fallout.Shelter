@@ -2,7 +2,7 @@ namespace Fallout.Shelter.Core.Models;
 
 public class Condition
 {
-    public Dictionary<ResourceType, int> Resources { get; set; }
+    public Dictionary<CurrencyType, int> Resources { get; set; }
     public int Happiness { get; set; }
     public bool IsItemNeeded { get; set; }
     public bool ShouldDwellerBeInjured { get; set; }
@@ -12,6 +12,6 @@ public class Condition
 
     public Condition()
     {
-        Resources = new Dictionary<ResourceType, int>(4);
+        Resources = new Dictionary<CurrencyType, int>(4);
     }
 }

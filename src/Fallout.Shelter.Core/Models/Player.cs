@@ -6,15 +6,13 @@ public class Player
     public bool IsFirstPlayer { get; set; }
     public Dictionary<ResourceType, int> Resources { get; set; }
     public int Happiness { get; set; }
-    public List<Dweller> Dwellers { get; set; }
+    public Dweller[] Dwellers { get; set; }
 
     public Player()
     {
-        Dwellers = new List<Dweller>(7)
-        {
-            new(),
-            new()
-        };
+        Dwellers = new Dweller[7];
+        Dwellers[0] = new Dweller();
+        Dwellers[1] = new Dweller();
 
         Resources = new Dictionary<ResourceType, int>(3)
         {

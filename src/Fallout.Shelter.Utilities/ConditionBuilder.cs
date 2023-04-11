@@ -11,4 +11,14 @@ public static class ConditionBuilder
 
         return condition;
     }
+    
+    public static Condition BuildWithInjuredDweller()
+    {
+        var condition = new Condition
+        {
+            ShouldDwellerBeInjured = true
+        };
+
+        return condition;
+    }
 }

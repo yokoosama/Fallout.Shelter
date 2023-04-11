@@ -43,7 +43,37 @@ public class BuildingFactory : IBuildingFactory
 
     public Building CreateVaultDoor()
     {
-        return new Building("Vault Door");
+        var leftSpace = new Space
+        {
+            Rewards = new List<Reward>
+            {
+                RewardBuilder.BuildWithFirstPlayerToken(),
+                RewardBuilder.BuildWithSpecialStat(SpecialStat.Luck)
+            }
+        };
+
+        var rightSpace = new Space
+        {
+            PriceToSpawn = new List<Condition>
+            {
+                ConditionBuilder.BuildWithResources(CurrencyType.Water, 1),
+                ConditionBuilder.BuildWithResources(CurrencyType.Food, 1),
+                ConditionBuilder.BuildWithInjuredDweller()
+            },
+            Rewards = new List<Reward>
+            {
+                RewardBuilder.BuildWithDweller()
+            }
+        };
+
+        return new Building("Vault Door")
+        {
+            Spaces =
+            {
+                [0] = leftSpace,
+                [1] = rightSpace
+            }
+        };
     }
 
     public Building CreateVaultEntrance()

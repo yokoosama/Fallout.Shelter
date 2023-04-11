@@ -31,4 +31,34 @@ public static class RewardBuilder
 
         return reward;
     }
+
+    public static Reward BuildWithFirstPlayerToken()
+    {
+        var reward = new Reward
+        {
+            IsFirstPlayerTokenGain = true
+        };
+
+        return reward;
+    }
+
+    public static Reward BuildWithSpecialStat(SpecialStat stat)
+    {
+        var reward = new Reward
+        {
+            SpecialStat = stat
+        };
+
+        return reward;
+    }
+    
+    public static Reward BuildWithDweller()
+    {
+        var reward = new Reward
+        {
+            IsDwellerGain = true
+        };
+
+        return reward;
+    }
 }

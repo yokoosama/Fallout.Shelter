@@ -19,7 +19,7 @@ public static class ConditionBuilder
     {
         var condition = new Condition
         {
-            ShouldDwellerBeInjured = true
+            InjureDweller = true
         };
 
         return condition;

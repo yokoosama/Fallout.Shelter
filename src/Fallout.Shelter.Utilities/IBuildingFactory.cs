@@ -7,7 +7,8 @@ public interface IBuildingFactory
     Building CreateWasteland();
     Building CreateVaultDoor();
     Building CreateVaultEntrance();
-    Building CreateElevator();
+    Building CreateDefaultElevator();
+    Building CreatePlayerElevator();
     Building CreateWaterTreatment();
     Building CreateDiner();
     Building CreatePowerGenerator();

@@ -19,7 +19,7 @@ public static class RewardBuilder
     {
         var reward = new Reward
         {
-            ItemGain = true
+            NewItem = true
         };
 
         return reward;
@@ -39,7 +39,7 @@ public static class RewardBuilder
     {
         var reward = new Reward
         {
-            IsFirstPlayerTokenGain = true
+            FirstPlayerToken = true
         };
 
         return reward;
@@ -59,7 +59,37 @@ public static class RewardBuilder
     {
         var reward = new Reward
         {
-            IsDwellerGain = true
+            NewDweller = true
+        };
+
+        return reward;
+    }
+    
+    public static Reward BuildWithDwellerHeal()
+    {
+        var reward = new Reward
+        {
+            HealDweller = true
+        };
+
+        return reward;
+    }
+    
+    public static Reward BuildWithBuilding()
+    {
+        var reward = new Reward
+        {
+            Build = true
+        };
+
+        return reward;
+    }
+    
+    public static Reward BuildWithHappiness()
+    {
+        var reward = new Reward
+        {
+            Happiness = 2
         };
 
         return reward;

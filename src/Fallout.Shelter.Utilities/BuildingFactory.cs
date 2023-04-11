@@ -108,23 +108,124 @@ public class BuildingFactory : IBuildingFactory
         };
     }
 
-    public Building CreateElevator()
+    public Building CreateDefaultElevator()
     {
-        return new Building("Elevator", true);
+        var space = new Space
+        {
+            Rewards = new List<Reward>
+            {
+                RewardBuilder.BuildWithDwellerHeal()
+            },
+            IsOnlyForInjuredDweller = true
+        };
+
+        return new Building("Elevator", true)
+        {
+            Spaces =
+            {
+                [0] = space
+            }
+        };
+    }
+
+    public Building CreatePlayerElevator()
+    {
+        var space = new Space
+        {
+            Rewards = new List<Reward>
+            {
+                RewardBuilder.BuildWithHappiness(),
+                RewardBuilder.BuildWithBuilding(),
+            }
+        };
+
+        return new Building("Elevator", true)
+        {
+            Spaces =
+            {
+                [0] = space
+            }
+        };
     }
 
     public Building CreateWaterTreatment()
     {
-        return new Building("Water Treatment");
+        var space = new Space
+        {
+            Rewards = new List<Reward>
+            {
+                RewardBuilder.BuildWithResources(ResourceType.Water, 1)
+            },
+            SpecialStat = SpecialStat.Perception
+        };
+
+        return new Building("Water Treatment")
+        {
+            Spaces =
+            {
+                [0] = space,
+                [1] = space
+            }
+        };
     }
 
     public Building CreateDiner()
     {
-        return new Building("Diner");
+        var leftSpace = new Space
+        {
+            Rewards = new List<Reward>
+            {
+                RewardBuilder.BuildWithResources(ResourceType.Food, 2)
+            },
+            SpecialStat = SpecialStat.Agility
+        };
+
+        var rightSpace = new Space
+        {
+            Rewards = new List<Reward>
+            {
+                RewardBuilder.BuildWithResources(ResourceType.Food, 1)
+            },
+            SpecialStat = SpecialStat.Luck
+        };
+
+        return new Building("Diner")
+        {
+            Spaces =
+            {
+                [0] = leftSpace,
+                [1] = rightSpace
+            }
+        };
     }
 
     public Building CreatePowerGenerator()
     {
-        return new Building("Power Generator");
+        var leftSpace = new Space
+        {
+            Rewards = new List<Reward>
+            {
+                RewardBuilder.BuildWithResources(ResourceType.Energy, 2)
+            },
+            SpecialStat = SpecialStat.Strength
+        };
+
+        var rightSpace = new Space
+        {
+            Rewards = new List<Reward>
+            {
+                RewardBuilder.BuildWithResources(ResourceType.Energy, 1)
+            },
+            SpecialStat = SpecialStat.Luck
+        };
+
+        return new Building("Power Generator")
+        {
+            Spaces =
+            {
+                [0] = leftSpace,
+                [1] = rightSpace
+            }
+        };
     }
 }

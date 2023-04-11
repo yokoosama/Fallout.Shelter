@@ -25,7 +25,7 @@ public class GameFieldFactory : IGameFieldFactory
                 [0, 0] = _buildingFactory.CreateWasteland(),
                 [0, 1] = _buildingFactory.CreateVaultDoor(),
                 [0, 2] = _buildingFactory.CreateVaultEntrance(),
-                [0, 3] = _buildingFactory.CreateElevator(),
+                [0, 3] = _buildingFactory.CreateDefaultElevator(),
                 [0, 4] = _buildingFactory.CreateWaterTreatment(),
                 [0, 5] = _buildingFactory.CreateDiner(),
                 [0, 6] = _buildingFactory.CreatePowerGenerator(),
@@ -34,7 +34,7 @@ public class GameFieldFactory : IGameFieldFactory
 
         for (var i = 1; i < playersCount; i++)
         {
-            field.Field[i, 7] = _buildingFactory.CreateElevator();
+            field.Field[i, 7] = _buildingFactory.CreatePlayerElevator();
         }
 
         return field;

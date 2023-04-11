@@ -1,10 +1,10 @@
 using Fallout.Shelter.Core.Models;
 
-namespace Fallout.Shelter.Utilities;
+namespace Fallout.Shelter.Utilities.Factories;
 
-public static class RewardBuilder
+public static class RewardFactory
 {
-    public static Reward BuildWithResources(ResourceType type, int amount)
+    public static Reward CreateWithResources(ResourceType type, int amount)
     {
         var reward = new Reward
         {
@@ -15,7 +15,7 @@ public static class RewardBuilder
         return reward;
     }
 
-    public static Reward BuildWithItem()
+    public static Reward CreateWithItem()
     {
         var reward = new Reward
         {
@@ -25,7 +25,7 @@ public static class RewardBuilder
         return reward;
     }
 
-    public static Reward BuildWithItemPoolRefresh()
+    public static Reward CreateWithItemPoolRefresh()
     {
         var reward = new Reward
         {
@@ -35,7 +35,7 @@ public static class RewardBuilder
         return reward;
     }
 
-    public static Reward BuildWithFirstPlayerToken()
+    public static Reward CreateWithFirstPlayerToken()
     {
         var reward = new Reward
         {
@@ -45,7 +45,7 @@ public static class RewardBuilder
         return reward;
     }
 
-    public static Reward BuildWithSpecialStat(SpecialStat stat)
+    public static Reward CreateWithSpecialStat(SpecialStat stat)
     {
         var reward = new Reward
         {
@@ -54,8 +54,8 @@ public static class RewardBuilder
 
         return reward;
     }
-    
-    public static Reward BuildWithDweller()
+
+    public static Reward CreateWithDweller()
     {
         var reward = new Reward
         {
@@ -64,8 +64,8 @@ public static class RewardBuilder
 
         return reward;
     }
-    
-    public static Reward BuildWithDwellerHeal()
+
+    public static Reward CreateWithDwellerHeal()
     {
         var reward = new Reward
         {
@@ -74,8 +74,8 @@ public static class RewardBuilder
 
         return reward;
     }
-    
-    public static Reward BuildWithBuilding()
+
+    public static Reward CreateWithBuild()
     {
         var reward = new Reward
         {
@@ -84,12 +84,12 @@ public static class RewardBuilder
 
         return reward;
     }
-    
-    public static Reward BuildWithHappiness()
+
+    public static Reward CreateWithHappiness(int amount)
     {
         var reward = new Reward
         {
-            Happiness = 2
+            Happiness = amount
         };
 
         return reward;

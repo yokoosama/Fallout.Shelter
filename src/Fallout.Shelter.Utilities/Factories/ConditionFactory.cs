@@ -1,10 +1,10 @@
 using Fallout.Shelter.Core.Models;
 
-namespace Fallout.Shelter.Utilities;
+namespace Fallout.Shelter.Utilities.Factories;
 
-public static class ConditionBuilder
+public static class ConditionFactory
 {
-    public static Condition BuildWithResources(ResourceType type, int amount)
+    public static Condition CreateWithResources(ResourceType type, int amount)
     {
         var condition = new Condition
         {
@@ -15,7 +15,7 @@ public static class ConditionBuilder
         return condition;
     }
     
-    public static Condition BuildWithInjuredDweller()
+    public static Condition CreateWithInjuredDweller()
     {
         var condition = new Condition
         {

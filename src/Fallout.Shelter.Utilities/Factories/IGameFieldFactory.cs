@@ -1,6 +1,6 @@
 using Fallout.Shelter.Core.Models;
 
-namespace Fallout.Shelter.Utilities;
+namespace Fallout.Shelter.Utilities.Factories;
 
 public interface IGameFieldFactory
 {

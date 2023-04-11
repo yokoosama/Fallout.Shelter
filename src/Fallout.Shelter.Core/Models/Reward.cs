@@ -14,7 +14,7 @@ public class Reward
     public bool HealDweller { get; set; }
     public bool NewItem { get; set; }
     public bool ActivateItem { get; set; }
-    public bool BuildingPoolRefresh { get; set; }
+    public bool RoomPoolRefresh { get; set; }
     public bool ItemPoolRefresh { get; set; }
     public KeyValuePair<ResourceType, int>? ExchangeFrom { get; set; }
     public KeyValuePair<ResourceType, int>? ExchangeTo { get; set; }

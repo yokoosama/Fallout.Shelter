@@ -1,21 +1,21 @@
 using Fallout.Shelter.Core.Models;
 
-namespace Fallout.Shelter.Utilities;
+namespace Fallout.Shelter.Utilities.Factories;
 
-public class BuildingFactory : IBuildingFactory
+public class RoomFactory : IRoomFactory
 {
-    public Building CreateWasteland()
+    public Room CreateWasteland()
     {
         var leftSpace = new Space
         {
             PriceToSpawn = new List<Condition>
             {
-                ConditionBuilder.BuildWithResources(ResourceType.Water, 2)
+                ConditionFactory.CreateWithResources(ResourceType.Water, 2)
             },
             Rewards = new List<Reward>
             {
-                RewardBuilder.BuildWithItemPoolRefresh(),
-                RewardBuilder.BuildWithItem()
+                RewardFactory.CreateWithItemPoolRefresh(),
+                RewardFactory.CreateWithItem()
             }
         };
 
@@ -23,15 +23,15 @@ public class BuildingFactory : IBuildingFactory
         {
             PriceToSpawn = new List<Condition>
             {
-                ConditionBuilder.BuildWithResources(ResourceType.Water, 1)
+                ConditionFactory.CreateWithResources(ResourceType.Water, 1)
             },
             Rewards = new List<Reward>
             {
-                RewardBuilder.BuildWithItem()
+                RewardFactory.CreateWithItem()
             }
         };
 
-        return new Building("The Wasteland")
+        return new Room("The Wasteland")
         {
             Spaces =
             {
@@ -41,14 +41,14 @@ public class BuildingFactory : IBuildingFactory
         };
     }
 
-    public Building CreateVaultDoor()
+    public Room CreateVaultDoor()
     {
         var leftSpace = new Space
         {
             Rewards = new List<Reward>
             {
-                RewardBuilder.BuildWithFirstPlayerToken(),
-                RewardBuilder.BuildWithSpecialStat(SpecialStat.Luck)
+                RewardFactory.CreateWithFirstPlayerToken(),
+                RewardFactory.CreateWithSpecialStat(SpecialStat.Luck)
             }
         };
 
@@ -56,17 +56,17 @@ public class BuildingFactory : IBuildingFactory
         {
             PriceToSpawn = new List<Condition>
             {
-                ConditionBuilder.BuildWithResources(ResourceType.Water, 1),
-                ConditionBuilder.BuildWithResources(ResourceType.Food, 1),
-                ConditionBuilder.BuildWithInjuredDweller()
+                ConditionFactory.CreateWithResources(ResourceType.Water, 1),
+                ConditionFactory.CreateWithResources(ResourceType.Food, 1),
+                ConditionFactory.CreateWithInjuredDweller()
             },
             Rewards = new List<Reward>
             {
-                RewardBuilder.BuildWithDweller()
+                RewardFactory.CreateWithDweller()
             }
         };
 
-        return new Building("Vault Door")
+        return new Room("Vault Door")
         {
             Spaces =
             {
@@ -76,17 +76,17 @@ public class BuildingFactory : IBuildingFactory
         };
     }
 
-    public Building CreateVaultEntrance()
+    public Room CreateVaultEntrance()
     {
         var leftSpace = new Space
         {
             PriceToSpawn = new List<Condition>
             {
-                ConditionBuilder.BuildWithResources(ResourceType.Food, 3)
+                ConditionFactory.CreateWithResources(ResourceType.Food, 3)
             },
             Rewards = new List<Reward>
             {
-                RewardBuilder.BuildWithDweller()
+                RewardFactory.CreateWithDweller()
             }
         };
 
@@ -94,11 +94,11 @@ public class BuildingFactory : IBuildingFactory
         {
             Rewards = new List<Reward>
             {
-                RewardBuilder.BuildWithSpecialStat(SpecialStat.Any)
+                RewardFactory.CreateWithSpecialStat(SpecialStat.Any)
             }
         };
 
-        return new Building("Vault Entrance")
+        return new Room("Vault Entrance")
         {
             Spaces =
             {
@@ -108,18 +108,18 @@ public class BuildingFactory : IBuildingFactory
         };
     }
 
-    public Building CreateDefaultElevator()
+    public Room CreateDefaultElevator()
     {
         var space = new Space
         {
             Rewards = new List<Reward>
             {
-                RewardBuilder.BuildWithDwellerHeal()
+                RewardFactory.CreateWithDwellerHeal()
             },
             IsOnlyForInjuredDweller = true
         };
 
-        return new Building("Elevator", true)
+        return new Room("Elevator", true)
         {
             Spaces =
             {
@@ -128,18 +128,18 @@ public class BuildingFactory : IBuildingFactory
         };
     }
 
-    public Building CreatePlayerElevator()
+    public Room CreatePlayerElevator()
     {
         var space = new Space
         {
             Rewards = new List<Reward>
             {
-                RewardBuilder.BuildWithHappiness(),
-                RewardBuilder.BuildWithBuilding(),
+                RewardFactory.CreateWithHappiness(2),
+                RewardFactory.CreateWithBuild(),
             }
         };
 
-        return new Building("Elevator", true)
+        return new Room("Elevator", true)
         {
             Spaces =
             {
@@ -148,18 +148,18 @@ public class BuildingFactory : IBuildingFactory
         };
     }
 
-    public Building CreateWaterTreatment()
+    public Room CreateWaterTreatment()
     {
         var space = new Space
         {
             Rewards = new List<Reward>
             {
-                RewardBuilder.BuildWithResources(ResourceType.Water, 1)
+                RewardFactory.CreateWithResources(ResourceType.Water, 1)
             },
             SpecialStat = SpecialStat.Perception
         };
 
-        return new Building("Water Treatment")
+        return new Room("Water Treatment")
         {
             Spaces =
             {
@@ -169,13 +169,13 @@ public class BuildingFactory : IBuildingFactory
         };
     }
 
-    public Building CreateDiner()
+    public Room CreateDiner()
     {
         var leftSpace = new Space
         {
             Rewards = new List<Reward>
             {
-                RewardBuilder.BuildWithResources(ResourceType.Food, 2)
+                RewardFactory.CreateWithResources(ResourceType.Food, 2)
             },
             SpecialStat = SpecialStat.Agility
         };
@@ -184,12 +184,12 @@ public class BuildingFactory : IBuildingFactory
         {
             Rewards = new List<Reward>
             {
-                RewardBuilder.BuildWithResources(ResourceType.Food, 1)
+                RewardFactory.CreateWithResources(ResourceType.Food, 1)
             },
             SpecialStat = SpecialStat.Luck
         };
 
-        return new Building("Diner")
+        return new Room("Diner")
         {
             Spaces =
             {
@@ -199,13 +199,13 @@ public class BuildingFactory : IBuildingFactory
         };
     }
 
-    public Building CreatePowerGenerator()
+    public Room CreatePowerGenerator()
     {
         var leftSpace = new Space
         {
             Rewards = new List<Reward>
             {
-                RewardBuilder.BuildWithResources(ResourceType.Energy, 2)
+                RewardFactory.CreateWithResources(ResourceType.Energy, 2)
             },
             SpecialStat = SpecialStat.Strength
         };
@@ -214,12 +214,12 @@ public class BuildingFactory : IBuildingFactory
         {
             Rewards = new List<Reward>
             {
-                RewardBuilder.BuildWithResources(ResourceType.Energy, 1)
+                RewardFactory.CreateWithResources(ResourceType.Energy, 1)
             },
             SpecialStat = SpecialStat.Luck
         };
 
-        return new Building("Power Generator")
+        return new Room("Power Generator")
         {
             Spaces =
             {

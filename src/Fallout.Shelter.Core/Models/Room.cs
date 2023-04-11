@@ -1,13 +1,13 @@
 namespace Fallout.Shelter.Core.Models;
 
-public class Building
+public class Room
 {
     public string Name { get; set; }
     public Dictionary<ResourceType, int> Price { get; set; }
     public bool IsElevator { get; set; }
     public Space[] Spaces { get; set; }
     
-    public Building(string name, bool isElevator = false)
+    public Room(string name, bool isElevator = false)
     {
         Name = name;
         IsElevator = isElevator;
@@ -15,7 +15,7 @@ public class Building
         Spaces = new Space[isElevator ? 1 : 2];
     }
     
-    public Building(string name, Dictionary<ResourceType, int> price)
+    public Room(string name, Dictionary<ResourceType, int> price)
     {
         Price = price;
         Name = name;

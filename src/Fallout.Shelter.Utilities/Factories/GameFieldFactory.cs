@@ -20,21 +20,26 @@ public class GameFieldFactory : IGameFieldFactory
 
         var field = new GameField(playersCount)
         {
-            Field =
-            {
-                [0, 0] = _roomFactory.CreateWasteland(),
-                [0, 1] = _roomFactory.CreateVaultDoor(),
-                [0, 2] = _roomFactory.CreateVaultEntrance(),
-                [0, 3] = _roomFactory.CreateDefaultElevator(),
-                [0, 4] = _roomFactory.CreateWaterTreatment(),
-                [0, 5] = _roomFactory.CreateDiner(),
-                [0, 6] = _roomFactory.CreatePowerGenerator(),
-            }
+            Field = CreateDefaultRooms(playersCount)
         };
+
+        return field;
+    }
+    
+    private Room[,] CreateDefaultRooms(int playersCount)
+    {
+        var field = new Room[playersCount + 1, 7];
+        field[0, 0] = _roomFactory.CreateWasteland();
+        field[0, 1] = _roomFactory.CreateVaultDoor();
+        field[0, 2] = _roomFactory.CreateVaultEntrance();
+        field[0, 3] = _roomFactory.CreateDefaultElevator();
+        field[0, 4] = _roomFactory.CreateWaterTreatment();
+        field[0, 5] = _roomFactory.CreateDiner();
+        field[0, 6] = _roomFactory.CreatePowerGenerator();
 
         for (var i = 1; i < playersCount; i++)
         {
-            field.Field[i, 7] = _roomFactory.CreatePlayerElevator();
+            field[i, 7] = _roomFactory.CreatePlayerElevator();
         }
 
         return field;

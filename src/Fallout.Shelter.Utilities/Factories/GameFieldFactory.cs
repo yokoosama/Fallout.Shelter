@@ -20,12 +20,13 @@ public class GameFieldFactory : IGameFieldFactory
 
         var field = new GameField(playersCount)
         {
-            Field = CreateDefaultRooms(playersCount)
+            Field = CreateDefaultRooms(playersCount),
+            RoomPool = CreateRoomPool()
         };
 
         return field;
     }
-    
+
     private Room[,] CreateDefaultRooms(int playersCount)
     {
         var field = new Room[playersCount + 1, 7];
@@ -43,5 +44,29 @@ public class GameFieldFactory : IGameFieldFactory
         }
 
         return field;
+    }
+
+    private List<Room> CreateRoomPool()
+    {
+        var roomPool = new List<Room>(30)
+        {
+            _roomFactory.CreateWaterPurificationRoom(),
+            _roomFactory.CreateWaterPurificationRoom(),
+            _roomFactory.CreateNukaColaBottlerRoom(),
+            _roomFactory.CreateNukaColaBottlerRoom(),
+            _roomFactory.CreateNuclearReactorRoom(),
+            _roomFactory.CreateNuclearReactorRoom(),
+            _roomFactory.CreateGardenRoom(),
+            _roomFactory.CreateGardenRoom(),
+            _roomFactory.CreateClassRoom(),
+            _roomFactory.CreateAthleticsRoom(),
+            _roomFactory.CreateArmoryRoom(),
+            _roomFactory.CreateGameRoom(),
+            _roomFactory.CreateWeightRoom(),
+            _roomFactory.CreateFitnessRoom(),
+            _roomFactory.CreateStorageRoom()
+        };
+
+        return roomPool;
     }
 }

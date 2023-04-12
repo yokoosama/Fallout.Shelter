@@ -94,4 +94,16 @@ public static class RewardFactory
 
         return reward;
     }
+
+    public static Reward CreateWithExchange(KeyValuePair<ResourceType, int> from, KeyValuePair<ResourceType, int> to)
+    {
+        var reward = new Reward
+        {
+            ExchangeFrom = from,
+            ExchangeTo = to,
+            ResourceExchange = true
+        };
+
+        return reward;
+    }
 }

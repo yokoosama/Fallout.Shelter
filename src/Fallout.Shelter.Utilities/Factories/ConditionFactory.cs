@@ -14,12 +14,22 @@ public static class ConditionFactory
 
         return condition;
     }
-    
+
     public static Condition CreateWithInjuredDweller()
     {
         var condition = new Condition
         {
             InjureDweller = true
+        };
+
+        return condition;
+    }
+
+    public static Condition CreateWithItem()
+    {
+        var condition = new Condition
+        {
+            Item = true
         };
 
         return condition;

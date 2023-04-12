@@ -10,7 +10,7 @@ public class Reward
     public bool Build { get; set; }
     public SpecialStat? SpecialStat { get; set; }
     public bool ResourceExchange { get; set; }
-    
+
     public bool HealDweller { get; set; }
     public bool NewItem { get; set; }
     public bool ActivateItem { get; set; }
@@ -18,5 +18,4 @@ public class Reward
     public bool ItemPoolRefresh { get; set; }
     public KeyValuePair<ResourceType, int>? ExchangeFrom { get; set; }
     public KeyValuePair<ResourceType, int>? ExchangeTo { get; set; }
-    
 }

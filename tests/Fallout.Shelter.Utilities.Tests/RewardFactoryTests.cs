@@ -73,6 +73,28 @@ public class RewardFactoryTests
         reward.ExchangeTo.Should().BeNull();
     }
     
+    [Test]
+    public void CreateWithFirstPlayerToken_CreateValidReward()
+    {
+        var reward = RewardFactory.CreateWithFirstPlayerToken();
+
+        reward.ResourceType.Should().BeNull();
+        reward.ResourceAmount.Should().BeNull();
+        reward.Happiness.Should().BeNull();
+        reward.NewDweller.Should().BeFalse();
+        reward.FirstPlayerToken.Should().BeTrue();
+        reward.Build.Should().BeFalse();
+        reward.SpecialStat.Should().BeNull();
+        reward.ResourceExchange.Should().BeFalse();
+        reward.HealDweller.Should().BeFalse();
+        reward.NewItem.Should().BeFalse();
+        reward.ActivateItem.Should().BeFalse();
+        reward.RoomPoolRefresh.Should().BeFalse();
+        reward.ItemPoolRefresh.Should().BeFalse();
+        reward.ExchangeFrom.Should().BeNull();
+        reward.ExchangeTo.Should().BeNull();
+    }
+    
     [TestCase(SpecialStat.Strength)]
     [TestCase(SpecialStat.Perception)]
     [TestCase(SpecialStat.Endurance)]

@@ -761,4 +761,85 @@ public class RoomFactory : IRoomFactory
             }
         };
     }
+    
+    public Room CreateRadioStudioRoom()
+    {
+        var leftSpace = new Space
+        {
+            PriceToSpawn = new List<Condition>
+            {
+                ConditionFactory.CreateWithResources(ResourceType.Food, 2)
+            },
+            Rewards = new List<Reward>
+            {
+                RewardFactory.CreateWithDweller()
+            }
+        };
+
+        var rightSpace = new Space
+        {
+            SpecialStat = SpecialStat.Charisma,
+            PriceToSpawn = new List<Condition>
+            {
+                ConditionFactory.CreateWithResources(ResourceType.Food, 3),
+            },
+            Rewards = new List<Reward>
+            {
+                RewardFactory.CreateWithDweller()
+            }
+        };
+
+        return new Room("Radio Studio Room")
+        {
+            Price = new Dictionary<ResourceType, int>
+            {
+                { ResourceType.Water, 1 },
+                { ResourceType.Energy, 3 }
+            },
+            Spaces =
+            {
+                [0] = leftSpace,
+                [1] = rightSpace
+            }
+        };
+    }
+    
+    public Room CreateLivingRoom()
+    {
+        var leftSpace = new Space
+        {
+            SpecialStat = SpecialStat.Charisma,
+            Rewards = new List<Reward>
+            {
+                RewardFactory.CreateWithDweller()
+            }
+        };
+
+        var rightSpace = new Space
+        {
+            SpecialStat = SpecialStat.Charisma,
+            PriceToSpawn = new List<Condition>
+            {
+                ConditionFactory.CreateWithResources(ResourceType.Food, 1),
+            },
+            Rewards = new List<Reward>
+            {
+                RewardFactory.CreateWithDweller()
+            }
+        };
+
+        return new Room("Living Room")
+        {
+            Price = new Dictionary<ResourceType, int>
+            {
+                { ResourceType.Water, 2 },
+                { ResourceType.Energy, 2 }
+            },
+            Spaces =
+            {
+                [0] = leftSpace,
+                [1] = rightSpace
+            }
+        };
+    }
 }

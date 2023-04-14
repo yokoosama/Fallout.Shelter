@@ -26,4 +26,6 @@ public interface IRoomFactory
     Room CreateLoungeRoom();
     Room CreateMedbayRoom();
     Room CreateScienceLabRoom();
+    Room CreateRadioStudioRoom();
+    Room CreateLivingRoom();
 }

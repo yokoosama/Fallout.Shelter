@@ -7,6 +7,8 @@ public class Space
     public Dweller? Dweller { get; set; }
     public bool IsOnlyForInjuredDweller { get; set; }
     public SpecialStat? SpecialStat { get; set; }
+    //todo:refactor
+    public Dweller? LinkedDweller { get; set; }
 
     public Space()
     {

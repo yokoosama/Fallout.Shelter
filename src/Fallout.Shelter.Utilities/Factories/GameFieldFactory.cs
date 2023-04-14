@@ -68,6 +68,9 @@ public class GameFieldFactory : IGameFieldFactory
             _roomFactory.CreateLoungeRoom(),
             _roomFactory.CreateMedbayRoom(),
             _roomFactory.CreateScienceLabRoom(),
+            _roomFactory.CreateRadioStudioRoom(),
+            _roomFactory.CreateLivingRoom(),
+            _roomFactory.CreateLivingRoom(),
         };
 
         return roomPool;

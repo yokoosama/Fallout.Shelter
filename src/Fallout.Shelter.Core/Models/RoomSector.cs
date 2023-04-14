@@ -2,14 +2,14 @@ namespace Fallout.Shelter.Core.Models;
 
 public class RoomSector
 {
-    public List<Condition> PriceToSpawn { get; set; }
+    public List<Condition> Conditions { get; set; }
     public List<Reward> Rewards { get; set; }
     public Space[] Spaces { get; set; }
 
-    public RoomSector()
+    public RoomSector(int spaceCount = 1)
     {
-        PriceToSpawn = new List<Condition>();
+        Conditions = new List<Condition>();
         Rewards = new List<Reward>();
-        Spaces = new Space[2];
+        Spaces = new Space[spaceCount];
     }
 }

@@ -8,7 +8,7 @@ public class RoomFactory : IRoomFactory
     {
         var leftSpace = new RoomSector
         {
-            PriceToSpawn = new List<Condition>
+            Conditions = new List<Condition>
             {
                 ConditionFactory.CreateWithResources(ResourceType.Water, 2)
             },
@@ -25,7 +25,7 @@ public class RoomFactory : IRoomFactory
 
         var rightSpace = new RoomSector
         {
-            PriceToSpawn = new List<Condition>
+            Conditions = new List<Condition>
             {
                 ConditionFactory.CreateWithResources(ResourceType.Water, 1)
             },
@@ -66,7 +66,7 @@ public class RoomFactory : IRoomFactory
 
         var rightSpace = new RoomSector
         {
-            PriceToSpawn = new List<Condition>
+            Conditions = new List<Condition>
             {
                 ConditionFactory.CreateWithResources(ResourceType.Water, 1),
                 ConditionFactory.CreateWithResources(ResourceType.Food, 1),
@@ -96,7 +96,7 @@ public class RoomFactory : IRoomFactory
     {
         var leftSpace = new RoomSector
         {
-            PriceToSpawn = new List<Condition>
+            Conditions = new List<Condition>
             {
                 ConditionFactory.CreateWithResources(ResourceType.Food, 3)
             },
@@ -550,7 +550,7 @@ public class RoomFactory : IRoomFactory
 
         var rightSpace = new RoomSector
         {
-            PriceToSpawn = new List<Condition>
+            Conditions = new List<Condition>
             {
                 ConditionFactory.CreateWithResources(ResourceType.Random, 4)
             },
@@ -596,7 +596,7 @@ public class RoomFactory : IRoomFactory
 
         var rightSpace = new RoomSector
         {
-            PriceToSpawn = new List<Condition>
+            Conditions = new List<Condition>
             {
                 ConditionFactory.CreateWithResources(ResourceType.Food, 3)
             },
@@ -642,7 +642,7 @@ public class RoomFactory : IRoomFactory
 
         var rightSpace = new RoomSector
         {
-            PriceToSpawn = new List<Condition>
+            Conditions = new List<Condition>
             {
                 ConditionFactory.CreateWithResources(ResourceType.Water, 2)
             },
@@ -688,7 +688,7 @@ public class RoomFactory : IRoomFactory
 
         var rightSpace = new RoomSector
         {
-            PriceToSpawn = new List<Condition>
+            Conditions = new List<Condition>
             {
                 ConditionFactory.CreateWithInjuredDweller()
             },
@@ -734,7 +734,7 @@ public class RoomFactory : IRoomFactory
 
         var rightSpace = new RoomSector
         {
-            PriceToSpawn = new List<Condition>
+            Conditions = new List<Condition>
             {
                 ConditionFactory.CreateWithResources(ResourceType.Energy, 3)
             },
@@ -779,7 +779,7 @@ public class RoomFactory : IRoomFactory
 
         var rightSpace = new RoomSector
         {
-            PriceToSpawn = new List<Condition>
+            Conditions = new List<Condition>
             {
                 ConditionFactory.CreateWithItem()
             },
@@ -825,7 +825,7 @@ public class RoomFactory : IRoomFactory
 
         var rightSpace = new RoomSector
         {
-            PriceToSpawn = new List<Condition>
+            Conditions = new List<Condition>
             {
                 ConditionFactory.CreateWithResources(ResourceType.Food, 1),
                 ConditionFactory.CreateWithInjuredDweller()
@@ -865,7 +865,7 @@ public class RoomFactory : IRoomFactory
                 RewardFactory.CreateWithDwellerHeal(),
                 RewardFactory.CreateWithSpecialStat(SpecialStat.Endurance)
             },
-            PriceToSpawn = new List<Condition>
+            Conditions = new List<Condition>
             {
                 ConditionFactory.CreateWithInjuredDweller()
             },
@@ -877,7 +877,7 @@ public class RoomFactory : IRoomFactory
 
         var rightSpace = new RoomSector
         {
-            PriceToSpawn = new List<Condition>
+            Conditions = new List<Condition>
             {
                 ConditionFactory.CreateWithResources(ResourceType.Food, 1),
                 ConditionFactory.CreateWithInjuredDweller()
@@ -917,7 +917,7 @@ public class RoomFactory : IRoomFactory
                 RewardFactory.CreateWithDwellerHeal(),
                 RewardFactory.CreateWithSpecialStat(SpecialStat.Intelligence)
             },
-            PriceToSpawn = new List<Condition>
+            Conditions = new List<Condition>
             {
                 ConditionFactory.CreateWithInjuredDweller()
             },
@@ -929,7 +929,7 @@ public class RoomFactory : IRoomFactory
 
         var rightSpace = new RoomSector
         {
-            PriceToSpawn = new List<Condition>
+            Conditions = new List<Condition>
             {
                 ConditionFactory.CreateWithResources(ResourceType.Food, 1),
                 ConditionFactory.CreateWithInjuredDweller()
@@ -964,7 +964,7 @@ public class RoomFactory : IRoomFactory
     {
         var leftSpace = new RoomSector
         {
-            PriceToSpawn = new List<Condition>
+            Conditions = new List<Condition>
             {
                 ConditionFactory.CreateWithResources(ResourceType.Food, 2)
             },
@@ -980,7 +980,7 @@ public class RoomFactory : IRoomFactory
 
         var rightSpace = new RoomSector
         {
-            PriceToSpawn = new List<Condition>
+            Conditions = new List<Condition>
             {
                 ConditionFactory.CreateWithResources(ResourceType.Food, 3)
             },
@@ -1031,7 +1031,7 @@ public class RoomFactory : IRoomFactory
 
         var rightSpace = new RoomSector
         {
-            PriceToSpawn = new List<Condition>
+            Conditions = new List<Condition>
             {
                 ConditionFactory.CreateWithResources(ResourceType.Food, 1)
             },
@@ -1067,7 +1067,7 @@ public class RoomFactory : IRoomFactory
     {
         var leftSpace = new RoomSector
         {
-            PriceToSpawn = new List<Condition>
+            Conditions = new List<Condition>
             {
                 ConditionFactory.CreateWithBuild()
             },
@@ -1113,7 +1113,7 @@ public class RoomFactory : IRoomFactory
     {
         var leftSpace = new RoomSector
         {
-            PriceToSpawn = new List<Condition>
+            Conditions = new List<Condition>
             {
                 ConditionFactory.CreateWithResources(ResourceType.Water, 1),
                 ConditionFactory.CreateWithResources(ResourceType.Random, 1)
@@ -1133,7 +1133,7 @@ public class RoomFactory : IRoomFactory
 
         var rightSpace = new RoomSector
         {
-            PriceToSpawn = new List<Condition>
+            Conditions = new List<Condition>
             {
                 ConditionFactory.CreateWithItem()
             },
@@ -1169,7 +1169,7 @@ public class RoomFactory : IRoomFactory
     {
         var leftSpace = new RoomSector
         {
-            PriceToSpawn = new List<Condition>
+            Conditions = new List<Condition>
             {
                 ConditionFactory.CreateWithResources(ResourceType.Water, 1),
                 ConditionFactory.CreateWithResources(ResourceType.Random, 1)

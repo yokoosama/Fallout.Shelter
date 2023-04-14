@@ -106,7 +106,7 @@ public static class RewardFactory
 
         return reward;
     }
-    
+
     public static Reward CreateWithActivateItem()
     {
         var reward = new Reward

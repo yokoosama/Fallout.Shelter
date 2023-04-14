@@ -34,4 +34,14 @@ public static class ConditionFactory
 
         return condition;
     }
+    
+    public static Condition CreateWithBuild()
+    {
+        var condition = new Condition
+        {
+            Build = true
+        };
+
+        return condition;
+    }
 }

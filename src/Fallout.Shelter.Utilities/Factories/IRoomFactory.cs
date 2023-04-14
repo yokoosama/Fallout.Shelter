@@ -28,4 +28,7 @@ public interface IRoomFactory
     Room CreateScienceLabRoom();
     Room CreateRadioStudioRoom();
     Room CreateLivingRoom();
+    Room CreateThemeWorkshopRoom();
+    Room CreateOutfitWorkshopRoom();
+    Room CreateWeaponWorkshopRoom();
 }

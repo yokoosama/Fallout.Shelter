@@ -842,4 +842,125 @@ public class RoomFactory : IRoomFactory
             }
         };
     }
+
+    public Room CreateThemeWorkshopRoom()
+    {
+        var leftSpace = new Space
+        {
+            PriceToSpawn = new List<Condition>
+            {
+                ConditionFactory.CreateWithBuild(),
+            },
+            Rewards = new List<Reward>
+            {
+                RewardFactory.CreateWithHappiness(1),
+                RewardFactory.CreateWithBuild(),
+            }
+        };
+
+        var rightSpace = new Space
+        {
+            Rewards = new List<Reward>
+            {
+                RewardFactory.CreateWithItemPoolRefresh(),
+                RewardFactory.CreateWithSpecialStat(SpecialStat.Any)
+            }
+        };
+
+        return new Room("Theme Workshop")
+        {
+            Price = new Dictionary<ResourceType, int>
+            {
+                { ResourceType.Energy, 5 }
+            },
+            Spaces =
+            {
+                [0] = leftSpace,
+                [1] = rightSpace
+            }
+        };
+    }
+
+    public Room CreateOutfitWorkshopRoom()
+    {
+        var leftSpace = new Space
+        {
+            SpecialStat = SpecialStat.Intelligence,
+            PriceToSpawn = new List<Condition>
+            {
+                ConditionFactory.CreateWithResources(ResourceType.Water, 1),
+                ConditionFactory.CreateWithResources(ResourceType.Random, 1),
+            },
+            Rewards = new List<Reward>
+            {
+                RewardFactory.CreateWithItem(),
+            }
+        };
+
+        var rightSpace = new Space
+        {
+            SpecialStat = SpecialStat.Intelligence,
+            PriceToSpawn = new List<Condition>
+            {
+                ConditionFactory.CreateWithItem(),
+            },
+            Rewards = new List<Reward>
+            {
+                RewardFactory.CreateWithResources(ResourceType.Random, 3)
+            }
+        };
+
+        return new Room("Outfit Workshop")
+        {
+            Price = new Dictionary<ResourceType, int>
+            {
+                { ResourceType.Water, 2 },
+                { ResourceType.Energy, 3 },
+            },
+            Spaces =
+            {
+                [0] = leftSpace,
+                [1] = rightSpace
+            }
+        };
+    }
+
+    public Room CreateWeaponWorkshopRoom()
+    {
+        var leftSpace = new Space
+        {
+            SpecialStat = SpecialStat.Intelligence,
+            PriceToSpawn = new List<Condition>
+            {
+                ConditionFactory.CreateWithResources(ResourceType.Water, 1),
+                ConditionFactory.CreateWithResources(ResourceType.Random, 1),
+            },
+            Rewards = new List<Reward>
+            {
+                RewardFactory.CreateWithItem(),
+            }
+        };
+
+        var rightSpace = new Space
+        {
+            SpecialStat = SpecialStat.Intelligence,
+            Rewards = new List<Reward>
+            {
+                RewardFactory.CreateWithActivateItem(),
+            }
+        };
+
+        return new Room("Weapon Workshop")
+        {
+            Price = new Dictionary<ResourceType, int>
+            {
+                { ResourceType.Energy, 5 }
+            },
+            Spaces =
+            {
+                [0] = leftSpace,
+                [1] = rightSpace
+            }
+        };
+    }
 }

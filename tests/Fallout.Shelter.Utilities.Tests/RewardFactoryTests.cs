@@ -28,7 +28,7 @@ public class RewardFactoryTests
         reward.ExchangeFrom.Should().BeNull();
         reward.ExchangeTo.Should().BeNull();
     }
-    
+
     [Test]
     public void CreateWithItem_CreateValidReward()
     {
@@ -50,7 +50,7 @@ public class RewardFactoryTests
         reward.ExchangeFrom.Should().BeNull();
         reward.ExchangeTo.Should().BeNull();
     }
-    
+
     [Test]
     public void CreateWithItemPoolRefresh_CreateValidReward()
     {
@@ -72,7 +72,7 @@ public class RewardFactoryTests
         reward.ExchangeFrom.Should().BeNull();
         reward.ExchangeTo.Should().BeNull();
     }
-    
+
     [Test]
     public void CreateWithFirstPlayerToken_CreateValidReward()
     {
@@ -94,7 +94,7 @@ public class RewardFactoryTests
         reward.ExchangeFrom.Should().BeNull();
         reward.ExchangeTo.Should().BeNull();
     }
-    
+
     [TestCase(SpecialStat.Strength)]
     [TestCase(SpecialStat.Perception)]
     [TestCase(SpecialStat.Endurance)]
@@ -123,7 +123,7 @@ public class RewardFactoryTests
         reward.ExchangeFrom.Should().BeNull();
         reward.ExchangeTo.Should().BeNull();
     }
-    
+
     [Test]
     public void CreateWithDweller_CreateValidReward()
     {
@@ -145,7 +145,7 @@ public class RewardFactoryTests
         reward.ExchangeFrom.Should().BeNull();
         reward.ExchangeTo.Should().BeNull();
     }
-    
+
     [Test]
     public void CreateWithDwellerHeal_CreateValidReward()
     {
@@ -167,7 +167,7 @@ public class RewardFactoryTests
         reward.ExchangeFrom.Should().BeNull();
         reward.ExchangeTo.Should().BeNull();
     }
-    
+
     [Test]
     public void CreateWithBuild_CreateValidReward()
     {
@@ -189,7 +189,7 @@ public class RewardFactoryTests
         reward.ExchangeFrom.Should().BeNull();
         reward.ExchangeTo.Should().BeNull();
     }
-    
+
     [Test]
     public void CreateWithHappiness_CreateValidReward()
     {
@@ -211,7 +211,7 @@ public class RewardFactoryTests
         reward.ExchangeFrom.Should().BeNull();
         reward.ExchangeTo.Should().BeNull();
     }
-    
+
     [Test]
     public void CreateWithActivateItem_CreateValidReward()
     {
@@ -233,7 +233,7 @@ public class RewardFactoryTests
         reward.ExchangeFrom.Should().BeNull();
         reward.ExchangeTo.Should().BeNull();
     }
-    
+
     [Test]
     public void CreateWithExchange_CreateValidReward()
     {

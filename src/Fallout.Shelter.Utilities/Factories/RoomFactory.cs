@@ -633,4 +633,132 @@ public class RoomFactory : IRoomFactory
             }
         };
     }
+
+    public Room CreateLoungeRoom()
+    {
+        var leftSpace = new Space
+        {
+            Rewards = new List<Reward>
+            {
+                RewardFactory.CreateWithResources(ResourceType.Random, 1),
+                RewardFactory.CreateWithSpecialStat(SpecialStat.Charisma)
+            }
+        };
+
+        var rightSpace = new Space
+        {
+            PriceToSpawn = new List<Condition>
+            {
+                ConditionFactory.CreateWithResources(ResourceType.Food, 1),
+                ConditionFactory.CreateWithInjuredDweller()
+            },
+            Rewards = new List<Reward>
+            {
+                RewardFactory.CreateWithHappiness(1),
+                RewardFactory.CreateWithDwellerHeal()
+            }
+        };
+
+        return new Room("Lounge Room")
+        {
+            Price = new Dictionary<ResourceType, int>
+            {
+                { ResourceType.Food, 2 },
+                { ResourceType.Energy, 2 }
+            },
+            Spaces =
+            {
+                [0] = leftSpace,
+                [1] = rightSpace
+            }
+        };
+    }
+
+    public Room CreateMedbayRoom()
+    {
+        var leftSpace = new Space
+        {
+            Rewards = new List<Reward>
+            {
+                RewardFactory.CreateWithDwellerHeal(),
+                RewardFactory.CreateWithSpecialStat(SpecialStat.Endurance)
+            },
+            PriceToSpawn = new List<Condition>
+            {
+                ConditionFactory.CreateWithInjuredDweller()
+            }
+        };
+
+        var rightSpace = new Space
+        {
+            PriceToSpawn = new List<Condition>
+            {
+                ConditionFactory.CreateWithResources(ResourceType.Food, 1),
+                ConditionFactory.CreateWithInjuredDweller()
+            },
+            Rewards = new List<Reward>
+            {
+                RewardFactory.CreateWithSpecialStat(SpecialStat.Any),
+                RewardFactory.CreateWithDwellerHeal()
+            }
+        };
+
+        return new Room("Medbay Room")
+        {
+            Price = new Dictionary<ResourceType, int>
+            {
+                { ResourceType.Random, 1 },
+                { ResourceType.Energy, 3 }
+            },
+            Spaces =
+            {
+                [0] = leftSpace,
+                [1] = rightSpace
+            }
+        };
+    }
+
+    public Room CreateScienceLabRoom()
+    {
+        var leftSpace = new Space
+        {
+            Rewards = new List<Reward>
+            {
+                RewardFactory.CreateWithDwellerHeal(),
+                RewardFactory.CreateWithSpecialStat(SpecialStat.Intelligence)
+            },
+            PriceToSpawn = new List<Condition>
+            {
+                ConditionFactory.CreateWithInjuredDweller()
+            }
+        };
+
+        var rightSpace = new Space
+        {
+            PriceToSpawn = new List<Condition>
+            {
+                ConditionFactory.CreateWithResources(ResourceType.Food, 1),
+                ConditionFactory.CreateWithInjuredDweller()
+            },
+            Rewards = new List<Reward>
+            {
+                RewardFactory.CreateWithSpecialStat(SpecialStat.Any),
+                RewardFactory.CreateWithDwellerHeal()
+            }
+        };
+
+        return new Room("Science Lab Room")
+        {
+            Price = new Dictionary<ResourceType, int>
+            {
+                { ResourceType.Random, 1 },
+                { ResourceType.Energy, 3 }
+            },
+            Spaces =
+            {
+                [0] = leftSpace,
+                [1] = rightSpace
+            }
+        };
+    }
 }

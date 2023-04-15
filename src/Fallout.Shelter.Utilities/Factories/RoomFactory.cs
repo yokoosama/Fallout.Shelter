@@ -167,6 +167,10 @@ public class RoomFactory : IRoomFactory
                 RewardFactory.CreateWithHappiness(2),
                 RewardFactory.CreateWithBuild()
             },
+            Conditions = new List<Condition>
+            {
+                ConditionFactory.CreateWithBuild()
+            },
             Spaces =
             {
                 [0] = new Space()

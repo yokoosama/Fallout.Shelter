@@ -290,4 +290,45 @@ public class RoomFactoryTests
                 IsOnlyForInjuredDweller = false
             });
     }
+
+    [Test]
+    public void CreateWaterPurificationRoom_CreateValidRoom()
+    {
+        var room = _roomFactory.CreateWaterPurificationRoom();
+
+        room.Name.Should().Be("Water Purification Room");
+        room.IsElevator.Should().BeFalse();
+        
+        room.Price.Should().HaveCount(2).And
+            .ContainEquivalentOf(new KeyValuePair<ResourceType,int>(ResourceType.Water, 2)).And 
+            .ContainEquivalentOf(new KeyValuePair<ResourceType,int>(ResourceType.Energy, 3));
+        
+        room.Sectors.Should().HaveCount(2);
+
+        room.Sectors[0].Rewards.Should().HaveCount(1).And
+            .ContainEquivalentOf(RewardFactory.CreateWithResources(ResourceType.Water, 2));
+
+        room.Sectors[0].Conditions.Should().BeEmpty();
+
+        room.Sectors[0].Spaces.Should().HaveCount(1).And
+            .ContainEquivalentOf(new Space
+            {
+                Dweller = null,
+                SpecialStat = SpecialStat.Perception,
+                IsOnlyForInjuredDweller = false
+            });
+
+        room.Sectors[1].Rewards.Should().HaveCount(1).And
+            .ContainEquivalentOf(RewardFactory.CreateWithResources(ResourceType.Water, 1));
+
+        room.Sectors[1].Conditions.Should().BeEmpty();
+
+        room.Sectors[1].Spaces.Should().HaveCount(1).And
+            .ContainEquivalentOf(new Space
+            {
+                Dweller = null,
+                SpecialStat = SpecialStat.Luck,
+                IsOnlyForInjuredDweller = false
+            });
+    }
 }

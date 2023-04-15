@@ -12,9 +12,9 @@ public class Condition
     protected bool Equals(Condition other)
     {
         return ResourceType == other.ResourceType &&
-               ResourceAmount == other.ResourceAmount && 
-               Item == other.Item && Build == other.Build && 
-               InjureDweller == other.InjureDweller && 
+               ResourceAmount == other.ResourceAmount &&
+               Item == other.Item && Build == other.Build &&
+               InjureDweller == other.InjureDweller &&
                Roll == other.Roll;
     }
 
@@ -30,7 +30,7 @@ public class Condition
             return true;
         }
 
-        if (obj.GetType() != this.GetType())
+        if (obj.GetType() != GetType())
         {
             return false;
         }

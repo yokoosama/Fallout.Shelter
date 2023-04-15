@@ -50,7 +50,7 @@ public class RoomFactoryTests
                 IsOnlyForInjuredDweller = false
             });
     }
-    
+
     [Test]
     public void CreateVaultDoor_CreateValidRoom()
     {
@@ -62,7 +62,7 @@ public class RoomFactoryTests
         room.Sectors.Should().HaveCount(2);
 
         room.Sectors[0].Rewards.Should().HaveCount(2).And
-            .ContainInOrder(RewardFactory.CreateWithFirstPlayerToken(), 
+            .ContainInOrder(RewardFactory.CreateWithFirstPlayerToken(),
                 RewardFactory.CreateWithSpecialStat(SpecialStat.Luck));
 
         room.Sectors[0].Conditions.Should().BeEmpty();
@@ -91,7 +91,7 @@ public class RoomFactoryTests
                 IsOnlyForInjuredDweller = false
             });
     }
-    
+
     [Test]
     public void CreateVaultEntrance_CreateValidRoom()
     {
@@ -129,7 +129,7 @@ public class RoomFactoryTests
                 IsOnlyForInjuredDweller = false
             });
     }
-    
+
     [Test]
     public void CreateDefaultElevator_CreateValidRoom()
     {
@@ -153,7 +153,7 @@ public class RoomFactoryTests
                 IsOnlyForInjuredDweller = true
             });
     }
-    
+
     [Test]
     public void CreatePlayerElevator_CreateValidRoom()
     {
@@ -179,7 +179,7 @@ public class RoomFactoryTests
                 IsOnlyForInjuredDweller = false
             });
     }
-    
+
     [Test]
     public void CreateWaterTreatment_CreateValidRoom()
     {
@@ -191,7 +191,7 @@ public class RoomFactoryTests
         room.Sectors.Should().HaveCount(2);
 
         room.Sectors[0].Rewards.Should().HaveCount(1).And
-            .ContainEquivalentOf(RewardFactory.CreateWithResources(ResourceType.Water,1));
+            .ContainEquivalentOf(RewardFactory.CreateWithResources(ResourceType.Water, 1));
 
         room.Sectors[0].Conditions.Should().BeEmpty();
 
@@ -204,7 +204,7 @@ public class RoomFactoryTests
             });
 
         room.Sectors[1].Rewards.Should().HaveCount(1).And
-            .ContainEquivalentOf(RewardFactory.CreateWithResources(ResourceType.Water,1));
+            .ContainEquivalentOf(RewardFactory.CreateWithResources(ResourceType.Water, 1));
 
         room.Sectors[1].Conditions.Should().BeEmpty();
 
@@ -216,7 +216,7 @@ public class RoomFactoryTests
                 IsOnlyForInjuredDweller = false
             });
     }
-    
+
     [Test]
     public void CreateDiner_CreateValidRoom()
     {
@@ -228,7 +228,7 @@ public class RoomFactoryTests
         room.Sectors.Should().HaveCount(2);
 
         room.Sectors[0].Rewards.Should().HaveCount(1).And
-            .ContainEquivalentOf(RewardFactory.CreateWithResources(ResourceType.Food,2));
+            .ContainEquivalentOf(RewardFactory.CreateWithResources(ResourceType.Food, 2));
 
         room.Sectors[0].Conditions.Should().BeEmpty();
 
@@ -241,7 +241,7 @@ public class RoomFactoryTests
             });
 
         room.Sectors[1].Rewards.Should().HaveCount(1).And
-            .ContainEquivalentOf(RewardFactory.CreateWithResources(ResourceType.Food,1));
+            .ContainEquivalentOf(RewardFactory.CreateWithResources(ResourceType.Food, 1));
 
         room.Sectors[1].Conditions.Should().BeEmpty();
 
@@ -253,7 +253,7 @@ public class RoomFactoryTests
                 IsOnlyForInjuredDweller = false
             });
     }
-    
+
     [Test]
     public void CreatePowerGenerator_CreateValidRoom()
     {
@@ -265,7 +265,7 @@ public class RoomFactoryTests
         room.Sectors.Should().HaveCount(2);
 
         room.Sectors[0].Rewards.Should().HaveCount(1).And
-            .ContainEquivalentOf(RewardFactory.CreateWithResources(ResourceType.Energy,2));
+            .ContainEquivalentOf(RewardFactory.CreateWithResources(ResourceType.Energy, 2));
 
         room.Sectors[0].Conditions.Should().BeEmpty();
 
@@ -278,7 +278,7 @@ public class RoomFactoryTests
             });
 
         room.Sectors[1].Rewards.Should().HaveCount(1).And
-            .ContainEquivalentOf(RewardFactory.CreateWithResources(ResourceType.Energy,1));
+            .ContainEquivalentOf(RewardFactory.CreateWithResources(ResourceType.Energy, 1));
 
         room.Sectors[1].Conditions.Should().BeEmpty();
 

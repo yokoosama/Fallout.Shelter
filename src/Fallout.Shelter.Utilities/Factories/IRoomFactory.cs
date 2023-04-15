@@ -13,10 +13,10 @@ public interface IRoomFactory
     Room CreateDiner();
     Room CreatePowerGenerator();
     Room CreateWaterPurificationRoom();
-    Room CreateNukaColaBottlerRoom();
-    Room CreateNuclearReactorRoom();
-    Room CreateGardenRoom();
-    Room CreateClassRoom();
+    Room CreateNukaColaBottler();
+    Room CreateNuclearReactor();
+    Room CreateGarden();
+    Room CreateClassroom();
     Room CreateAthleticsRoom();
     Room CreateArmoryRoom();
     Room CreateGameRoom();

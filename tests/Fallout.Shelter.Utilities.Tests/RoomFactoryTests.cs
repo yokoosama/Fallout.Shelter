@@ -298,11 +298,11 @@ public class RoomFactoryTests
 
         room.Name.Should().Be("Water Purification Room");
         room.IsElevator.Should().BeFalse();
-        
+
         room.Price.Should().HaveCount(2).And
-            .ContainEquivalentOf(new KeyValuePair<ResourceType,int>(ResourceType.Water, 2)).And 
-            .ContainEquivalentOf(new KeyValuePair<ResourceType,int>(ResourceType.Energy, 3));
-        
+            .ContainEquivalentOf(new KeyValuePair<ResourceType, int>(ResourceType.Water, 2)).And
+            .ContainEquivalentOf(new KeyValuePair<ResourceType, int>(ResourceType.Energy, 3));
+
         room.Sectors.Should().HaveCount(2);
 
         room.Sectors[0].Rewards.Should().HaveCount(1).And
@@ -328,6 +328,174 @@ public class RoomFactoryTests
             {
                 Dweller = null,
                 SpecialStat = SpecialStat.Luck,
+                IsOnlyForInjuredDweller = false
+            });
+    }
+
+    [Test]
+    public void CreateNukaColaBottler_CreateValidRoom()
+    {
+        var room = _roomFactory.CreateNukaColaBottler();
+
+        room.Name.Should().Be("Nuka-Cola Bottler");
+        room.IsElevator.Should().BeFalse();
+
+        room.Price.Should().HaveCount(3).And
+            .ContainEquivalentOf(new KeyValuePair<ResourceType, int>(ResourceType.Water, 1)).And
+            .ContainEquivalentOf(new KeyValuePair<ResourceType, int>(ResourceType.Food, 1)).And
+            .ContainEquivalentOf(new KeyValuePair<ResourceType, int>(ResourceType.Energy, 3));
+
+        room.Sectors.Should().HaveCount(2);
+
+        room.Sectors[0].Rewards.Should().HaveCount(2).And
+            .ContainEquivalentOf(RewardFactory.CreateWithResources(ResourceType.Food, 1)).And
+            .ContainEquivalentOf(RewardFactory.CreateWithResources(ResourceType.Water, 1));
+
+        room.Sectors[0].Conditions.Should().BeEmpty();
+
+        room.Sectors[0].Spaces.Should().HaveCount(1).And
+            .ContainEquivalentOf(new Space
+            {
+                Dweller = null,
+                SpecialStat = SpecialStat.Luck,
+                IsOnlyForInjuredDweller = false
+            });
+
+        room.Sectors[1].Rewards.Should().HaveCount(2).And
+            .ContainEquivalentOf(RewardFactory.CreateWithResources(ResourceType.Food, 2)).And
+            .ContainEquivalentOf(RewardFactory.CreateWithResources(ResourceType.Water, 1));
+
+        room.Sectors[1].Conditions.Should().BeEmpty();
+
+        room.Sectors[1].Spaces.Should().HaveCount(1).And
+            .ContainEquivalentOf(new Space
+            {
+                Dweller = null,
+                SpecialStat = SpecialStat.Endurance,
+                IsOnlyForInjuredDweller = false
+            });
+    }
+
+    [Test]
+    public void CreateNuclearReactor_CreateValidRoom()
+    {
+        var room = _roomFactory.CreateNuclearReactor();
+
+        room.Name.Should().Be("Nuclear Reactor");
+        room.IsElevator.Should().BeFalse();
+
+        room.Price.Should().HaveCount(1).And
+            .ContainEquivalentOf(new KeyValuePair<ResourceType, int>(ResourceType.Energy, 5));
+
+        room.Sectors.Should().HaveCount(2);
+
+        room.Sectors[0].Rewards.Should().HaveCount(1).And
+            .ContainEquivalentOf(RewardFactory.CreateWithResources(ResourceType.Energy, 2));
+
+        room.Sectors[0].Conditions.Should().BeEmpty();
+
+        room.Sectors[0].Spaces.Should().HaveCount(1).And
+            .ContainEquivalentOf(new Space
+            {
+                Dweller = null,
+                SpecialStat = SpecialStat.Luck,
+                IsOnlyForInjuredDweller = false
+            });
+
+        room.Sectors[1].Rewards.Should().HaveCount(1).And
+            .ContainEquivalentOf(RewardFactory.CreateWithResources(ResourceType.Energy, 3));
+
+        room.Sectors[1].Conditions.Should().BeEmpty();
+
+        room.Sectors[1].Spaces.Should().HaveCount(1).And
+            .ContainEquivalentOf(new Space
+            {
+                Dweller = null,
+                SpecialStat = SpecialStat.Strength,
+                IsOnlyForInjuredDweller = false
+            });
+    }
+
+    [Test]
+    public void CreateGarden_CreateValidRoom()
+    {
+        var room = _roomFactory.CreateGarden();
+
+        room.Name.Should().Be("Garden");
+        room.IsElevator.Should().BeFalse();
+
+        room.Price.Should().HaveCount(2).And
+            .ContainEquivalentOf(new KeyValuePair<ResourceType, int>(ResourceType.Food, 2)).And
+            .ContainEquivalentOf(new KeyValuePair<ResourceType, int>(ResourceType.Energy, 3));
+
+        room.Sectors.Should().HaveCount(2);
+
+        room.Sectors[0].Rewards.Should().HaveCount(1).And
+            .ContainEquivalentOf(RewardFactory.CreateWithResources(ResourceType.Food, 2));
+
+        room.Sectors[0].Conditions.Should().BeEmpty();
+
+        room.Sectors[0].Spaces.Should().HaveCount(1).And
+            .ContainEquivalentOf(new Space
+            {
+                Dweller = null,
+                SpecialStat = SpecialStat.Luck,
+                IsOnlyForInjuredDweller = false
+            });
+
+        room.Sectors[1].Rewards.Should().HaveCount(1).And
+            .ContainEquivalentOf(RewardFactory.CreateWithResources(ResourceType.Food, 3));
+
+        room.Sectors[1].Conditions.Should().BeEmpty();
+
+        room.Sectors[1].Spaces.Should().HaveCount(1).And
+            .ContainEquivalentOf(new Space
+            {
+                Dweller = null,
+                SpecialStat = SpecialStat.Agility,
+                IsOnlyForInjuredDweller = false
+            });
+    }
+
+    [Test]
+    public void CreateClassroom_CreateValidRoom()
+    {
+        var room = _roomFactory.CreateClassroom();
+
+        room.Name.Should().Be("Classroom");
+        room.IsElevator.Should().BeFalse();
+
+        room.Price.Should().HaveCount(2).And
+            .ContainEquivalentOf(new KeyValuePair<ResourceType, int>(ResourceType.Food, 1)).And
+            .ContainEquivalentOf(new KeyValuePair<ResourceType, int>(ResourceType.Energy, 3));
+
+        room.Sectors.Should().HaveCount(2);
+
+        room.Sectors[0].Rewards.Should().HaveCount(2).And
+            .ContainInOrder(RewardFactory.CreateWithResources(ResourceType.Random, 1)).And
+            .ContainInOrder(RewardFactory.CreateWithSpecialStat(SpecialStat.Intelligence));
+
+        room.Sectors[0].Conditions.Should().BeEmpty();
+
+        room.Sectors[0].Spaces.Should().HaveCount(1).And
+            .ContainEquivalentOf(new Space
+            {
+                Dweller = null,
+                SpecialStat = null,
+                IsOnlyForInjuredDweller = false
+            });
+
+        room.Sectors[1].Rewards.Should().HaveCount(1).And
+            .ContainEquivalentOf(RewardFactory.CreateWithHappiness(1));
+
+        room.Sectors[1].Conditions.Should().HaveCount(1).And
+            .ContainEquivalentOf(ConditionFactory.CreateWithResources(ResourceType.Random, 4));
+
+        room.Sectors[1].Spaces.Should().HaveCount(1).And
+            .ContainEquivalentOf(new Space
+            {
+                Dweller = null,
+                SpecialStat = null,
                 IsOnlyForInjuredDweller = false
             });
     }

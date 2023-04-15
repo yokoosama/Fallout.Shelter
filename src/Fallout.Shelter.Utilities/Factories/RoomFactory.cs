@@ -394,7 +394,7 @@ public class RoomFactory : IRoomFactory
         };
     }
 
-    public Room CreateNukaColaBottlerRoom()
+    public Room CreateNukaColaBottler()
     {
         var leftSpace = new RoomSector
         {
@@ -428,7 +428,7 @@ public class RoomFactory : IRoomFactory
             }
         };
 
-        return new Room("Nuka-Cola Bottler Room")
+        return new Room("Nuka-Cola Bottler")
         {
             Price = new Dictionary<ResourceType, int>
             {
@@ -444,7 +444,7 @@ public class RoomFactory : IRoomFactory
         };
     }
 
-    public Room CreateNuclearReactorRoom()
+    public Room CreateNuclearReactor()
     {
         var leftSpace = new RoomSector
         {
@@ -476,7 +476,7 @@ public class RoomFactory : IRoomFactory
             }
         };
 
-        return new Room("Nuclear Reactor Room")
+        return new Room("Nuclear Reactor")
         {
             Price = new Dictionary<ResourceType, int>
             {
@@ -490,7 +490,7 @@ public class RoomFactory : IRoomFactory
         };
     }
 
-    public Room CreateGardenRoom()
+    public Room CreateGarden()
     {
         var leftSpace = new RoomSector
         {
@@ -522,7 +522,7 @@ public class RoomFactory : IRoomFactory
             }
         };
 
-        return new Room("Garden Room")
+        return new Room("Garden")
         {
             Price = new Dictionary<ResourceType, int>
             {
@@ -537,7 +537,7 @@ public class RoomFactory : IRoomFactory
         };
     }
 
-    public Room CreateClassRoom()
+    public Room CreateClassroom()
     {
         var leftSpace = new RoomSector
         {
@@ -568,7 +568,7 @@ public class RoomFactory : IRoomFactory
             }
         };
 
-        return new Room("Class Room")
+        return new Room("Classroom")
         {
             Price = new Dictionary<ResourceType, int>
             {

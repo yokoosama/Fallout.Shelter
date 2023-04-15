@@ -32,4 +32,8 @@ jobs:
       run: dotnet test --no-build --verbosity normal
     - name: Run Stryker Mutator
       run: dotnet dotnet-stryker
+    - uses: actions/upload-artifact@v3
+      with:
+        name: Stryker Report
+        path: StrykerOutput/*/reports/mutation-report.html
       

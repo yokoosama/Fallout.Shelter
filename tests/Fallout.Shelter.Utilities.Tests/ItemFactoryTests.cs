@@ -680,6 +680,87 @@ public class ItemFactoryTests
         reward.GiveSpecialStatToDweller.Should().BeNull();
     }
     
+    [Test]
+    public void CreateCollie_CreateValidReward()
+    {
+        var reward = ItemFactory.CreateCollie();
+    
+        reward.Name.Should().Be("Collie");
+        reward.Type.Should().Be(ItemType.Pet);
+        reward.IsActive.Should().BeTrue();
+        reward.IsAlwaysActive.Should().BeFalse();
+        reward.IsEndGameItem.Should().BeFalse();
+        reward.GiveActivateItemPossibility.Should().BeFalse();
+        reward.GiveAdditionalDamage.Should().BeNull();
+        reward.GiveReRollPossibility.Should().BeFalse();
+        reward.HealDweller.Should().BeFalse();
+        reward.GiveHappinessPerItem.Should().BeNull();
+        reward.GiveHappinessPerResources.Should().BeNull();
+        reward.GiveHappinessPerDwellers.Should().BeFalse();
+        reward.GiveHappinessPerRooms.Should().BeFalse();
+        reward.GiveAdditionalResourceForBuilding.Should().BeFalse();
+        reward.GiveItemChangePossibility.Should().BeFalse();
+        reward.GiveResourceExchange.Should().BeTrue();
+        reward.GiveNeededStatInFight.Should().BeNull();
+        reward.ExchangeFrom.Should().Be(new Resource(ResourceType.Water, 1));
+        reward.ExchangeTo.Should().Be(new Resource(ResourceType.Energy, 2));
+        reward.GiveSpecialStatToDweller.Should().BeNull();
+    }
+    
+    [Test]
+    public void CreateHusky_CreateValidReward()
+    {
+        var reward = ItemFactory.CreateHusky();
+    
+        reward.Name.Should().Be("Husky");
+        reward.Type.Should().Be(ItemType.Pet);
+        reward.IsActive.Should().BeTrue();
+        reward.IsAlwaysActive.Should().BeFalse();
+        reward.IsEndGameItem.Should().BeFalse();
+        reward.GiveActivateItemPossibility.Should().BeFalse();
+        reward.GiveAdditionalDamage.Should().BeNull();
+        reward.GiveReRollPossibility.Should().BeFalse();
+        reward.HealDweller.Should().BeFalse();
+        reward.GiveHappinessPerItem.Should().BeNull();
+        reward.GiveHappinessPerResources.Should().BeNull();
+        reward.GiveHappinessPerDwellers.Should().BeFalse();
+        reward.GiveHappinessPerRooms.Should().BeFalse();
+        reward.GiveAdditionalResourceForBuilding.Should().BeFalse();
+        reward.GiveItemChangePossibility.Should().BeFalse();
+        reward.GiveResourceExchange.Should().BeTrue();
+        reward.GiveNeededStatInFight.Should().BeNull();
+        reward.ExchangeFrom.Should().Be(new Resource(ResourceType.Water, 1));
+        reward.ExchangeTo.Should().Be(new Resource(ResourceType.Food, 2));
+        reward.GiveSpecialStatToDweller.Should().BeNull();
+    }
+    
+    [Test]
+    public void CreateGermanShepherd_CreateValidReward()
+    {
+        var reward = ItemFactory.CreateGermanShepherd();
+    
+        reward.Name.Should().Be("German Shepherd");
+        reward.Type.Should().Be(ItemType.Pet);
+        reward.IsActive.Should().BeTrue();
+        reward.IsAlwaysActive.Should().BeFalse();
+        reward.IsEndGameItem.Should().BeFalse();
+        reward.GiveActivateItemPossibility.Should().BeFalse();
+        reward.GiveAdditionalDamage.Should().BeNull();
+        reward.GiveReRollPossibility.Should().BeFalse();
+        reward.HealDweller.Should().BeFalse();
+        reward.GiveHappinessPerItem.Should().BeNull();
+        reward.GiveHappinessPerResources.Should().BeNull();
+        reward.GiveHappinessPerDwellers.Should().BeFalse();
+        reward.GiveHappinessPerRooms.Should().BeFalse();
+        reward.GiveAdditionalResourceForBuilding.Should().BeFalse();
+        reward.GiveItemChangePossibility.Should().BeFalse();
+        reward.GiveResourceExchange.Should().BeTrue();
+        reward.GiveNeededStatInFight.Should().BeNull();
+        reward.ExchangeFrom.Should().Be(new Resource(ResourceType.Food, 1));
+        reward.ExchangeTo.Should().Be(new Resource(ResourceType.Energy, 1));
+        reward.GiveSpecialStatToDweller.Should().BeNull();
+    }
+    
     // [Test]
     // public void CreateGoldenRetriever_CreateValidReward()
     // {

@@ -255,4 +255,40 @@ public static class ItemFactory
 
         return item;
     }
+
+    public static Item CreateGermanShepherd()
+    {
+        var item = new Item("German Shepherd", ItemType.Pet)
+        {
+            GiveResourceExchange = true,
+            ExchangeFrom = new Resource(ResourceType.Food, 1),
+            ExchangeTo = new Resource(ResourceType.Energy,1)
+        };
+
+        return item;
+    }
+
+    public static Item CreateCollie()
+    {
+        var item = new Item("Collie", ItemType.Pet)
+        {
+            GiveResourceExchange = true,
+            ExchangeFrom = new Resource(ResourceType.Water, 1),
+            ExchangeTo = new Resource(ResourceType.Energy,2)
+        };
+
+        return item;
+    }
+
+    public static Item CreateHusky()
+    {
+        var item = new Item("Husky", ItemType.Pet)
+        {
+            GiveResourceExchange = true,
+            ExchangeFrom = new Resource(ResourceType.Water, 1),
+            ExchangeTo = new Resource(ResourceType.Food,2)
+        };
+
+        return item;
+    }
 }

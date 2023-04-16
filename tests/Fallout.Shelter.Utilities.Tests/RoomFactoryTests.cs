@@ -5,18 +5,10 @@ namespace Fallout.Shelter.Utilities.Tests;
 
 public class RoomFactoryTests
 {
-    private IRoomFactory _roomFactory = null!;
-
-    [OneTimeSetUp]
-    public void OneTimeSetUp()
-    {
-        _roomFactory = new RoomFactory();
-    }
-
     [Test]
     public void CreateWasteland_CreateValidRoom()
     {
-        var room = _roomFactory.CreateWasteland();
+        var room = RoomFactory.CreateWasteland();
 
         room.Name.Should().Be("The Wasteland");
         room.IsElevator.Should().BeFalse();
@@ -55,7 +47,7 @@ public class RoomFactoryTests
     [Test]
     public void CreateVaultDoor_CreateValidRoom()
     {
-        var room = _roomFactory.CreateVaultDoor();
+        var room = RoomFactory.CreateVaultDoor();
 
         room.Name.Should().Be("Vault Door");
         room.IsElevator.Should().BeFalse();
@@ -96,7 +88,7 @@ public class RoomFactoryTests
     [Test]
     public void CreateVaultEntrance_CreateValidRoom()
     {
-        var room = _roomFactory.CreateVaultEntrance();
+        var room = RoomFactory.CreateVaultEntrance();
 
         room.Name.Should().Be("Vault Entrance");
         room.IsElevator.Should().BeFalse();
@@ -134,7 +126,7 @@ public class RoomFactoryTests
     [Test]
     public void CreateDefaultElevator_CreateValidRoom()
     {
-        var room = _roomFactory.CreateDefaultElevator();
+        var room = RoomFactory.CreateDefaultElevator();
 
         room.Name.Should().Be("Elevator");
         room.IsElevator.Should().BeTrue();
@@ -158,7 +150,7 @@ public class RoomFactoryTests
     [Test]
     public void CreatePlayerElevator_CreateValidRoom()
     {
-        var room = _roomFactory.CreatePlayerElevator();
+        var room = RoomFactory.CreatePlayerElevator();
 
         room.Name.Should().Be("Elevator");
         room.IsElevator.Should().BeTrue();
@@ -184,7 +176,7 @@ public class RoomFactoryTests
     [Test]
     public void CreateWaterTreatment_CreateValidRoom()
     {
-        var room = _roomFactory.CreateWaterTreatment();
+        var room = RoomFactory.CreateWaterTreatment();
 
         room.Name.Should().Be("Water Treatment");
         room.IsElevator.Should().BeFalse();
@@ -221,7 +213,7 @@ public class RoomFactoryTests
     [Test]
     public void CreateDiner_CreateValidRoom()
     {
-        var room = _roomFactory.CreateDiner();
+        var room = RoomFactory.CreateDiner();
 
         room.Name.Should().Be("Diner");
         room.IsElevator.Should().BeFalse();
@@ -258,7 +250,7 @@ public class RoomFactoryTests
     [Test]
     public void CreatePowerGenerator_CreateValidRoom()
     {
-        var room = _roomFactory.CreatePowerGenerator();
+        var room = RoomFactory.CreatePowerGenerator();
 
         room.Name.Should().Be("Power Generator");
         room.IsElevator.Should().BeFalse();
@@ -295,7 +287,7 @@ public class RoomFactoryTests
     [Test]
     public void CreateWaterPurificationRoom_CreateValidRoom()
     {
-        var room = _roomFactory.CreateWaterPurificationRoom();
+        var room = RoomFactory.CreateWaterPurificationRoom();
 
         room.Name.Should().Be("Water Purification Room");
         room.IsElevator.Should().BeFalse();
@@ -336,7 +328,7 @@ public class RoomFactoryTests
     [Test]
     public void CreateNukaColaBottler_CreateValidRoom()
     {
-        var room = _roomFactory.CreateNukaColaBottler();
+        var room = RoomFactory.CreateNukaColaBottler();
 
         room.Name.Should().Be("Nuka-Cola Bottler");
         room.IsElevator.Should().BeFalse();
@@ -380,7 +372,7 @@ public class RoomFactoryTests
     [Test]
     public void CreateNuclearReactor_CreateValidRoom()
     {
-        var room = _roomFactory.CreateNuclearReactor();
+        var room = RoomFactory.CreateNuclearReactor();
 
         room.Name.Should().Be("Nuclear Reactor");
         room.IsElevator.Should().BeFalse();
@@ -420,7 +412,7 @@ public class RoomFactoryTests
     [Test]
     public void CreateGarden_CreateValidRoom()
     {
-        var room = _roomFactory.CreateGarden();
+        var room = RoomFactory.CreateGarden();
 
         room.Name.Should().Be("Garden");
         room.IsElevator.Should().BeFalse();
@@ -461,7 +453,7 @@ public class RoomFactoryTests
     [Test]
     public void CreateClassroom_CreateValidRoom()
     {
-        var room = _roomFactory.CreateClassroom();
+        var room = RoomFactory.CreateClassroom();
 
         room.Name.Should().Be("Classroom");
         room.IsElevator.Should().BeFalse();
@@ -504,7 +496,7 @@ public class RoomFactoryTests
     [Test]
     public void CreateAthleticsRoom_CreateValidRoom()
     {
-        var room = _roomFactory.CreateAthleticsRoom();
+        var room = RoomFactory.CreateAthleticsRoom();
 
         room.Name.Should().Be("Athletics Room");
         room.IsElevator.Should().BeFalse();
@@ -547,7 +539,7 @@ public class RoomFactoryTests
     [Test]
     public void CreateArmory_CreateValidRoom()
     {
-        var room = _roomFactory.CreateArmory();
+        var room = RoomFactory.CreateArmory();
 
         room.Name.Should().Be("Armory");
         room.IsElevator.Should().BeFalse();
@@ -590,7 +582,7 @@ public class RoomFactoryTests
     [Test]
     public void CreateGameRoom_CreateValidRoom()
     {
-        var room = _roomFactory.CreateGameRoom();
+        var room = RoomFactory.CreateGameRoom();
 
         room.Name.Should().Be("Game Room");
         room.IsElevator.Should().BeFalse();
@@ -633,7 +625,7 @@ public class RoomFactoryTests
     [Test]
     public void CreateWeightRoom_CreateValidRoom()
     {
-        var room = _roomFactory.CreateWeightRoom();
+        var room = RoomFactory.CreateWeightRoom();
 
         room.Name.Should().Be("Weight Room");
         room.IsElevator.Should().BeFalse();
@@ -675,7 +667,7 @@ public class RoomFactoryTests
     [Test]
     public void CreateFitnessRoom_CreateValidRoom()
     {
-        var room = _roomFactory.CreateFitnessRoom();
+        var room = RoomFactory.CreateFitnessRoom();
 
         room.Name.Should().Be("Fitness Room");
         room.IsElevator.Should().BeFalse();
@@ -718,7 +710,7 @@ public class RoomFactoryTests
     [Test]
     public void CreateStorageRoom_CreateValidRoom()
     {
-        var room = _roomFactory.CreateStorageRoom();
+        var room = RoomFactory.CreateStorageRoom();
 
         room.Name.Should().Be("Storage Room");
         room.IsElevator.Should().BeFalse();
@@ -764,7 +756,7 @@ public class RoomFactoryTests
     [Test]
     public void CreateLounge_CreateValidRoom()
     {
-        var room = _roomFactory.CreateLounge();
+        var room = RoomFactory.CreateLounge();
 
         room.Name.Should().Be("Lounge");
         room.IsElevator.Should().BeFalse();
@@ -808,7 +800,7 @@ public class RoomFactoryTests
     [Test]
     public void CreateMedbay_CreateValidRoom()
     {
-        var room = _roomFactory.CreateMedbay();
+        var room = RoomFactory.CreateMedbay();
 
         room.Name.Should().Be("Medbay");
         room.IsElevator.Should().BeFalse();
@@ -852,7 +844,7 @@ public class RoomFactoryTests
     [Test]
     public void CreateScienceLab_CreateValidRoom()
     {
-        var room = _roomFactory.CreateScienceLab();
+        var room = RoomFactory.CreateScienceLab();
 
         room.Name.Should().Be("Science Lab");
         room.IsElevator.Should().BeFalse();
@@ -896,7 +888,7 @@ public class RoomFactoryTests
     [Test]
     public void CreateRadioStudio_CreateValidRoom()
     {
-        var room = _roomFactory.CreateRadioStudio();
+        var room = RoomFactory.CreateRadioStudio();
 
         room.Name.Should().Be("Radio Studio");
         room.IsElevator.Should().BeFalse();
@@ -939,7 +931,7 @@ public class RoomFactoryTests
     [Test]
     public void CreateLivingRoom_CreateValidRoom()
     {
-        var room = _roomFactory.CreateLivingRoom();
+        var room = RoomFactory.CreateLivingRoom();
 
         room.Name.Should().Be("Living Room");
         room.IsElevator.Should().BeFalse();
@@ -993,7 +985,7 @@ public class RoomFactoryTests
     [Test]
     public void CreateThemeWorkshop_CreateValidRoom()
     {
-        var room = _roomFactory.CreateThemeWorkshop();
+        var room = RoomFactory.CreateThemeWorkshop();
 
         room.Name.Should().Be("Theme Workshop");
         room.IsElevator.Should().BeFalse();
@@ -1036,7 +1028,7 @@ public class RoomFactoryTests
     [Test]
     public void CreateOutfitWorkshop_CreateValidRoom()
     {
-        var room = _roomFactory.CreateOutfitWorkshop();
+        var room = RoomFactory.CreateOutfitWorkshop();
 
         room.Name.Should().Be("Outfit Workshop");
         room.IsElevator.Should().BeFalse();
@@ -1080,7 +1072,7 @@ public class RoomFactoryTests
     [Test]
     public void CreateWeaponWorkshop_CreateValidRoom()
     {
-        var room = _roomFactory.CreateWeaponWorkshop();
+        var room = RoomFactory.CreateWeaponWorkshop();
 
         room.Name.Should().Be("Weapon Workshop");
         room.IsElevator.Should().BeFalse();

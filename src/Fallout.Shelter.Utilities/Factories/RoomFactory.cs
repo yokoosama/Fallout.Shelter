@@ -3,9 +3,9 @@ using Fallout.Shelter.Core.Models;
 
 namespace Fallout.Shelter.Utilities.Factories;
 
-public class RoomFactory : IRoomFactory
+public class RoomFactory
 {
-    public Room CreateWasteland()
+    public static Room CreateWasteland()
     {
         var leftSpace = new RoomSector
         {
@@ -50,7 +50,7 @@ public class RoomFactory : IRoomFactory
         };
     }
 
-    public Room CreateVaultDoor()
+    public static Room CreateVaultDoor()
     {
         var leftSpace = new RoomSector
         {
@@ -93,7 +93,7 @@ public class RoomFactory : IRoomFactory
         };
     }
 
-    public Room CreateVaultEntrance()
+    public static Room CreateVaultEntrance()
     {
         var leftSpace = new RoomSector
         {
@@ -133,7 +133,7 @@ public class RoomFactory : IRoomFactory
         };
     }
 
-    public Room CreateDefaultElevator()
+    public static Room CreateDefaultElevator()
     {
         var space = new RoomSector
         {
@@ -159,7 +159,7 @@ public class RoomFactory : IRoomFactory
         };
     }
 
-    public Room CreatePlayerElevator()
+    public static Room CreatePlayerElevator()
     {
         var space = new RoomSector
         {
@@ -187,7 +187,7 @@ public class RoomFactory : IRoomFactory
         };
     }
 
-    public Room CreateWaterTreatment()
+    public static Room CreateWaterTreatment()
     {
         var space = new RoomSector
         {
@@ -214,7 +214,7 @@ public class RoomFactory : IRoomFactory
         };
     }
 
-    public Room CreateDiner()
+    public static Room CreateDiner()
     {
         var leftSpace = new RoomSector
         {
@@ -256,7 +256,7 @@ public class RoomFactory : IRoomFactory
         };
     }
 
-    public Room CreatePowerGenerator()
+    public static Room CreatePowerGenerator()
     {
         var leftSpace = new RoomSector
         {
@@ -298,7 +298,7 @@ public class RoomFactory : IRoomFactory
         };
     }
 
-    public Room CreateStorageRoom()
+    public static Room CreateStorageRoom()
     {
         var leftSpace = new RoomSector
         {
@@ -342,7 +342,7 @@ public class RoomFactory : IRoomFactory
         };
     }
 
-    public Room CreateWaterPurificationRoom()
+    public static Room CreateWaterPurificationRoom()
     {
         var leftSpace = new RoomSector
         {
@@ -389,7 +389,7 @@ public class RoomFactory : IRoomFactory
         };
     }
 
-    public Room CreateNukaColaBottler()
+    public static Room CreateNukaColaBottler()
     {
         var leftSpace = new RoomSector
         {
@@ -439,7 +439,7 @@ public class RoomFactory : IRoomFactory
         };
     }
 
-    public Room CreateNuclearReactor()
+    public static Room CreateNuclearReactor()
     {
         var leftSpace = new RoomSector
         {
@@ -485,7 +485,7 @@ public class RoomFactory : IRoomFactory
         };
     }
 
-    public Room CreateGarden()
+    public static Room CreateGarden()
     {
         var leftSpace = new RoomSector
         {
@@ -532,7 +532,7 @@ public class RoomFactory : IRoomFactory
         };
     }
 
-    public Room CreateClassroom()
+    public static Room CreateClassroom()
     {
         var leftSpace = new RoomSector
         {
@@ -578,7 +578,7 @@ public class RoomFactory : IRoomFactory
         };
     }
 
-    public Room CreateAthleticsRoom()
+    public static Room CreateAthleticsRoom()
     {
         var leftSpace = new RoomSector
         {
@@ -624,7 +624,7 @@ public class RoomFactory : IRoomFactory
         };
     }
 
-    public Room CreateArmory()
+    public static Room CreateArmory()
     {
         var leftSpace = new RoomSector
         {
@@ -670,7 +670,7 @@ public class RoomFactory : IRoomFactory
         };
     }
 
-    public Room CreateGameRoom()
+    public static Room CreateGameRoom()
     {
         var leftSpace = new RoomSector
         {
@@ -716,7 +716,7 @@ public class RoomFactory : IRoomFactory
         };
     }
 
-    public Room CreateWeightRoom()
+    public static Room CreateWeightRoom()
     {
         var leftSpace = new RoomSector
         {
@@ -761,7 +761,7 @@ public class RoomFactory : IRoomFactory
         };
     }
 
-    public Room CreateFitnessRoom()
+    public static Room CreateFitnessRoom()
     {
         var leftSpace = new RoomSector
         {
@@ -807,7 +807,7 @@ public class RoomFactory : IRoomFactory
         };
     }
 
-    public Room CreateLounge()
+    public static Room CreateLounge()
     {
         var leftSpace = new RoomSector
         {
@@ -857,7 +857,7 @@ public class RoomFactory : IRoomFactory
         };
     }
 
-    public Room CreateMedbay()
+    public static Room CreateMedbay()
     {
         var leftSpace = new RoomSector
         {
@@ -910,7 +910,7 @@ public class RoomFactory : IRoomFactory
         };
     }
 
-    public Room CreateScienceLab()
+    public static Room CreateScienceLab()
     {
         var leftSpace = new RoomSector
         {
@@ -963,7 +963,7 @@ public class RoomFactory : IRoomFactory
         };
     }
 
-    public Room CreateRadioStudio()
+    public static Room CreateRadioStudio()
     {
         var leftSpace = new RoomSector
         {
@@ -1015,7 +1015,7 @@ public class RoomFactory : IRoomFactory
         };
     }
 
-    public Room CreateLivingRoom()
+    public static Room CreateLivingRoom()
     {
         var leftSpace = new RoomSector(2)
         {
@@ -1068,7 +1068,7 @@ public class RoomFactory : IRoomFactory
         };
     }
 
-    public Room CreateThemeWorkshop()
+    public static Room CreateThemeWorkshop()
     {
         var leftSpace = new RoomSector
         {
@@ -1114,7 +1114,7 @@ public class RoomFactory : IRoomFactory
         };
     }
 
-    public Room CreateOutfitWorkshop()
+    public static Room CreateOutfitWorkshop()
     {
         var leftSpace = new RoomSector
         {
@@ -1170,7 +1170,7 @@ public class RoomFactory : IRoomFactory
         };
     }
 
-    public Room CreateWeaponWorkshop()
+    public static Room CreateWeaponWorkshop()
     {
         var leftSpace = new RoomSector
         {

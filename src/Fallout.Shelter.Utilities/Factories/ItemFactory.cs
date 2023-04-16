@@ -145,4 +145,34 @@ public static class ItemFactory
 
         return item;
     }
+
+    public static Item CreateScottishFold()
+    {
+        var item = new Item("Scottish Fold", ItemType.Pet)
+        {
+            GiveReRollPossibility = true
+        };
+
+        return item;
+    }
+
+    public static Item CreateMissileLauncher()
+    {
+        var item = new Item("Missile Launcher", ItemType.Weapon)
+        {
+            GiveReRollPossibility = true
+        };
+
+        return item;
+    }
+
+    public static Item CreateFatMan()
+    {
+        var item = new Item("Fat Man", ItemType.Weapon)
+        {
+            GiveReRollPossibility = true
+        };
+
+        return item;
+    }
 }

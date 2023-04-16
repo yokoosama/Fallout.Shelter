@@ -383,6 +383,87 @@ public class ItemFactoryTests
         reward.GiveSpecialStatToDweller.Should().Be(SpecialStat.Intelligence);
     }
     
+    [Test]
+    public void CreateScottishFold_CreateValidReward()
+    {
+        var reward = ItemFactory.CreateScottishFold();
+    
+        reward.Name.Should().Be("Scottish Fold");
+        reward.Type.Should().Be(ItemType.Pet);
+        reward.IsActive.Should().BeTrue();
+        reward.IsAlwaysActive.Should().BeFalse();
+        reward.IsEndGameItem.Should().BeFalse();
+        reward.GiveActivateItemPossibility.Should().BeFalse();
+        reward.GiveAdditionalDamage.Should().BeNull();
+        reward.GiveReRollPossibility.Should().BeTrue();
+        reward.HealDweller.Should().BeFalse();
+        reward.GiveHappinessPerItem.Should().BeNull();
+        reward.GiveHappinessPerResources.Should().BeNull();
+        reward.GiveHappinessPerDwellers.Should().BeFalse();
+        reward.GiveHappinessPerRooms.Should().BeFalse();
+        reward.GiveAdditionalResourceForBuilding.Should().BeFalse();
+        reward.GiveItemChangePossibility.Should().BeFalse();
+        reward.GiveResourceExchange.Should().BeFalse();
+        reward.GiveNeededStatInFight.Should().BeNull();
+        reward.ExchangeFrom.Should().BeNull();
+        reward.ExchangeTo.Should().BeNull();
+        reward.GiveSpecialStatToDweller.Should().BeNull();
+    }
+    
+    [Test]
+    public void CreateFatMan_CreateValidReward()
+    {
+        var reward = ItemFactory.CreateFatMan();
+    
+        reward.Name.Should().Be("Fat Man");
+        reward.Type.Should().Be(ItemType.Weapon);
+        reward.IsActive.Should().BeTrue();
+        reward.IsAlwaysActive.Should().BeFalse();
+        reward.IsEndGameItem.Should().BeFalse();
+        reward.GiveActivateItemPossibility.Should().BeFalse();
+        reward.GiveAdditionalDamage.Should().BeNull();
+        reward.GiveReRollPossibility.Should().BeTrue();
+        reward.HealDweller.Should().BeFalse();
+        reward.GiveHappinessPerItem.Should().BeNull();
+        reward.GiveHappinessPerResources.Should().BeNull();
+        reward.GiveHappinessPerDwellers.Should().BeFalse();
+        reward.GiveHappinessPerRooms.Should().BeFalse();
+        reward.GiveAdditionalResourceForBuilding.Should().BeFalse();
+        reward.GiveItemChangePossibility.Should().BeFalse();
+        reward.GiveResourceExchange.Should().BeFalse();
+        reward.GiveNeededStatInFight.Should().BeNull();
+        reward.ExchangeFrom.Should().BeNull();
+        reward.ExchangeTo.Should().BeNull();
+        reward.GiveSpecialStatToDweller.Should().BeNull();
+    }
+    
+    [Test]
+    public void CreateMissileLauncher_CreateValidReward()
+    {
+        var reward = ItemFactory.CreateMissileLauncher();
+    
+        reward.Name.Should().Be("Missile Launcher");
+        reward.Type.Should().Be(ItemType.Weapon);
+        reward.IsActive.Should().BeTrue();
+        reward.IsAlwaysActive.Should().BeFalse();
+        reward.IsEndGameItem.Should().BeFalse();
+        reward.GiveActivateItemPossibility.Should().BeFalse();
+        reward.GiveAdditionalDamage.Should().BeNull();
+        reward.GiveReRollPossibility.Should().BeTrue();
+        reward.HealDweller.Should().BeFalse();
+        reward.GiveHappinessPerItem.Should().BeNull();
+        reward.GiveHappinessPerResources.Should().BeNull();
+        reward.GiveHappinessPerDwellers.Should().BeFalse();
+        reward.GiveHappinessPerRooms.Should().BeFalse();
+        reward.GiveAdditionalResourceForBuilding.Should().BeFalse();
+        reward.GiveItemChangePossibility.Should().BeFalse();
+        reward.GiveResourceExchange.Should().BeFalse();
+        reward.GiveNeededStatInFight.Should().BeNull();
+        reward.ExchangeFrom.Should().BeNull();
+        reward.ExchangeTo.Should().BeNull();
+        reward.GiveSpecialStatToDweller.Should().BeNull();
+    }
+    
     // [Test]
     // public void CreateGoldenRetriever_CreateValidReward()
     // {

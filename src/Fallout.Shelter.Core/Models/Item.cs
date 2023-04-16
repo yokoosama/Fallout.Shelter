@@ -14,5 +14,15 @@ public class Item
     public int? GiveAdditionalDamage { get; set; }
     public bool GiveReRollPossibility { get; set; }
     public bool HealDweller { get; set; }
+    public ItemType? GiveHappinessPerItem { get; set; }
+    public ResourceType? GiveHappinessPerResources { get; set; }
+    public bool GiveHappinessPerDwellers { get; set; }
+    public bool GiveHappinessPerRooms { get; set; }
+    public bool GiveAdditionalResourceForBuilding { get; set; }
+    public bool GiveItemChangePossibility { get; set; }
+    public bool GiveResourceExchange { get; set; }
+    public Resource? GiveNeededStatInFight { get; set; }
+    public Resource? ExchangeFrom { get; set; }
+    public Resource? ExchangeTo { get; set; }
     public SpecialStat? GiveSpecialStatToDweller { get; set; }
 }

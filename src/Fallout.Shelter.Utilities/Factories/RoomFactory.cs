@@ -308,10 +308,7 @@ public class RoomFactory : IRoomFactory
             },
             Spaces =
             {
-                [0] = new Space
-                {
-                    SpecialStat = SpecialStat.Perception
-                }
+                [0] = new Space()
             }
         };
 
@@ -324,10 +321,7 @@ public class RoomFactory : IRoomFactory
             },
             Spaces =
             {
-                [0] = new Space
-                {
-                    SpecialStat = SpecialStat.Perception
-                }
+                [0] = new Space()
             }
         };
 
@@ -812,7 +806,7 @@ public class RoomFactory : IRoomFactory
         };
     }
 
-    public Room CreateLoungeRoom()
+    public Room CreateLounge()
     {
         var leftSpace = new RoomSector
         {
@@ -831,8 +825,7 @@ public class RoomFactory : IRoomFactory
         {
             Conditions = new List<Condition>
             {
-                ConditionFactory.CreateWithResources(ResourceType.Food, 1),
-                ConditionFactory.CreateWithInjuredDweller()
+                ConditionFactory.CreateWithResources(ResourceType.Food, 1)
             },
             Rewards = new List<Reward>
             {
@@ -841,11 +834,14 @@ public class RoomFactory : IRoomFactory
             },
             Spaces =
             {
-                [0] = new Space()
+                [0] = new Space
+                {
+                    IsOnlyForInjuredDweller = true
+                }
             }
         };
 
-        return new Room("Lounge Room")
+        return new Room("Lounge")
         {
             Price = new Dictionary<ResourceType, int>
             {
@@ -860,7 +856,7 @@ public class RoomFactory : IRoomFactory
         };
     }
 
-    public Room CreateMedbayRoom()
+    public Room CreateMedbay()
     {
         var leftSpace = new RoomSector
         {
@@ -869,13 +865,12 @@ public class RoomFactory : IRoomFactory
                 RewardFactory.CreateWithDwellerHeal(),
                 RewardFactory.CreateWithSpecialStat(SpecialStat.Endurance)
             },
-            Conditions = new List<Condition>
-            {
-                ConditionFactory.CreateWithInjuredDweller()
-            },
             Spaces =
             {
-                [0] = new Space()
+                [0] = new Space
+                {
+                    IsOnlyForInjuredDweller = true
+                }
             }
         };
 
@@ -883,8 +878,7 @@ public class RoomFactory : IRoomFactory
         {
             Conditions = new List<Condition>
             {
-                ConditionFactory.CreateWithResources(ResourceType.Food, 1),
-                ConditionFactory.CreateWithInjuredDweller()
+                ConditionFactory.CreateWithResources(ResourceType.Food, 1)
             },
             Rewards = new List<Reward>
             {
@@ -893,11 +887,14 @@ public class RoomFactory : IRoomFactory
             },
             Spaces =
             {
-                [0] = new Space()
+                [0] = new Space
+                {
+                    IsOnlyForInjuredDweller = true
+                }
             }
         };
 
-        return new Room("Medbay Room")
+        return new Room("Medbay")
         {
             Price = new Dictionary<ResourceType, int>
             {
@@ -912,7 +909,7 @@ public class RoomFactory : IRoomFactory
         };
     }
 
-    public Room CreateScienceLabRoom()
+    public Room CreateScienceLab()
     {
         var leftSpace = new RoomSector
         {
@@ -921,13 +918,12 @@ public class RoomFactory : IRoomFactory
                 RewardFactory.CreateWithDwellerHeal(),
                 RewardFactory.CreateWithSpecialStat(SpecialStat.Intelligence)
             },
-            Conditions = new List<Condition>
-            {
-                ConditionFactory.CreateWithInjuredDweller()
-            },
             Spaces =
             {
-                [0] = new Space()
+                [0] = new Space
+                {
+                    IsOnlyForInjuredDweller = true
+                }
             }
         };
 
@@ -935,8 +931,7 @@ public class RoomFactory : IRoomFactory
         {
             Conditions = new List<Condition>
             {
-                ConditionFactory.CreateWithResources(ResourceType.Food, 1),
-                ConditionFactory.CreateWithInjuredDweller()
+                ConditionFactory.CreateWithResources(ResourceType.Food, 1)
             },
             Rewards = new List<Reward>
             {
@@ -945,11 +940,14 @@ public class RoomFactory : IRoomFactory
             },
             Spaces =
             {
-                [0] = new Space()
+                [0] = new Space
+                {
+                    IsOnlyForInjuredDweller = true
+                }
             }
         };
 
-        return new Room("Science Lab Room")
+        return new Room("Science Lab")
         {
             Price = new Dictionary<ResourceType, int>
             {

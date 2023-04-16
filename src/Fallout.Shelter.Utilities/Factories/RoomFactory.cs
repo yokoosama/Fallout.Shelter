@@ -1,3 +1,4 @@
+using Fallout.Shelter.Core.Enums;
 using Fallout.Shelter.Core.Models;
 
 namespace Fallout.Shelter.Utilities.Factories;
@@ -303,15 +304,12 @@ public class RoomFactory : IRoomFactory
         {
             Rewards = new List<Reward>
             {
-                RewardFactory.CreateWithExchange(new KeyValuePair<ResourceType, int>(ResourceType.Water, 1),
-                    new KeyValuePair<ResourceType, int>(ResourceType.Food, 2))
+                RewardFactory.CreateWithExchange(new Resource(ResourceType.Water, 1),
+                    new Resource(ResourceType.Food, 2))
             },
             Spaces =
             {
-                [0] = new Space
-                {
-                    SpecialStat = SpecialStat.Perception
-                }
+                [0] = new Space()
             }
         };
 
@@ -319,25 +317,22 @@ public class RoomFactory : IRoomFactory
         {
             Rewards = new List<Reward>
             {
-                RewardFactory.CreateWithExchange(new KeyValuePair<ResourceType, int>(ResourceType.Energy, 1),
-                    new KeyValuePair<ResourceType, int>(ResourceType.Food, 1))
+                RewardFactory.CreateWithExchange(new Resource(ResourceType.Energy, 1),
+                    new Resource(ResourceType.Food, 1))
             },
             Spaces =
             {
-                [0] = new Space
-                {
-                    SpecialStat = SpecialStat.Perception
-                }
+                [0] = new Space()
             }
         };
 
         return new Room("Storage Room")
         {
-            Price = new Dictionary<ResourceType, int>
+            Price = new List<Resource>
             {
-                { ResourceType.Water, 1 },
-                { ResourceType.Food, 1 },
-                { ResourceType.Energy, 2 }
+                new(ResourceType.Water, 1),
+                new(ResourceType.Food, 1),
+                new(ResourceType.Energy, 2)
             },
             Sectors =
             {
@@ -381,10 +376,10 @@ public class RoomFactory : IRoomFactory
 
         return new Room("Water Purification Room")
         {
-            Price = new Dictionary<ResourceType, int>
+            Price = new List<Resource>
             {
-                { ResourceType.Water, 2 },
-                { ResourceType.Energy, 3 }
+                new(ResourceType.Water, 2),
+                new(ResourceType.Energy, 3)
             },
             Sectors =
             {
@@ -394,7 +389,7 @@ public class RoomFactory : IRoomFactory
         };
     }
 
-    public Room CreateNukaColaBottlerRoom()
+    public Room CreateNukaColaBottler()
     {
         var leftSpace = new RoomSector
         {
@@ -428,13 +423,13 @@ public class RoomFactory : IRoomFactory
             }
         };
 
-        return new Room("Nuka-Cola Bottler Room")
+        return new Room("Nuka-Cola Bottler")
         {
-            Price = new Dictionary<ResourceType, int>
+            Price = new List<Resource>
             {
-                { ResourceType.Water, 1 },
-                { ResourceType.Food, 1 },
-                { ResourceType.Energy, 3 }
+                new(ResourceType.Water, 1),
+                new(ResourceType.Food, 1),
+                new(ResourceType.Energy, 3)
             },
             Sectors =
             {
@@ -444,7 +439,7 @@ public class RoomFactory : IRoomFactory
         };
     }
 
-    public Room CreateNuclearReactorRoom()
+    public Room CreateNuclearReactor()
     {
         var leftSpace = new RoomSector
         {
@@ -476,11 +471,11 @@ public class RoomFactory : IRoomFactory
             }
         };
 
-        return new Room("Nuclear Reactor Room")
+        return new Room("Nuclear Reactor")
         {
-            Price = new Dictionary<ResourceType, int>
+            Price = new List<Resource>
             {
-                { ResourceType.Energy, 5 }
+                new(ResourceType.Energy, 5)
             },
             Sectors =
             {
@@ -490,7 +485,7 @@ public class RoomFactory : IRoomFactory
         };
     }
 
-    public Room CreateGardenRoom()
+    public Room CreateGarden()
     {
         var leftSpace = new RoomSector
         {
@@ -515,19 +510,19 @@ public class RoomFactory : IRoomFactory
             },
             Spaces =
             {
-                [0] = new Space()
+                [0] = new Space
                 {
                     SpecialStat = SpecialStat.Agility
                 }
             }
         };
 
-        return new Room("Garden Room")
+        return new Room("Garden")
         {
-            Price = new Dictionary<ResourceType, int>
+            Price = new List<Resource>
             {
-                { ResourceType.Food, 2 },
-                { ResourceType.Energy, 3 }
+                new(ResourceType.Food, 2),
+                new(ResourceType.Energy, 3)
             },
             Sectors =
             {
@@ -537,7 +532,7 @@ public class RoomFactory : IRoomFactory
         };
     }
 
-    public Room CreateClassRoom()
+    public Room CreateClassroom()
     {
         var leftSpace = new RoomSector
         {
@@ -568,12 +563,12 @@ public class RoomFactory : IRoomFactory
             }
         };
 
-        return new Room("Class Room")
+        return new Room("Classroom")
         {
-            Price = new Dictionary<ResourceType, int>
+            Price = new List<Resource>
             {
-                { ResourceType.Food, 1 },
-                { ResourceType.Energy, 3 }
+                new(ResourceType.Food, 1),
+                new(ResourceType.Energy, 3)
             },
             Sectors =
             {
@@ -616,10 +611,10 @@ public class RoomFactory : IRoomFactory
 
         return new Room("Athletics Room")
         {
-            Price = new Dictionary<ResourceType, int>
+            Price = new List<Resource>
             {
-                { ResourceType.Food, 3 },
-                { ResourceType.Energy, 1 }
+                new(ResourceType.Food, 3),
+                new(ResourceType.Energy, 1)
             },
             Sectors =
             {
@@ -629,7 +624,7 @@ public class RoomFactory : IRoomFactory
         };
     }
 
-    public Room CreateArmoryRoom()
+    public Room CreateArmory()
     {
         var leftSpace = new RoomSector
         {
@@ -660,12 +655,12 @@ public class RoomFactory : IRoomFactory
             }
         };
 
-        return new Room("Armory Room")
+        return new Room("Armory")
         {
-            Price = new Dictionary<ResourceType, int>
+            Price = new List<Resource>
             {
-                { ResourceType.Water, 2 },
-                { ResourceType.Energy, 2 }
+                new(ResourceType.Water, 2),
+                new(ResourceType.Energy, 2)
             },
             Sectors =
             {
@@ -708,10 +703,10 @@ public class RoomFactory : IRoomFactory
 
         return new Room("Game Room")
         {
-            Price = new Dictionary<ResourceType, int>
+            Price = new List<Resource>
             {
-                { ResourceType.Random, 4 },
-                { ResourceType.Energy, 1 }
+                new(ResourceType.Random, 4),
+                new(ResourceType.Energy, 1)
             },
             Sectors =
             {
@@ -754,9 +749,9 @@ public class RoomFactory : IRoomFactory
 
         return new Room("Weight Room")
         {
-            Price = new Dictionary<ResourceType, int>
+            Price = new List<Resource>
             {
-                { ResourceType.Energy, 4 }
+                new(ResourceType.Energy, 4)
             },
             Sectors =
             {
@@ -799,10 +794,10 @@ public class RoomFactory : IRoomFactory
 
         return new Room("Fitness Room")
         {
-            Price = new Dictionary<ResourceType, int>
+            Price = new List<Resource>
             {
-                { ResourceType.Water, 1 },
-                { ResourceType.Energy, 3 }
+                new(ResourceType.Water, 1),
+                new(ResourceType.Energy, 3)
             },
             Sectors =
             {
@@ -812,7 +807,7 @@ public class RoomFactory : IRoomFactory
         };
     }
 
-    public Room CreateLoungeRoom()
+    public Room CreateLounge()
     {
         var leftSpace = new RoomSector
         {
@@ -831,8 +826,7 @@ public class RoomFactory : IRoomFactory
         {
             Conditions = new List<Condition>
             {
-                ConditionFactory.CreateWithResources(ResourceType.Food, 1),
-                ConditionFactory.CreateWithInjuredDweller()
+                ConditionFactory.CreateWithResources(ResourceType.Food, 1)
             },
             Rewards = new List<Reward>
             {
@@ -841,16 +835,19 @@ public class RoomFactory : IRoomFactory
             },
             Spaces =
             {
-                [0] = new Space()
+                [0] = new Space
+                {
+                    IsOnlyForInjuredDweller = true
+                }
             }
         };
 
-        return new Room("Lounge Room")
+        return new Room("Lounge")
         {
-            Price = new Dictionary<ResourceType, int>
+            Price = new List<Resource>
             {
-                { ResourceType.Food, 2 },
-                { ResourceType.Energy, 2 }
+                new(ResourceType.Food, 2),
+                new(ResourceType.Energy, 2)
             },
             Sectors =
             {
@@ -860,7 +857,7 @@ public class RoomFactory : IRoomFactory
         };
     }
 
-    public Room CreateMedbayRoom()
+    public Room CreateMedbay()
     {
         var leftSpace = new RoomSector
         {
@@ -869,13 +866,12 @@ public class RoomFactory : IRoomFactory
                 RewardFactory.CreateWithDwellerHeal(),
                 RewardFactory.CreateWithSpecialStat(SpecialStat.Endurance)
             },
-            Conditions = new List<Condition>
-            {
-                ConditionFactory.CreateWithInjuredDweller()
-            },
             Spaces =
             {
-                [0] = new Space()
+                [0] = new Space
+                {
+                    IsOnlyForInjuredDweller = true
+                }
             }
         };
 
@@ -883,8 +879,7 @@ public class RoomFactory : IRoomFactory
         {
             Conditions = new List<Condition>
             {
-                ConditionFactory.CreateWithResources(ResourceType.Food, 1),
-                ConditionFactory.CreateWithInjuredDweller()
+                ConditionFactory.CreateWithResources(ResourceType.Food, 1)
             },
             Rewards = new List<Reward>
             {
@@ -893,16 +888,19 @@ public class RoomFactory : IRoomFactory
             },
             Spaces =
             {
-                [0] = new Space()
+                [0] = new Space
+                {
+                    IsOnlyForInjuredDweller = true
+                }
             }
         };
 
-        return new Room("Medbay Room")
+        return new Room("Medbay")
         {
-            Price = new Dictionary<ResourceType, int>
+            Price = new List<Resource>
             {
-                { ResourceType.Random, 1 },
-                { ResourceType.Energy, 3 }
+                new(ResourceType.Random, 1),
+                new(ResourceType.Energy, 3)
             },
             Sectors =
             {
@@ -912,7 +910,7 @@ public class RoomFactory : IRoomFactory
         };
     }
 
-    public Room CreateScienceLabRoom()
+    public Room CreateScienceLab()
     {
         var leftSpace = new RoomSector
         {
@@ -921,13 +919,12 @@ public class RoomFactory : IRoomFactory
                 RewardFactory.CreateWithDwellerHeal(),
                 RewardFactory.CreateWithSpecialStat(SpecialStat.Intelligence)
             },
-            Conditions = new List<Condition>
-            {
-                ConditionFactory.CreateWithInjuredDweller()
-            },
             Spaces =
             {
-                [0] = new Space()
+                [0] = new Space
+                {
+                    IsOnlyForInjuredDweller = true
+                }
             }
         };
 
@@ -935,8 +932,7 @@ public class RoomFactory : IRoomFactory
         {
             Conditions = new List<Condition>
             {
-                ConditionFactory.CreateWithResources(ResourceType.Food, 1),
-                ConditionFactory.CreateWithInjuredDweller()
+                ConditionFactory.CreateWithResources(ResourceType.Food, 1)
             },
             Rewards = new List<Reward>
             {
@@ -945,16 +941,19 @@ public class RoomFactory : IRoomFactory
             },
             Spaces =
             {
-                [0] = new Space()
+                [0] = new Space
+                {
+                    IsOnlyForInjuredDweller = true
+                }
             }
         };
 
-        return new Room("Science Lab Room")
+        return new Room("Science Lab")
         {
-            Price = new Dictionary<ResourceType, int>
+            Price = new List<Resource>
             {
-                { ResourceType.Random, 1 },
-                { ResourceType.Energy, 3 }
+                new(ResourceType.Random, 1),
+                new(ResourceType.Energy, 3)
             },
             Sectors =
             {
@@ -964,7 +963,7 @@ public class RoomFactory : IRoomFactory
         };
     }
 
-    public Room CreateRadioStudioRoom()
+    public Room CreateRadioStudio()
     {
         var leftSpace = new RoomSector
         {
@@ -994,19 +993,19 @@ public class RoomFactory : IRoomFactory
             },
             Spaces =
             {
-                [0] = new Space()
+                [0] = new Space
                 {
                     SpecialStat = SpecialStat.Charisma
                 }
             }
         };
 
-        return new Room("Radio Studio Room")
+        return new Room("Radio Studio")
         {
-            Price = new Dictionary<ResourceType, int>
+            Price = new List<Resource>
             {
-                { ResourceType.Water, 1 },
-                { ResourceType.Energy, 3 }
+                new(ResourceType.Water, 1),
+                new(ResourceType.Energy, 3)
             },
             Sectors =
             {
@@ -1018,7 +1017,7 @@ public class RoomFactory : IRoomFactory
 
     public Room CreateLivingRoom()
     {
-        var leftSpace = new RoomSector
+        var leftSpace = new RoomSector(2)
         {
             Rewards = new List<Reward>
             {
@@ -1026,14 +1025,15 @@ public class RoomFactory : IRoomFactory
             },
             Spaces =
             {
-                [0] = new Space()
+                [0] = new Space
                 {
                     SpecialStat = SpecialStat.Charisma
-                }
+                },
+                [1] = new Space()
             }
         };
 
-        var rightSpace = new RoomSector
+        var rightSpace = new RoomSector(2)
         {
             Conditions = new List<Condition>
             {
@@ -1045,19 +1045,20 @@ public class RoomFactory : IRoomFactory
             },
             Spaces =
             {
-                [0] = new Space()
+                [0] = new Space
                 {
                     SpecialStat = SpecialStat.Charisma
-                }
+                },
+                [1] = new Space()
             }
         };
 
         return new Room("Living Room")
         {
-            Price = new Dictionary<ResourceType, int>
+            Price = new List<Resource>
             {
-                { ResourceType.Water, 2 },
-                { ResourceType.Energy, 2 }
+                new(ResourceType.Water, 2),
+                new(ResourceType.Energy, 2)
             },
             Sectors =
             {
@@ -1067,7 +1068,7 @@ public class RoomFactory : IRoomFactory
         };
     }
 
-    public Room CreateThemeWorkshopRoom()
+    public Room CreateThemeWorkshop()
     {
         var leftSpace = new RoomSector
         {
@@ -1090,7 +1091,7 @@ public class RoomFactory : IRoomFactory
         {
             Rewards = new List<Reward>
             {
-                RewardFactory.CreateWithItemPoolRefresh(),
+                RewardFactory.CreateWithRoomPoolRefresh(),
                 RewardFactory.CreateWithSpecialStat(SpecialStat.Any)
             },
             Spaces =
@@ -1101,9 +1102,9 @@ public class RoomFactory : IRoomFactory
 
         return new Room("Theme Workshop")
         {
-            Price = new Dictionary<ResourceType, int>
+            Price = new List<Resource>
             {
-                { ResourceType.Energy, 5 }
+                new(ResourceType.Energy, 5)
             },
             Sectors =
             {
@@ -1113,7 +1114,7 @@ public class RoomFactory : IRoomFactory
         };
     }
 
-    public Room CreateOutfitWorkshopRoom()
+    public Room CreateOutfitWorkshop()
     {
         var leftSpace = new RoomSector
         {
@@ -1128,7 +1129,7 @@ public class RoomFactory : IRoomFactory
             },
             Spaces =
             {
-                [0] = new Space()
+                [0] = new Space
                 {
                     SpecialStat = SpecialStat.Intelligence
                 }
@@ -1147,7 +1148,7 @@ public class RoomFactory : IRoomFactory
             },
             Spaces =
             {
-                [0] = new Space()
+                [0] = new Space
                 {
                     SpecialStat = SpecialStat.Intelligence
                 }
@@ -1156,10 +1157,10 @@ public class RoomFactory : IRoomFactory
 
         return new Room("Outfit Workshop")
         {
-            Price = new Dictionary<ResourceType, int>
+            Price = new List<Resource>
             {
-                { ResourceType.Water, 2 },
-                { ResourceType.Energy, 3 }
+                new(ResourceType.Water, 2),
+                new(ResourceType.Energy, 3)
             },
             Sectors =
             {
@@ -1169,7 +1170,7 @@ public class RoomFactory : IRoomFactory
         };
     }
 
-    public Room CreateWeaponWorkshopRoom()
+    public Room CreateWeaponWorkshop()
     {
         var leftSpace = new RoomSector
         {
@@ -1184,7 +1185,7 @@ public class RoomFactory : IRoomFactory
             },
             Spaces =
             {
-                [0] = new Space()
+                [0] = new Space
                 {
                     SpecialStat = SpecialStat.Intelligence
                 }
@@ -1199,7 +1200,7 @@ public class RoomFactory : IRoomFactory
             },
             Spaces =
             {
-                [0] = new Space()
+                [0] = new Space
                 {
                     SpecialStat = SpecialStat.Intelligence
                 }
@@ -1208,9 +1209,10 @@ public class RoomFactory : IRoomFactory
 
         return new Room("Weapon Workshop")
         {
-            Price = new Dictionary<ResourceType, int>
+            Price = new List<Resource>
             {
-                { ResourceType.Energy, 5 }
+                new(ResourceType.Water, 2),
+                new(ResourceType.Energy, 3)
             },
             Sectors =
             {

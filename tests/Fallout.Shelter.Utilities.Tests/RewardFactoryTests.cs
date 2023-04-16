@@ -1,3 +1,4 @@
+using Fallout.Shelter.Core.Enums;
 using Fallout.Shelter.Utilities.Factories;
 
 namespace Fallout.Shelter.Utilities.Tests;
@@ -12,19 +13,20 @@ public class RewardFactoryTests
     {
         var reward = RewardFactory.CreateWithResources(type, amount);
 
-        reward.ResourceType.Should().Be(type);
-        reward.ResourceAmount.Should().Be(amount);
-        reward.Happiness.Should().BeNull();
-        reward.NewDweller.Should().BeFalse();
-        reward.FirstPlayerToken.Should().BeFalse();
-        reward.Build.Should().BeFalse();
-        reward.SpecialStat.Should().BeNull();
-        reward.ResourceExchange.Should().BeFalse();
+        reward.GiveResource.Should().NotBeNull();
+        reward.GiveResource.Type.Should().Be(type);
+        reward.GiveResource.Amount.Should().Be(amount);
+        reward.GiveHappiness.Should().BeNull();
+        reward.GiveNewDweller.Should().BeFalse();
+        reward.GiveFirstPlayerToken.Should().BeFalse();
+        reward.GiveBuildPossibility.Should().BeFalse();
+        reward.GiveSpecialStatToDweller.Should().BeNull();
+        reward.GiveResourceExchangePossibility.Should().BeFalse();
         reward.HealDweller.Should().BeFalse();
-        reward.NewItem.Should().BeFalse();
-        reward.ActivateItem.Should().BeFalse();
-        reward.RoomPoolRefresh.Should().BeFalse();
-        reward.ItemPoolRefresh.Should().BeFalse();
+        reward.GiveNewItem.Should().BeFalse();
+        reward.GiveActivateItemPossibility.Should().BeFalse();
+        reward.GiveRoomPoolRefreshPossibility.Should().BeFalse();
+        reward.GiveItemPoolRefreshPossibility.Should().BeFalse();
         reward.ExchangeFrom.Should().BeNull();
         reward.ExchangeTo.Should().BeNull();
     }
@@ -34,19 +36,18 @@ public class RewardFactoryTests
     {
         var reward = RewardFactory.CreateWithItem();
 
-        reward.ResourceType.Should().BeNull();
-        reward.ResourceAmount.Should().BeNull();
-        reward.Happiness.Should().BeNull();
-        reward.NewDweller.Should().BeFalse();
-        reward.FirstPlayerToken.Should().BeFalse();
-        reward.Build.Should().BeFalse();
-        reward.SpecialStat.Should().BeNull();
-        reward.ResourceExchange.Should().BeFalse();
+        reward.GiveResource.Should().BeNull();
+        reward.GiveHappiness.Should().BeNull();
+        reward.GiveNewDweller.Should().BeFalse();
+        reward.GiveFirstPlayerToken.Should().BeFalse();
+        reward.GiveBuildPossibility.Should().BeFalse();
+        reward.GiveSpecialStatToDweller.Should().BeNull();
+        reward.GiveResourceExchangePossibility.Should().BeFalse();
         reward.HealDweller.Should().BeFalse();
-        reward.NewItem.Should().BeTrue();
-        reward.ActivateItem.Should().BeFalse();
-        reward.RoomPoolRefresh.Should().BeFalse();
-        reward.ItemPoolRefresh.Should().BeFalse();
+        reward.GiveNewItem.Should().BeTrue();
+        reward.GiveActivateItemPossibility.Should().BeFalse();
+        reward.GiveRoomPoolRefreshPossibility.Should().BeFalse();
+        reward.GiveItemPoolRefreshPossibility.Should().BeFalse();
         reward.ExchangeFrom.Should().BeNull();
         reward.ExchangeTo.Should().BeNull();
     }
@@ -56,19 +57,18 @@ public class RewardFactoryTests
     {
         var reward = RewardFactory.CreateWithItemPoolRefresh();
 
-        reward.ResourceType.Should().BeNull();
-        reward.ResourceAmount.Should().BeNull();
-        reward.Happiness.Should().BeNull();
-        reward.NewDweller.Should().BeFalse();
-        reward.FirstPlayerToken.Should().BeFalse();
-        reward.Build.Should().BeFalse();
-        reward.SpecialStat.Should().BeNull();
-        reward.ResourceExchange.Should().BeFalse();
+        reward.GiveResource.Should().BeNull();
+        reward.GiveHappiness.Should().BeNull();
+        reward.GiveNewDweller.Should().BeFalse();
+        reward.GiveFirstPlayerToken.Should().BeFalse();
+        reward.GiveBuildPossibility.Should().BeFalse();
+        reward.GiveSpecialStatToDweller.Should().BeNull();
+        reward.GiveResourceExchangePossibility.Should().BeFalse();
         reward.HealDweller.Should().BeFalse();
-        reward.NewItem.Should().BeFalse();
-        reward.ActivateItem.Should().BeFalse();
-        reward.RoomPoolRefresh.Should().BeFalse();
-        reward.ItemPoolRefresh.Should().BeTrue();
+        reward.GiveNewItem.Should().BeFalse();
+        reward.GiveActivateItemPossibility.Should().BeFalse();
+        reward.GiveRoomPoolRefreshPossibility.Should().BeFalse();
+        reward.GiveItemPoolRefreshPossibility.Should().BeTrue();
         reward.ExchangeFrom.Should().BeNull();
         reward.ExchangeTo.Should().BeNull();
     }
@@ -78,19 +78,18 @@ public class RewardFactoryTests
     {
         var reward = RewardFactory.CreateWithFirstPlayerToken();
 
-        reward.ResourceType.Should().BeNull();
-        reward.ResourceAmount.Should().BeNull();
-        reward.Happiness.Should().BeNull();
-        reward.NewDweller.Should().BeFalse();
-        reward.FirstPlayerToken.Should().BeTrue();
-        reward.Build.Should().BeFalse();
-        reward.SpecialStat.Should().BeNull();
-        reward.ResourceExchange.Should().BeFalse();
+        reward.GiveResource.Should().BeNull();
+        reward.GiveHappiness.Should().BeNull();
+        reward.GiveNewDweller.Should().BeFalse();
+        reward.GiveFirstPlayerToken.Should().BeTrue();
+        reward.GiveBuildPossibility.Should().BeFalse();
+        reward.GiveSpecialStatToDweller.Should().BeNull();
+        reward.GiveResourceExchangePossibility.Should().BeFalse();
         reward.HealDweller.Should().BeFalse();
-        reward.NewItem.Should().BeFalse();
-        reward.ActivateItem.Should().BeFalse();
-        reward.RoomPoolRefresh.Should().BeFalse();
-        reward.ItemPoolRefresh.Should().BeFalse();
+        reward.GiveNewItem.Should().BeFalse();
+        reward.GiveActivateItemPossibility.Should().BeFalse();
+        reward.GiveRoomPoolRefreshPossibility.Should().BeFalse();
+        reward.GiveItemPoolRefreshPossibility.Should().BeFalse();
         reward.ExchangeFrom.Should().BeNull();
         reward.ExchangeTo.Should().BeNull();
     }
@@ -107,19 +106,18 @@ public class RewardFactoryTests
     {
         var reward = RewardFactory.CreateWithSpecialStat(stat);
 
-        reward.ResourceType.Should().BeNull();
-        reward.ResourceAmount.Should().BeNull();
-        reward.Happiness.Should().BeNull();
-        reward.NewDweller.Should().BeFalse();
-        reward.FirstPlayerToken.Should().BeFalse();
-        reward.Build.Should().BeFalse();
-        reward.SpecialStat.Should().NotBeNull().And.Be(stat);
-        reward.ResourceExchange.Should().BeFalse();
+        reward.GiveResource.Should().BeNull();
+        reward.GiveHappiness.Should().BeNull();
+        reward.GiveNewDweller.Should().BeFalse();
+        reward.GiveFirstPlayerToken.Should().BeFalse();
+        reward.GiveBuildPossibility.Should().BeFalse();
+        reward.GiveSpecialStatToDweller.Should().NotBeNull().And.Be(stat);
+        reward.GiveResourceExchangePossibility.Should().BeFalse();
         reward.HealDweller.Should().BeFalse();
-        reward.NewItem.Should().BeFalse();
-        reward.ActivateItem.Should().BeFalse();
-        reward.RoomPoolRefresh.Should().BeFalse();
-        reward.ItemPoolRefresh.Should().BeFalse();
+        reward.GiveNewItem.Should().BeFalse();
+        reward.GiveActivateItemPossibility.Should().BeFalse();
+        reward.GiveRoomPoolRefreshPossibility.Should().BeFalse();
+        reward.GiveItemPoolRefreshPossibility.Should().BeFalse();
         reward.ExchangeFrom.Should().BeNull();
         reward.ExchangeTo.Should().BeNull();
     }
@@ -129,19 +127,18 @@ public class RewardFactoryTests
     {
         var reward = RewardFactory.CreateWithDweller();
 
-        reward.ResourceType.Should().BeNull();
-        reward.ResourceAmount.Should().BeNull();
-        reward.Happiness.Should().BeNull();
-        reward.NewDweller.Should().BeTrue();
-        reward.FirstPlayerToken.Should().BeFalse();
-        reward.Build.Should().BeFalse();
-        reward.SpecialStat.Should().BeNull();
-        reward.ResourceExchange.Should().BeFalse();
+        reward.GiveResource.Should().BeNull();
+        reward.GiveHappiness.Should().BeNull();
+        reward.GiveNewDweller.Should().BeTrue();
+        reward.GiveFirstPlayerToken.Should().BeFalse();
+        reward.GiveBuildPossibility.Should().BeFalse();
+        reward.GiveSpecialStatToDweller.Should().BeNull();
+        reward.GiveResourceExchangePossibility.Should().BeFalse();
         reward.HealDweller.Should().BeFalse();
-        reward.NewItem.Should().BeFalse();
-        reward.ActivateItem.Should().BeFalse();
-        reward.RoomPoolRefresh.Should().BeFalse();
-        reward.ItemPoolRefresh.Should().BeFalse();
+        reward.GiveNewItem.Should().BeFalse();
+        reward.GiveActivateItemPossibility.Should().BeFalse();
+        reward.GiveRoomPoolRefreshPossibility.Should().BeFalse();
+        reward.GiveItemPoolRefreshPossibility.Should().BeFalse();
         reward.ExchangeFrom.Should().BeNull();
         reward.ExchangeTo.Should().BeNull();
     }
@@ -151,19 +148,18 @@ public class RewardFactoryTests
     {
         var reward = RewardFactory.CreateWithDwellerHeal();
 
-        reward.ResourceType.Should().BeNull();
-        reward.ResourceAmount.Should().BeNull();
-        reward.Happiness.Should().BeNull();
-        reward.NewDweller.Should().BeFalse();
-        reward.FirstPlayerToken.Should().BeFalse();
-        reward.Build.Should().BeFalse();
-        reward.SpecialStat.Should().BeNull();
-        reward.ResourceExchange.Should().BeFalse();
+        reward.GiveResource.Should().BeNull();
+        reward.GiveHappiness.Should().BeNull();
+        reward.GiveNewDweller.Should().BeFalse();
+        reward.GiveFirstPlayerToken.Should().BeFalse();
+        reward.GiveBuildPossibility.Should().BeFalse();
+        reward.GiveSpecialStatToDweller.Should().BeNull();
+        reward.GiveResourceExchangePossibility.Should().BeFalse();
         reward.HealDweller.Should().BeTrue();
-        reward.NewItem.Should().BeFalse();
-        reward.ActivateItem.Should().BeFalse();
-        reward.RoomPoolRefresh.Should().BeFalse();
-        reward.ItemPoolRefresh.Should().BeFalse();
+        reward.GiveNewItem.Should().BeFalse();
+        reward.GiveActivateItemPossibility.Should().BeFalse();
+        reward.GiveRoomPoolRefreshPossibility.Should().BeFalse();
+        reward.GiveItemPoolRefreshPossibility.Should().BeFalse();
         reward.ExchangeFrom.Should().BeNull();
         reward.ExchangeTo.Should().BeNull();
     }
@@ -173,19 +169,18 @@ public class RewardFactoryTests
     {
         var reward = RewardFactory.CreateWithBuild();
 
-        reward.ResourceType.Should().BeNull();
-        reward.ResourceAmount.Should().BeNull();
-        reward.Happiness.Should().BeNull();
-        reward.NewDweller.Should().BeFalse();
-        reward.FirstPlayerToken.Should().BeFalse();
-        reward.Build.Should().BeTrue();
-        reward.SpecialStat.Should().BeNull();
-        reward.ResourceExchange.Should().BeFalse();
+        reward.GiveResource.Should().BeNull();
+        reward.GiveHappiness.Should().BeNull();
+        reward.GiveNewDweller.Should().BeFalse();
+        reward.GiveFirstPlayerToken.Should().BeFalse();
+        reward.GiveBuildPossibility.Should().BeTrue();
+        reward.GiveSpecialStatToDweller.Should().BeNull();
+        reward.GiveResourceExchangePossibility.Should().BeFalse();
         reward.HealDweller.Should().BeFalse();
-        reward.NewItem.Should().BeFalse();
-        reward.ActivateItem.Should().BeFalse();
-        reward.RoomPoolRefresh.Should().BeFalse();
-        reward.ItemPoolRefresh.Should().BeFalse();
+        reward.GiveNewItem.Should().BeFalse();
+        reward.GiveActivateItemPossibility.Should().BeFalse();
+        reward.GiveRoomPoolRefreshPossibility.Should().BeFalse();
+        reward.GiveItemPoolRefreshPossibility.Should().BeFalse();
         reward.ExchangeFrom.Should().BeNull();
         reward.ExchangeTo.Should().BeNull();
     }
@@ -195,19 +190,18 @@ public class RewardFactoryTests
     {
         var reward = RewardFactory.CreateWithHappiness(5);
 
-        reward.ResourceType.Should().BeNull();
-        reward.ResourceAmount.Should().BeNull();
-        reward.Happiness.Should().NotBeNull().And.Be(5);
-        reward.NewDweller.Should().BeFalse();
-        reward.FirstPlayerToken.Should().BeFalse();
-        reward.Build.Should().BeFalse();
-        reward.SpecialStat.Should().BeNull();
-        reward.ResourceExchange.Should().BeFalse();
+        reward.GiveResource.Should().BeNull();
+        reward.GiveHappiness.Should().NotBeNull().And.Be(5);
+        reward.GiveNewDweller.Should().BeFalse();
+        reward.GiveFirstPlayerToken.Should().BeFalse();
+        reward.GiveBuildPossibility.Should().BeFalse();
+        reward.GiveSpecialStatToDweller.Should().BeNull();
+        reward.GiveResourceExchangePossibility.Should().BeFalse();
         reward.HealDweller.Should().BeFalse();
-        reward.NewItem.Should().BeFalse();
-        reward.ActivateItem.Should().BeFalse();
-        reward.RoomPoolRefresh.Should().BeFalse();
-        reward.ItemPoolRefresh.Should().BeFalse();
+        reward.GiveNewItem.Should().BeFalse();
+        reward.GiveActivateItemPossibility.Should().BeFalse();
+        reward.GiveRoomPoolRefreshPossibility.Should().BeFalse();
+        reward.GiveItemPoolRefreshPossibility.Should().BeFalse();
         reward.ExchangeFrom.Should().BeNull();
         reward.ExchangeTo.Should().BeNull();
     }
@@ -217,19 +211,18 @@ public class RewardFactoryTests
     {
         var reward = RewardFactory.CreateWithActivateItem();
 
-        reward.ResourceType.Should().BeNull();
-        reward.ResourceAmount.Should().BeNull();
-        reward.Happiness.Should().BeNull();
-        reward.NewDweller.Should().BeFalse();
-        reward.FirstPlayerToken.Should().BeFalse();
-        reward.Build.Should().BeFalse();
-        reward.SpecialStat.Should().BeNull();
-        reward.ResourceExchange.Should().BeFalse();
+        reward.GiveResource.Should().BeNull();
+        reward.GiveHappiness.Should().BeNull();
+        reward.GiveNewDweller.Should().BeFalse();
+        reward.GiveFirstPlayerToken.Should().BeFalse();
+        reward.GiveBuildPossibility.Should().BeFalse();
+        reward.GiveSpecialStatToDweller.Should().BeNull();
+        reward.GiveResourceExchangePossibility.Should().BeFalse();
         reward.HealDweller.Should().BeFalse();
-        reward.NewItem.Should().BeFalse();
-        reward.ActivateItem.Should().BeTrue();
-        reward.RoomPoolRefresh.Should().BeFalse();
-        reward.ItemPoolRefresh.Should().BeFalse();
+        reward.GiveNewItem.Should().BeFalse();
+        reward.GiveActivateItemPossibility.Should().BeTrue();
+        reward.GiveRoomPoolRefreshPossibility.Should().BeFalse();
+        reward.GiveItemPoolRefreshPossibility.Should().BeFalse();
         reward.ExchangeFrom.Should().BeNull();
         reward.ExchangeTo.Should().BeNull();
     }
@@ -237,23 +230,22 @@ public class RewardFactoryTests
     [Test]
     public void CreateWithExchange_CreateValidReward()
     {
-        var reward = RewardFactory.CreateWithExchange(new KeyValuePair<ResourceType, int>(ResourceType.Water, 4),
-            new KeyValuePair<ResourceType, int>(ResourceType.Random, 3));
+        var reward = RewardFactory.CreateWithExchange(new Resource(ResourceType.Water, 4),
+            new Resource(ResourceType.Random, 3));
 
-        reward.ResourceType.Should().BeNull();
-        reward.ResourceAmount.Should().BeNull();
-        reward.Happiness.Should().BeNull();
-        reward.NewDweller.Should().BeFalse();
-        reward.FirstPlayerToken.Should().BeFalse();
-        reward.Build.Should().BeFalse();
-        reward.SpecialStat.Should().BeNull();
-        reward.ResourceExchange.Should().BeTrue();
+        reward.GiveResource.Should().BeNull();
+        reward.GiveHappiness.Should().BeNull();
+        reward.GiveNewDweller.Should().BeFalse();
+        reward.GiveFirstPlayerToken.Should().BeFalse();
+        reward.GiveBuildPossibility.Should().BeFalse();
+        reward.GiveSpecialStatToDweller.Should().BeNull();
+        reward.GiveResourceExchangePossibility.Should().BeTrue();
         reward.HealDweller.Should().BeFalse();
-        reward.NewItem.Should().BeFalse();
-        reward.ActivateItem.Should().BeFalse();
-        reward.RoomPoolRefresh.Should().BeFalse();
-        reward.ItemPoolRefresh.Should().BeFalse();
-        reward.ExchangeFrom.Should().NotBeNull().And.Be(new KeyValuePair<ResourceType, int>(ResourceType.Water, 4));
-        reward.ExchangeTo.Should().NotBeNull().And.Be(new KeyValuePair<ResourceType, int>(ResourceType.Random, 3));
+        reward.GiveNewItem.Should().BeFalse();
+        reward.GiveActivateItemPossibility.Should().BeFalse();
+        reward.GiveRoomPoolRefreshPossibility.Should().BeFalse();
+        reward.GiveItemPoolRefreshPossibility.Should().BeFalse();
+        reward.ExchangeFrom.Should().NotBeNull().And.Be(new Resource(ResourceType.Water, 4));
+        reward.ExchangeTo.Should().NotBeNull().And.Be(new Resource(ResourceType.Random, 3));
     }
 }

@@ -14,8 +14,8 @@ public class RewardFactoryTests
         var reward = RewardFactory.CreateWithResources(type, amount);
 
         reward.GiveResource.Should().NotBeNull();
-        reward.GiveResource.Type.Should().Be(type);
-        reward.GiveResource.Amount.Should().Be(amount);
+        reward.GiveResource?.Type.Should().Be(type);
+        reward.GiveResource?.Amount.Should().Be(amount);
         reward.GiveHappiness.Should().BeNull();
         reward.GiveNewDweller.Should().BeFalse();
         reward.GiveFirstPlayerToken.Should().BeFalse();

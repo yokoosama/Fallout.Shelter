@@ -14,8 +14,8 @@ public class ConditionFactoryTests
         var reward = ConditionFactory.CreateWithResources(type, amount);
 
         reward.ShouldThrowResource.Should().NotBeNull();
-        reward.ShouldThrowResource.Amount.Should().Be(amount);
-        reward.ShouldThrowResource.Type.Should().Be(type);
+        reward.ShouldThrowResource?.Amount.Should().Be(amount);
+        reward.ShouldThrowResource?.Type.Should().Be(type);
         reward.ShouldThrowItem.Should().BeFalse();
         reward.ShouldBuild.Should().BeFalse();
         reward.ShouldInjureDweller.Should().BeFalse();

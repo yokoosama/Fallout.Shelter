@@ -60,7 +60,7 @@ public class GameFieldFactory : IGameFieldFactory
             _roomFactory.CreateGarden(),
             _roomFactory.CreateClassroom(),
             _roomFactory.CreateAthleticsRoom(),
-            _roomFactory.CreateArmoryRoom(),
+            _roomFactory.CreateArmory(),
             _roomFactory.CreateGameRoom(),
             _roomFactory.CreateWeightRoom(),
             _roomFactory.CreateFitnessRoom(),

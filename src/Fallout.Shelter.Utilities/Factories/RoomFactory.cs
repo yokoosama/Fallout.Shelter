@@ -629,7 +629,7 @@ public class RoomFactory : IRoomFactory
         };
     }
 
-    public Room CreateArmoryRoom()
+    public Room CreateArmory()
     {
         var leftSpace = new RoomSector
         {
@@ -660,7 +660,7 @@ public class RoomFactory : IRoomFactory
             }
         };
 
-        return new Room("Armory Room")
+        return new Room("Armory")
         {
             Price = new Dictionary<ResourceType, int>
             {

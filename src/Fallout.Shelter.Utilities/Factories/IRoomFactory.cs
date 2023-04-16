@@ -18,7 +18,7 @@ public interface IRoomFactory
     Room CreateGarden();
     Room CreateClassroom();
     Room CreateAthleticsRoom();
-    Room CreateArmoryRoom();
+    Room CreateArmory();
     Room CreateGameRoom();
     Room CreateWeightRoom();
     Room CreateFitnessRoom();

@@ -962,7 +962,7 @@ public class RoomFactory : IRoomFactory
         };
     }
 
-    public Room CreateRadioStudioRoom()
+    public Room CreateRadioStudio()
     {
         var leftSpace = new RoomSector
         {
@@ -999,7 +999,7 @@ public class RoomFactory : IRoomFactory
             }
         };
 
-        return new Room("Radio Studio Room")
+        return new Room("Radio Studio")
         {
             Price = new Dictionary<ResourceType, int>
             {
@@ -1016,7 +1016,7 @@ public class RoomFactory : IRoomFactory
 
     public Room CreateLivingRoom()
     {
-        var leftSpace = new RoomSector
+        var leftSpace = new RoomSector(2)
         {
             Rewards = new List<Reward>
             {
@@ -1024,14 +1024,15 @@ public class RoomFactory : IRoomFactory
             },
             Spaces =
             {
-                [0] = new Space()
+                [0] = new Space
                 {
                     SpecialStat = SpecialStat.Charisma
-                }
+                },
+                [1] = new Space()
             }
         };
 
-        var rightSpace = new RoomSector
+        var rightSpace = new RoomSector(2)
         {
             Conditions = new List<Condition>
             {
@@ -1043,10 +1044,11 @@ public class RoomFactory : IRoomFactory
             },
             Spaces =
             {
-                [0] = new Space()
+                [0] = new Space
                 {
                     SpecialStat = SpecialStat.Charisma
-                }
+                },
+                [1] = new Space()
             }
         };
 

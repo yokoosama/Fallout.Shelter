@@ -76,6 +76,66 @@ public static class ItemFactory
         return item;
     }
 
+    public static Item CreateWastelandGear()
+    {
+        var item = new Item("Wasteland Gear", ItemType.Armor)
+        {
+            GiveSpecialStatToDweller = SpecialStat.Endurance
+        };
+
+        return item;
+    }
+
+    public static Item CreateNightwear()
+    {
+        var item = new Item("Nightwear", ItemType.Armor)
+        {
+            GiveSpecialStatToDweller = SpecialStat.Charisma
+        };
+
+        return item;
+    }
+
+    public static Item CreateFormalWear()
+    {
+        var item = new Item("Formal Wear", ItemType.Armor)
+        {
+            GiveSpecialStatToDweller = SpecialStat.Luck
+        };
+
+        return item;
+    }
+
+    public static Item CreateMilitaryFatigues()
+    {
+        var item = new Item("Military Fatigues", ItemType.Armor)
+        {
+            GiveSpecialStatToDweller = SpecialStat.Strength
+        };
+
+        return item;
+    }
+
+    public static Item CreateHandymanJumpsuit()
+    {
+        var item = new Item("Handyman Jumpsuit", ItemType.Armor)
+        {
+            GiveSpecialStatToDweller = SpecialStat.Agility
+        };
+
+        return item;
+    }
+
+    public static Item CreateArmoredVaultSuit()
+    {
+        var item = new Item("Armored Vault Suit", ItemType.Armor)
+        {
+            GiveSpecialStatToDweller = SpecialStat.Perception
+        };
+
+        return item;
+    }
+
     public static Item CreateLabCoat()
     {
         var item = new Item("Lab Coat", ItemType.Armor)

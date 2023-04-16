@@ -544,6 +544,142 @@ public class ItemFactoryTests
         reward.ExchangeTo.Should().BeNull();
         reward.GiveSpecialStatToDweller.Should().BeNull();
     }
+    
+    [Test]
+    public void CreateChemistryFlask_CreateValidReward()
+    {
+        var reward = ItemFactory.CreateChemistryFlask();
+    
+        reward.Name.Should().Be("Chemistry Flask");
+        reward.Type.Should().Be(ItemType.Other);
+        reward.IsActive.Should().BeTrue();
+        reward.IsAlwaysActive.Should().BeFalse();
+        reward.IsEndGameItem.Should().BeFalse();
+        reward.GiveActivateItemPossibility.Should().BeFalse();
+        reward.GiveAdditionalDamage.Should().BeNull();
+        reward.GiveReRollPossibility.Should().BeFalse();
+        reward.HealDweller.Should().BeFalse();
+        reward.GiveHappinessPerItem.Should().BeNull();
+        reward.GiveHappinessPerResources.Should().Be(ResourceType.Water);
+        reward.GiveHappinessPerDwellers.Should().BeFalse();
+        reward.GiveHappinessPerRooms.Should().BeFalse();
+        reward.GiveAdditionalResourceForBuilding.Should().BeFalse();
+        reward.GiveItemChangePossibility.Should().BeFalse();
+        reward.GiveResourceExchange.Should().BeFalse();
+        reward.GiveNeededStatInFight.Should().BeNull();
+        reward.ExchangeFrom.Should().BeNull();
+        reward.ExchangeTo.Should().BeNull();
+        reward.GiveSpecialStatToDweller.Should().BeNull();
+    }
+    
+    [Test]
+    public void CreateMilitaryCircuitBoard_CreateValidReward()
+    {
+        var reward = ItemFactory.CreateMilitaryCircuitBoard();
+    
+        reward.Name.Should().Be("Military Circuit Board");
+        reward.Type.Should().Be(ItemType.Other);
+        reward.IsActive.Should().BeTrue();
+        reward.IsAlwaysActive.Should().BeFalse();
+        reward.IsEndGameItem.Should().BeFalse();
+        reward.GiveActivateItemPossibility.Should().BeFalse();
+        reward.GiveAdditionalDamage.Should().BeNull();
+        reward.GiveReRollPossibility.Should().BeFalse();
+        reward.HealDweller.Should().BeFalse();
+        reward.GiveHappinessPerItem.Should().BeNull();
+        reward.GiveHappinessPerResources.Should().Be(ResourceType.Energy);
+        reward.GiveHappinessPerDwellers.Should().BeFalse();
+        reward.GiveHappinessPerRooms.Should().BeFalse();
+        reward.GiveAdditionalResourceForBuilding.Should().BeFalse();
+        reward.GiveItemChangePossibility.Should().BeFalse();
+        reward.GiveResourceExchange.Should().BeFalse();
+        reward.GiveNeededStatInFight.Should().BeNull();
+        reward.ExchangeFrom.Should().BeNull();
+        reward.ExchangeTo.Should().BeNull();
+        reward.GiveSpecialStatToDweller.Should().BeNull();
+    }
+    
+    [Test]
+    public void CreateGoldWatch_CreateValidReward()
+    {
+        var reward = ItemFactory.CreateGoldWatch();
+    
+        reward.Name.Should().Be("Gold Watch");
+        reward.Type.Should().Be(ItemType.Other);
+        reward.IsActive.Should().BeTrue();
+        reward.IsAlwaysActive.Should().BeFalse();
+        reward.IsEndGameItem.Should().BeFalse();
+        reward.GiveActivateItemPossibility.Should().BeFalse();
+        reward.GiveAdditionalDamage.Should().BeNull();
+        reward.GiveReRollPossibility.Should().BeFalse();
+        reward.HealDweller.Should().BeFalse();
+        reward.GiveHappinessPerItem.Should().BeNull();
+        reward.GiveHappinessPerResources.Should().Be(ResourceType.Food);
+        reward.GiveHappinessPerDwellers.Should().BeFalse();
+        reward.GiveHappinessPerRooms.Should().BeFalse();
+        reward.GiveAdditionalResourceForBuilding.Should().BeFalse();
+        reward.GiveItemChangePossibility.Should().BeFalse();
+        reward.GiveResourceExchange.Should().BeFalse();
+        reward.GiveNeededStatInFight.Should().BeNull();
+        reward.ExchangeFrom.Should().BeNull();
+        reward.ExchangeTo.Should().BeNull();
+        reward.GiveSpecialStatToDweller.Should().BeNull();
+    }
+    
+    [Test]
+    public void CreateGlobe_CreateValidReward()
+    {
+        var reward = ItemFactory.CreateGlobe();
+    
+        reward.Name.Should().Be("Globe");
+        reward.Type.Should().Be(ItemType.Other);
+        reward.IsActive.Should().BeTrue();
+        reward.IsAlwaysActive.Should().BeFalse();
+        reward.IsEndGameItem.Should().BeFalse();
+        reward.GiveActivateItemPossibility.Should().BeFalse();
+        reward.GiveAdditionalDamage.Should().BeNull();
+        reward.GiveReRollPossibility.Should().BeFalse();
+        reward.HealDweller.Should().BeFalse();
+        reward.GiveHappinessPerItem.Should().BeNull();
+        reward.GiveHappinessPerResources.Should().BeNull();
+        reward.GiveHappinessPerDwellers.Should().BeFalse();
+        reward.GiveHappinessPerRooms.Should().BeTrue();
+        reward.GiveAdditionalResourceForBuilding.Should().BeFalse();
+        reward.GiveItemChangePossibility.Should().BeFalse();
+        reward.GiveResourceExchange.Should().BeFalse();
+        reward.GiveNeededStatInFight.Should().BeNull();
+        reward.ExchangeFrom.Should().BeNull();
+        reward.ExchangeTo.Should().BeNull();
+        reward.GiveSpecialStatToDweller.Should().BeNull();
+    }
+    
+    [Test]
+    public void CreateCamera_CreateValidReward()
+    {
+        var reward = ItemFactory.CreateCamera();
+    
+        reward.Name.Should().Be("Camera");
+        reward.Type.Should().Be(ItemType.Other);
+        reward.IsActive.Should().BeTrue();
+        reward.IsAlwaysActive.Should().BeFalse();
+        reward.IsEndGameItem.Should().BeFalse();
+        reward.GiveActivateItemPossibility.Should().BeFalse();
+        reward.GiveAdditionalDamage.Should().BeNull();
+        reward.GiveReRollPossibility.Should().BeFalse();
+        reward.HealDweller.Should().BeFalse();
+        reward.GiveHappinessPerItem.Should().BeNull();
+        reward.GiveHappinessPerResources.Should().BeNull();
+        reward.GiveHappinessPerDwellers.Should().BeTrue();
+        reward.GiveHappinessPerRooms.Should().BeFalse();
+        reward.GiveAdditionalResourceForBuilding.Should().BeFalse();
+        reward.GiveItemChangePossibility.Should().BeFalse();
+        reward.GiveResourceExchange.Should().BeFalse();
+        reward.GiveNeededStatInFight.Should().BeNull();
+        reward.ExchangeFrom.Should().BeNull();
+        reward.ExchangeTo.Should().BeNull();
+        reward.GiveSpecialStatToDweller.Should().BeNull();
+    }
+    
     // [Test]
     // public void CreateGoldenRetriever_CreateValidReward()
     // {

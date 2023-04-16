@@ -205,4 +205,54 @@ public static class ItemFactory
 
         return item;
     }
+
+    public static Item CreateChemistryFlask()
+    {
+        var item = new Item("Chemistry Flask", ItemType.Other)
+        {
+            GiveHappinessPerResources = ResourceType.Water
+        };
+
+        return item;
+    }
+
+    public static Item CreateMilitaryCircuitBoard()
+    {
+        var item = new Item("Military Circuit Board", ItemType.Other)
+        {
+            GiveHappinessPerResources = ResourceType.Energy
+        };
+
+        return item;
+    }
+
+    public static Item CreateGoldWatch()
+    {
+        var item = new Item("Gold Watch", ItemType.Other)
+        {
+            GiveHappinessPerResources = ResourceType.Food
+        };
+
+        return item;
+    }
+
+    public static Item CreateGlobe()
+    {
+        var item = new Item("Globe", ItemType.Other)
+        {
+            GiveHappinessPerRooms = true
+        };
+
+        return item;
+    }
+
+    public static Item CreateCamera()
+    {
+        var item = new Item("Camera", ItemType.Other)
+        {
+            GiveHappinessPerDwellers = true
+        };
+
+        return item;
+    }
 }

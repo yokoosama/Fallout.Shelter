@@ -17,7 +17,7 @@ public static class ThreatFactory
             {
                 [0] = new Space
                 {
-                    SpecialStat = SpecialStat.Endurance,
+                    SpecialStat = SpecialStat.Endurance
                 }
             },
             Roll = 6
@@ -25,7 +25,7 @@ public static class ThreatFactory
 
         return threat;
     }
-    
+
     public static Threat CreateDeathclaw()
     {
         var threat = new Threat("Deathclaw", 2)
@@ -38,7 +38,7 @@ public static class ThreatFactory
             {
                 [0] = new Space
                 {
-                    SpecialStat = SpecialStat.Endurance,
+                    SpecialStat = SpecialStat.Endurance
                 },
                 [1] = new Space()
             },
@@ -47,7 +47,7 @@ public static class ThreatFactory
 
         return threat;
     }
-    
+
     public static Threat CreateGlowingRadscorpion()
     {
         var threat = new Threat("Glowing Radscorpion")
@@ -61,7 +61,7 @@ public static class ThreatFactory
             {
                 [0] = new Space
                 {
-                    SpecialStat = SpecialStat.Endurance,
+                    SpecialStat = SpecialStat.Endurance
                 }
             },
             Roll = 9
@@ -69,20 +69,20 @@ public static class ThreatFactory
 
         return threat;
     }
-    
+
     public static Threat CreateFeralGhoul()
     {
         var threat = new Threat("Feral Ghoul")
         {
             Rewards = new List<Reward>
             {
-                RewardFactory.CreateWithHappiness(1),
+                RewardFactory.CreateWithHappiness(1)
             },
             Spaces =
             {
                 [0] = new Space
                 {
-                    SpecialStat = SpecialStat.Intelligence,
+                    SpecialStat = SpecialStat.Intelligence
                 }
             },
             Roll = 7
@@ -90,20 +90,20 @@ public static class ThreatFactory
 
         return threat;
     }
-    
+
     public static Threat CreateGlowingOne()
     {
         var threat = new Threat("Glowing One")
         {
             Rewards = new List<Reward>
             {
-                RewardFactory.CreateWithHappiness(1),
+                RewardFactory.CreateWithHappiness(1)
             },
             Spaces =
             {
                 [0] = new Space
                 {
-                    SpecialStat = SpecialStat.Endurance,
+                    SpecialStat = SpecialStat.Endurance
                 }
             },
             Roll = 8
@@ -111,7 +111,7 @@ public static class ThreatFactory
 
         return threat;
     }
-    
+
     public static Threat CreateRadscorpion()
     {
         var threat = new Threat("Radscorpion")
@@ -125,7 +125,7 @@ public static class ThreatFactory
             {
                 [0] = new Space
                 {
-                    SpecialStat = SpecialStat.Perception,
+                    SpecialStat = SpecialStat.Perception
                 }
             },
             Roll = 8
@@ -133,7 +133,7 @@ public static class ThreatFactory
 
         return threat;
     }
-    
+
     public static Threat CreateRadroach()
     {
         var threat = new Threat("Radroach")
@@ -146,7 +146,7 @@ public static class ThreatFactory
             {
                 [0] = new Space
                 {
-                    SpecialStat = SpecialStat.Agility,
+                    SpecialStat = SpecialStat.Agility
                 }
             },
             Roll = 5
@@ -154,20 +154,20 @@ public static class ThreatFactory
 
         return threat;
     }
-    
+
     public static Threat CreateMoleRat()
     {
         var threat = new Threat("Mole Rat")
         {
             Rewards = new List<Reward>
             {
-                RewardFactory.CreateWithHappiness(1),
+                RewardFactory.CreateWithHappiness(1)
             },
             Spaces =
             {
                 [0] = new Space
                 {
-                    SpecialStat = SpecialStat.Strength,
+                    SpecialStat = SpecialStat.Strength
                 }
             },
             Roll = 6
@@ -175,7 +175,7 @@ public static class ThreatFactory
 
         return threat;
     }
-    
+
     public static Threat CreateRaider()
     {
         var threat = new Threat("Raider")
@@ -188,7 +188,7 @@ public static class ThreatFactory
             {
                 [0] = new Space
                 {
-                    SpecialStat = SpecialStat.Charisma,
+                    SpecialStat = SpecialStat.Charisma
                 }
             },
             Roll = 9
@@ -196,20 +196,20 @@ public static class ThreatFactory
 
         return threat;
     }
-    
+
     public static Threat CreateFire()
     {
         var threat = new Threat("Fire")
         {
             Rewards = new List<Reward>
             {
-                RewardFactory.CreateWithHappiness(1),
+                RewardFactory.CreateWithHappiness(1)
             },
             Spaces =
             {
                 [0] = new Space
                 {
-                    SpecialStat = SpecialStat.Endurance,
+                    SpecialStat = SpecialStat.Endurance
                 }
             },
             Resource = new Resource(ResourceType.Water, 1)
@@ -217,20 +217,20 @@ public static class ThreatFactory
 
         return threat;
     }
-    
+
     public static Threat CreateEnergyFailure()
     {
         var threat = new Threat("Energy Failure")
         {
             Rewards = new List<Reward>
             {
-                RewardFactory.CreateWithHappiness(1),
+                RewardFactory.CreateWithHappiness(1)
             },
             Spaces =
             {
                 [0] = new Space
                 {
-                    SpecialStat = SpecialStat.Intelligence,
+                    SpecialStat = SpecialStat.Intelligence
                 }
             },
             Resource = new Resource(ResourceType.Energy, 2)

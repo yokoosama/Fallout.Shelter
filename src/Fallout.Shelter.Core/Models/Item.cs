@@ -25,4 +25,11 @@ public class Item
     public Resource? ExchangeFrom { get; set; }
     public Resource? ExchangeTo { get; set; }
     public SpecialStat? GiveSpecialStatToDweller { get; set; }
+
+    public Item(string name, ItemType type)
+    {
+        Name = name;
+        Type = type;
+        IsActive = true;
+    }
 }

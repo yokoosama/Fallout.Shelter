@@ -4,5 +4,6 @@ public enum ItemType
 {
     Weapon,
     Armor,
-    Pet
+    Pet,
+    Other
 }

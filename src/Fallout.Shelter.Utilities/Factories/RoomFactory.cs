@@ -304,8 +304,8 @@ public class RoomFactory : IRoomFactory
         {
             Rewards = new List<Reward>
             {
-                RewardFactory.CreateWithExchange(new KeyValuePair<ResourceType, int>(ResourceType.Water, 1),
-                    new KeyValuePair<ResourceType, int>(ResourceType.Food, 2))
+                RewardFactory.CreateWithExchange(new Resource(ResourceType.Water, 1),
+                    new Resource(ResourceType.Food, 2))
             },
             Spaces =
             {
@@ -317,8 +317,8 @@ public class RoomFactory : IRoomFactory
         {
             Rewards = new List<Reward>
             {
-                RewardFactory.CreateWithExchange(new KeyValuePair<ResourceType, int>(ResourceType.Energy, 1),
-                    new KeyValuePair<ResourceType, int>(ResourceType.Food, 1))
+                RewardFactory.CreateWithExchange(new Resource(ResourceType.Energy, 1),
+                    new Resource(ResourceType.Food, 1))
             },
             Spaces =
             {
@@ -328,11 +328,11 @@ public class RoomFactory : IRoomFactory
 
         return new Room("Storage Room")
         {
-            Price = new Dictionary<ResourceType, int>
+            Price = new List<Resource>
             {
-                { ResourceType.Water, 1 },
-                { ResourceType.Food, 1 },
-                { ResourceType.Energy, 2 }
+                new(ResourceType.Water, 1),
+                new(ResourceType.Food, 1),
+                new(ResourceType.Energy, 2)
             },
             Sectors =
             {
@@ -376,10 +376,10 @@ public class RoomFactory : IRoomFactory
 
         return new Room("Water Purification Room")
         {
-            Price = new Dictionary<ResourceType, int>
+            Price = new List<Resource>
             {
-                { ResourceType.Water, 2 },
-                { ResourceType.Energy, 3 }
+                new(ResourceType.Water, 2),
+                new(ResourceType.Energy, 3)
             },
             Sectors =
             {
@@ -425,11 +425,11 @@ public class RoomFactory : IRoomFactory
 
         return new Room("Nuka-Cola Bottler")
         {
-            Price = new Dictionary<ResourceType, int>
+            Price = new List<Resource>
             {
-                { ResourceType.Water, 1 },
-                { ResourceType.Food, 1 },
-                { ResourceType.Energy, 3 }
+                new(ResourceType.Water, 1),
+                new(ResourceType.Food, 1),
+                new(ResourceType.Energy, 3)
             },
             Sectors =
             {
@@ -473,9 +473,9 @@ public class RoomFactory : IRoomFactory
 
         return new Room("Nuclear Reactor")
         {
-            Price = new Dictionary<ResourceType, int>
+            Price = new List<Resource>
             {
-                { ResourceType.Energy, 5 }
+                new(ResourceType.Energy, 5)
             },
             Sectors =
             {
@@ -519,10 +519,10 @@ public class RoomFactory : IRoomFactory
 
         return new Room("Garden")
         {
-            Price = new Dictionary<ResourceType, int>
+            Price = new List<Resource>
             {
-                { ResourceType.Food, 2 },
-                { ResourceType.Energy, 3 }
+                new(ResourceType.Food, 2),
+                new(ResourceType.Energy, 3)
             },
             Sectors =
             {
@@ -565,10 +565,10 @@ public class RoomFactory : IRoomFactory
 
         return new Room("Classroom")
         {
-            Price = new Dictionary<ResourceType, int>
+            Price = new List<Resource>
             {
-                { ResourceType.Food, 1 },
-                { ResourceType.Energy, 3 }
+                new(ResourceType.Food, 1),
+                new(ResourceType.Energy, 3)
             },
             Sectors =
             {
@@ -611,10 +611,10 @@ public class RoomFactory : IRoomFactory
 
         return new Room("Athletics Room")
         {
-            Price = new Dictionary<ResourceType, int>
+            Price = new List<Resource>
             {
-                { ResourceType.Food, 3 },
-                { ResourceType.Energy, 1 }
+                new(ResourceType.Food, 3),
+                new(ResourceType.Energy, 1)
             },
             Sectors =
             {
@@ -657,10 +657,10 @@ public class RoomFactory : IRoomFactory
 
         return new Room("Armory")
         {
-            Price = new Dictionary<ResourceType, int>
+            Price = new List<Resource>
             {
-                { ResourceType.Water, 2 },
-                { ResourceType.Energy, 2 }
+                new(ResourceType.Water, 2),
+                new(ResourceType.Energy, 2)
             },
             Sectors =
             {
@@ -703,10 +703,10 @@ public class RoomFactory : IRoomFactory
 
         return new Room("Game Room")
         {
-            Price = new Dictionary<ResourceType, int>
+            Price = new List<Resource>
             {
-                { ResourceType.Random, 4 },
-                { ResourceType.Energy, 1 }
+                new(ResourceType.Random, 4),
+                new(ResourceType.Energy, 1)
             },
             Sectors =
             {
@@ -749,9 +749,9 @@ public class RoomFactory : IRoomFactory
 
         return new Room("Weight Room")
         {
-            Price = new Dictionary<ResourceType, int>
+            Price = new List<Resource>
             {
-                { ResourceType.Energy, 4 }
+                new(ResourceType.Energy, 4)
             },
             Sectors =
             {
@@ -794,10 +794,10 @@ public class RoomFactory : IRoomFactory
 
         return new Room("Fitness Room")
         {
-            Price = new Dictionary<ResourceType, int>
+            Price = new List<Resource>
             {
-                { ResourceType.Water, 1 },
-                { ResourceType.Energy, 3 }
+                new(ResourceType.Water, 1),
+                new(ResourceType.Energy, 3)
             },
             Sectors =
             {
@@ -844,10 +844,10 @@ public class RoomFactory : IRoomFactory
 
         return new Room("Lounge")
         {
-            Price = new Dictionary<ResourceType, int>
+            Price = new List<Resource>
             {
-                { ResourceType.Food, 2 },
-                { ResourceType.Energy, 2 }
+                new(ResourceType.Food, 2),
+                new(ResourceType.Energy, 2)
             },
             Sectors =
             {
@@ -897,10 +897,10 @@ public class RoomFactory : IRoomFactory
 
         return new Room("Medbay")
         {
-            Price = new Dictionary<ResourceType, int>
+            Price = new List<Resource>
             {
-                { ResourceType.Random, 1 },
-                { ResourceType.Energy, 3 }
+                new(ResourceType.Random, 1),
+                new(ResourceType.Energy, 3)
             },
             Sectors =
             {
@@ -950,10 +950,10 @@ public class RoomFactory : IRoomFactory
 
         return new Room("Science Lab")
         {
-            Price = new Dictionary<ResourceType, int>
+            Price = new List<Resource>
             {
-                { ResourceType.Random, 1 },
-                { ResourceType.Energy, 3 }
+                new(ResourceType.Random, 1),
+                new(ResourceType.Energy, 3)
             },
             Sectors =
             {
@@ -1002,10 +1002,10 @@ public class RoomFactory : IRoomFactory
 
         return new Room("Radio Studio")
         {
-            Price = new Dictionary<ResourceType, int>
+            Price = new List<Resource>
             {
-                { ResourceType.Water, 1 },
-                { ResourceType.Energy, 3 }
+                new(ResourceType.Water, 1),
+                new(ResourceType.Energy, 3)
             },
             Sectors =
             {
@@ -1055,10 +1055,10 @@ public class RoomFactory : IRoomFactory
 
         return new Room("Living Room")
         {
-            Price = new Dictionary<ResourceType, int>
+            Price = new List<Resource>
             {
-                { ResourceType.Water, 2 },
-                { ResourceType.Energy, 2 }
+                new(ResourceType.Water, 2),
+                new(ResourceType.Energy, 2)
             },
             Sectors =
             {
@@ -1102,9 +1102,9 @@ public class RoomFactory : IRoomFactory
 
         return new Room("Theme Workshop")
         {
-            Price = new Dictionary<ResourceType, int>
+            Price = new List<Resource>
             {
-                { ResourceType.Energy, 5 }
+                new(ResourceType.Energy, 5)
             },
             Sectors =
             {
@@ -1157,10 +1157,10 @@ public class RoomFactory : IRoomFactory
 
         return new Room("Outfit Workshop")
         {
-            Price = new Dictionary<ResourceType, int>
+            Price = new List<Resource>
             {
-                { ResourceType.Water, 2 },
-                { ResourceType.Energy, 3 }
+                new(ResourceType.Water, 2),
+                new(ResourceType.Energy, 3)
             },
             Sectors =
             {
@@ -1209,10 +1209,10 @@ public class RoomFactory : IRoomFactory
 
         return new Room("Weapon Workshop")
         {
-            Price = new Dictionary<ResourceType, int>
+            Price = new List<Resource>
             {
-                { ResourceType.Water, 2 },
-                { ResourceType.Energy, 3 }
+                new(ResourceType.Water, 2),
+                new(ResourceType.Energy, 3)
             },
             Sectors =
             {

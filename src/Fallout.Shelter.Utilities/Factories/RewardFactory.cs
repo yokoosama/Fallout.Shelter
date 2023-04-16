@@ -9,8 +9,7 @@ public static class RewardFactory
     {
         var reward = new Reward
         {
-            GiveResourceOfType = type,
-            GiveResourceAmount = amount
+            GiveResource = new Resource(type, amount)
         };
 
         return reward;
@@ -106,7 +105,7 @@ public static class RewardFactory
         return reward;
     }
 
-    public static Reward CreateWithExchange(KeyValuePair<ResourceType, int> from, KeyValuePair<ResourceType, int> to)
+    public static Reward CreateWithExchange(Resource from, Resource to)
     {
         var reward = new Reward
         {

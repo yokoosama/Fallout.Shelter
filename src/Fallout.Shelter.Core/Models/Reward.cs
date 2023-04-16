@@ -4,26 +4,24 @@ namespace Fallout.Shelter.Core.Models;
 
 public class Reward
 {
-    public ResourceType? GiveResourceOfType { get; set; }
-    public int? GiveResourceAmount { get; set; }
+    public Resource? GiveResource { get; set; }
     public int? GiveHappiness { get; set; }
     public bool GiveNewDweller { get; set; }
     public bool GiveFirstPlayerToken { get; set; }
     public bool GiveBuildPossibility { get; set; }
     public SpecialStat? GiveSpecialStatToDweller { get; set; }
-    public bool GiveResourceExchangePossibility { get; set; }
     public bool HealDweller { get; set; }
     public bool GiveNewItem { get; set; }
     public bool GiveActivateItemPossibility { get; set; }
     public bool GiveRoomPoolRefreshPossibility { get; set; }
     public bool GiveItemPoolRefreshPossibility { get; set; }
-    public KeyValuePair<ResourceType, int>? ExchangeFrom { get; set; }
-    public KeyValuePair<ResourceType, int>? ExchangeTo { get; set; }
+    public bool GiveResourceExchangePossibility { get; set; }
+    public Resource? ExchangeFrom { get; set; }
+    public Resource? ExchangeTo { get; set; }
 
     protected bool Equals(Reward other)
     {
-        return GiveResourceOfType == other.GiveResourceOfType &&
-               GiveResourceAmount == other.GiveResourceAmount &&
+        return GiveResource == other.GiveResource &&
                GiveHappiness == other.GiveHappiness &&
                GiveNewDweller == other.GiveNewDweller &&
                GiveFirstPlayerToken == other.GiveFirstPlayerToken &&
@@ -62,8 +60,7 @@ public class Reward
     public override int GetHashCode()
     {
         var hashCode = new HashCode();
-        hashCode.Add(GiveResourceOfType);
-        hashCode.Add(GiveResourceAmount);
+        hashCode.Add(GiveResource);
         hashCode.Add(GiveHappiness);
         hashCode.Add(GiveNewDweller);
         hashCode.Add(GiveFirstPlayerToken);

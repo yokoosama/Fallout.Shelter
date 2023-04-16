@@ -9,8 +9,7 @@ public static class ConditionFactory
     {
         var condition = new Condition
         {
-            ShouldThrowResourceOfType = type,
-            ShouldThrowResourceAmount = amount
+            ShouldThrowResource = new Resource(type, amount)
         };
 
         return condition;

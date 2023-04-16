@@ -1,20 +1,17 @@
-using Fallout.Shelter.Core.Enums;
-
 namespace Fallout.Shelter.Core.Models;
 
 public class Condition
 {
-    public ResourceType? ShouldThrowResourceOfType { get; set; }
-    public int? ShouldThrowResourceAmount { get; set; }
+    public Resource? ShouldThrowResource { get; set; }
     public bool ShouldThrowItem { get; set; }
     public bool ShouldBuild { get; set; }
     public bool ShouldInjureDweller { get; set; }
 
     protected bool Equals(Condition other)
     {
-        return ShouldThrowResourceOfType == other.ShouldThrowResourceOfType &&
-               ShouldThrowResourceAmount == other.ShouldThrowResourceAmount &&
-               ShouldThrowItem == other.ShouldThrowItem && ShouldBuild == other.ShouldBuild &&
+        return ShouldThrowResource == other.ShouldThrowResource &&
+               ShouldThrowItem == other.ShouldThrowItem &&
+               ShouldBuild == other.ShouldBuild &&
                ShouldInjureDweller == other.ShouldInjureDweller;
     }
 
@@ -40,8 +37,7 @@ public class Condition
 
     public override int GetHashCode()
     {
-        return HashCode.Combine(ShouldThrowResourceOfType, ShouldThrowResourceAmount, ShouldThrowItem, ShouldBuild,
-            ShouldInjureDweller);
+        return HashCode.Combine(ShouldThrowResource, ShouldThrowItem, ShouldBuild, ShouldInjureDweller);
     }
 
     public static bool operator ==(Condition? left, Condition? right)

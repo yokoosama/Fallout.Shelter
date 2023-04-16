@@ -13,8 +13,9 @@ public class ConditionFactoryTests
     {
         var reward = ConditionFactory.CreateWithResources(type, amount);
 
-        reward.ShouldThrowResourceOfType.Should().Be(type);
-        reward.ShouldThrowResourceAmount.Should().Be(amount);
+        reward.ShouldThrowResource.Should().NotBeNull();
+        reward.ShouldThrowResource.Amount.Should().Be(amount);
+        reward.ShouldThrowResource.Type.Should().Be(type);
         reward.ShouldThrowItem.Should().BeFalse();
         reward.ShouldBuild.Should().BeFalse();
         reward.ShouldInjureDweller.Should().BeFalse();
@@ -25,8 +26,7 @@ public class ConditionFactoryTests
     {
         var reward = ConditionFactory.CreateWithInjuredDweller();
 
-        reward.ShouldThrowResourceOfType.Should().BeNull();
-        reward.ShouldThrowResourceAmount.Should().BeNull();
+        reward.ShouldThrowResource.Should().BeNull();
         reward.ShouldThrowItem.Should().BeFalse();
         reward.ShouldBuild.Should().BeFalse();
         reward.ShouldInjureDweller.Should().BeTrue();
@@ -37,8 +37,7 @@ public class ConditionFactoryTests
     {
         var reward = ConditionFactory.CreateWithItem();
 
-        reward.ShouldThrowResourceOfType.Should().BeNull();
-        reward.ShouldThrowResourceAmount.Should().BeNull();
+        reward.ShouldThrowResource.Should().BeNull();
         reward.ShouldThrowItem.Should().BeTrue();
         reward.ShouldBuild.Should().BeFalse();
         reward.ShouldInjureDweller.Should().BeFalse();
@@ -49,8 +48,7 @@ public class ConditionFactoryTests
     {
         var reward = ConditionFactory.CreateWithBuild();
 
-        reward.ShouldThrowResourceOfType.Should().BeNull();
-        reward.ShouldThrowResourceAmount.Should().BeNull();
+        reward.ShouldThrowResource.Should().BeNull();
         reward.ShouldThrowItem.Should().BeFalse();
         reward.ShouldBuild.Should().BeTrue();
         reward.ShouldInjureDweller.Should().BeFalse();

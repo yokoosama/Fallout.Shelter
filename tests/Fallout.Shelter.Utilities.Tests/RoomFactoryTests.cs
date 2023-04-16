@@ -301,8 +301,8 @@ public class RoomFactoryTests
         room.IsElevator.Should().BeFalse();
 
         room.Price.Should().HaveCount(2).And
-            .ContainEquivalentOf(new KeyValuePair<ResourceType, int>(ResourceType.Water, 2)).And
-            .ContainEquivalentOf(new KeyValuePair<ResourceType, int>(ResourceType.Energy, 3));
+            .ContainEquivalentOf(new Resource(ResourceType.Water, 2)).And
+            .ContainEquivalentOf(new Resource(ResourceType.Energy, 3));
 
         room.Sectors.Should().HaveCount(2);
 
@@ -342,9 +342,9 @@ public class RoomFactoryTests
         room.IsElevator.Should().BeFalse();
 
         room.Price.Should().HaveCount(3).And
-            .ContainEquivalentOf(new KeyValuePair<ResourceType, int>(ResourceType.Water, 1)).And
-            .ContainEquivalentOf(new KeyValuePair<ResourceType, int>(ResourceType.Food, 1)).And
-            .ContainEquivalentOf(new KeyValuePair<ResourceType, int>(ResourceType.Energy, 3));
+            .ContainEquivalentOf(new Resource(ResourceType.Water, 1)).And
+            .ContainEquivalentOf(new Resource(ResourceType.Food, 1)).And
+            .ContainEquivalentOf(new Resource(ResourceType.Energy, 3));
 
         room.Sectors.Should().HaveCount(2);
 
@@ -386,7 +386,7 @@ public class RoomFactoryTests
         room.IsElevator.Should().BeFalse();
 
         room.Price.Should().HaveCount(1).And
-            .ContainEquivalentOf(new KeyValuePair<ResourceType, int>(ResourceType.Energy, 5));
+            .ContainEquivalentOf(new Resource(ResourceType.Energy, 5));
 
         room.Sectors.Should().HaveCount(2);
 
@@ -426,8 +426,8 @@ public class RoomFactoryTests
         room.IsElevator.Should().BeFalse();
 
         room.Price.Should().HaveCount(2).And
-            .ContainEquivalentOf(new KeyValuePair<ResourceType, int>(ResourceType.Food, 2)).And
-            .ContainEquivalentOf(new KeyValuePair<ResourceType, int>(ResourceType.Energy, 3));
+            .ContainEquivalentOf(new Resource(ResourceType.Food, 2)).And
+            .ContainEquivalentOf(new Resource(ResourceType.Energy, 3));
 
         room.Sectors.Should().HaveCount(2);
 
@@ -467,8 +467,8 @@ public class RoomFactoryTests
         room.IsElevator.Should().BeFalse();
 
         room.Price.Should().HaveCount(2).And
-            .ContainEquivalentOf(new KeyValuePair<ResourceType, int>(ResourceType.Food, 1)).And
-            .ContainEquivalentOf(new KeyValuePair<ResourceType, int>(ResourceType.Energy, 3));
+            .ContainEquivalentOf(new Resource(ResourceType.Food, 1)).And
+            .ContainEquivalentOf(new Resource(ResourceType.Energy, 3));
 
         room.Sectors.Should().HaveCount(2);
 
@@ -510,8 +510,8 @@ public class RoomFactoryTests
         room.IsElevator.Should().BeFalse();
 
         room.Price.Should().HaveCount(2).And
-            .ContainEquivalentOf(new KeyValuePair<ResourceType, int>(ResourceType.Food, 3)).And
-            .ContainEquivalentOf(new KeyValuePair<ResourceType, int>(ResourceType.Energy, 1));
+            .ContainEquivalentOf(new Resource(ResourceType.Food, 3)).And
+            .ContainEquivalentOf(new Resource(ResourceType.Energy, 1));
 
         room.Sectors.Should().HaveCount(2);
 
@@ -553,8 +553,8 @@ public class RoomFactoryTests
         room.IsElevator.Should().BeFalse();
 
         room.Price.Should().HaveCount(2).And
-            .ContainEquivalentOf(new KeyValuePair<ResourceType, int>(ResourceType.Water, 2)).And
-            .ContainEquivalentOf(new KeyValuePair<ResourceType, int>(ResourceType.Energy, 2));
+            .ContainEquivalentOf(new Resource(ResourceType.Water, 2)).And
+            .ContainEquivalentOf(new Resource(ResourceType.Energy, 2));
 
         room.Sectors.Should().HaveCount(2);
 
@@ -596,8 +596,8 @@ public class RoomFactoryTests
         room.IsElevator.Should().BeFalse();
 
         room.Price.Should().HaveCount(2).And
-            .ContainEquivalentOf(new KeyValuePair<ResourceType, int>(ResourceType.Random, 4)).And
-            .ContainEquivalentOf(new KeyValuePair<ResourceType, int>(ResourceType.Energy, 1));
+            .ContainEquivalentOf(new Resource(ResourceType.Random, 4)).And
+            .ContainEquivalentOf(new Resource(ResourceType.Energy, 1));
 
         room.Sectors.Should().HaveCount(2);
 
@@ -639,7 +639,7 @@ public class RoomFactoryTests
         room.IsElevator.Should().BeFalse();
 
         room.Price.Should().HaveCount(1).And
-            .ContainEquivalentOf(new KeyValuePair<ResourceType, int>(ResourceType.Energy, 4));
+            .ContainEquivalentOf(new Resource(ResourceType.Energy, 4));
 
         room.Sectors.Should().HaveCount(2);
 
@@ -681,8 +681,8 @@ public class RoomFactoryTests
         room.IsElevator.Should().BeFalse();
 
         room.Price.Should().HaveCount(2).And
-            .ContainEquivalentOf(new KeyValuePair<ResourceType, int>(ResourceType.Water, 1)).And
-            .ContainEquivalentOf(new KeyValuePair<ResourceType, int>(ResourceType.Energy, 3));
+            .ContainEquivalentOf(new Resource(ResourceType.Water, 1)).And
+            .ContainEquivalentOf(new Resource(ResourceType.Energy, 3));
 
         room.Sectors.Should().HaveCount(2);
 
@@ -724,16 +724,16 @@ public class RoomFactoryTests
         room.IsElevator.Should().BeFalse();
 
         room.Price.Should().HaveCount(3).And
-            .ContainEquivalentOf(new KeyValuePair<ResourceType, int>(ResourceType.Water, 1)).And
-            .ContainEquivalentOf(new KeyValuePair<ResourceType, int>(ResourceType.Food, 1)).And
-            .ContainEquivalentOf(new KeyValuePair<ResourceType, int>(ResourceType.Energy, 2));
+            .ContainEquivalentOf(new Resource(ResourceType.Water, 1)).And
+            .ContainEquivalentOf(new Resource(ResourceType.Food, 1)).And
+            .ContainEquivalentOf(new Resource(ResourceType.Energy, 2));
 
         room.Sectors.Should().HaveCount(2);
 
         room.Sectors[0].Rewards.Should().HaveCount(1).And
             .ContainEquivalentOf(RewardFactory.CreateWithExchange(
-                new KeyValuePair<ResourceType, int>(ResourceType.Water, 1),
-                new KeyValuePair<ResourceType, int>(ResourceType.Food, 2)));
+                new Resource(ResourceType.Water, 1),
+                new Resource(ResourceType.Food, 2)));
 
         room.Sectors[0].Conditions.Should().BeEmpty();
 
@@ -747,8 +747,8 @@ public class RoomFactoryTests
 
         room.Sectors[1].Rewards.Should().HaveCount(1).And
             .ContainEquivalentOf(RewardFactory.CreateWithExchange(
-                new KeyValuePair<ResourceType, int>(ResourceType.Energy, 1),
-                new KeyValuePair<ResourceType, int>(ResourceType.Food, 1)));
+                new Resource(ResourceType.Energy, 1),
+                new Resource(ResourceType.Food, 1)));
 
         room.Sectors[1].Conditions.Should().BeEmpty();
 
@@ -770,8 +770,8 @@ public class RoomFactoryTests
         room.IsElevator.Should().BeFalse();
 
         room.Price.Should().HaveCount(2).And
-            .ContainEquivalentOf(new KeyValuePair<ResourceType, int>(ResourceType.Food, 2)).And
-            .ContainEquivalentOf(new KeyValuePair<ResourceType, int>(ResourceType.Energy, 2));
+            .ContainEquivalentOf(new Resource(ResourceType.Food, 2)).And
+            .ContainEquivalentOf(new Resource(ResourceType.Energy, 2));
 
         room.Sectors.Should().HaveCount(2);
 
@@ -814,8 +814,8 @@ public class RoomFactoryTests
         room.IsElevator.Should().BeFalse();
 
         room.Price.Should().HaveCount(2).And
-            .ContainEquivalentOf(new KeyValuePair<ResourceType, int>(ResourceType.Random, 1)).And
-            .ContainEquivalentOf(new KeyValuePair<ResourceType, int>(ResourceType.Energy, 3));
+            .ContainEquivalentOf(new Resource(ResourceType.Random, 1)).And
+            .ContainEquivalentOf(new Resource(ResourceType.Energy, 3));
 
         room.Sectors.Should().HaveCount(2);
 
@@ -858,8 +858,8 @@ public class RoomFactoryTests
         room.IsElevator.Should().BeFalse();
 
         room.Price.Should().HaveCount(2).And
-            .ContainEquivalentOf(new KeyValuePair<ResourceType, int>(ResourceType.Random, 1)).And
-            .ContainEquivalentOf(new KeyValuePair<ResourceType, int>(ResourceType.Energy, 3));
+            .ContainEquivalentOf(new Resource(ResourceType.Random, 1)).And
+            .ContainEquivalentOf(new Resource(ResourceType.Energy, 3));
 
         room.Sectors.Should().HaveCount(2);
 
@@ -902,8 +902,8 @@ public class RoomFactoryTests
         room.IsElevator.Should().BeFalse();
 
         room.Price.Should().HaveCount(2).And
-            .ContainEquivalentOf(new KeyValuePair<ResourceType, int>(ResourceType.Water, 1)).And
-            .ContainEquivalentOf(new KeyValuePair<ResourceType, int>(ResourceType.Energy, 3));
+            .ContainEquivalentOf(new Resource(ResourceType.Water, 1)).And
+            .ContainEquivalentOf(new Resource(ResourceType.Energy, 3));
 
         room.Sectors.Should().HaveCount(2);
 
@@ -945,8 +945,8 @@ public class RoomFactoryTests
         room.IsElevator.Should().BeFalse();
 
         room.Price.Should().HaveCount(2).And
-            .ContainEquivalentOf(new KeyValuePair<ResourceType, int>(ResourceType.Water, 2)).And
-            .ContainEquivalentOf(new KeyValuePair<ResourceType, int>(ResourceType.Energy, 2));
+            .ContainEquivalentOf(new Resource(ResourceType.Water, 2)).And
+            .ContainEquivalentOf(new Resource(ResourceType.Energy, 2));
 
         room.Sectors.Should().HaveCount(2);
 
@@ -999,7 +999,7 @@ public class RoomFactoryTests
         room.IsElevator.Should().BeFalse();
 
         room.Price.Should().HaveCount(1).And
-            .ContainEquivalentOf(new KeyValuePair<ResourceType, int>(ResourceType.Energy, 5));
+            .ContainEquivalentOf(new Resource(ResourceType.Energy, 5));
 
         room.Sectors.Should().HaveCount(2);
 
@@ -1042,8 +1042,8 @@ public class RoomFactoryTests
         room.IsElevator.Should().BeFalse();
 
         room.Price.Should().HaveCount(2).And
-            .ContainEquivalentOf(new KeyValuePair<ResourceType, int>(ResourceType.Water, 2)).And
-            .ContainEquivalentOf(new KeyValuePair<ResourceType, int>(ResourceType.Energy, 3));
+            .ContainEquivalentOf(new Resource(ResourceType.Water, 2)).And
+            .ContainEquivalentOf(new Resource(ResourceType.Energy, 3));
 
         room.Sectors.Should().HaveCount(2);
 
@@ -1086,8 +1086,8 @@ public class RoomFactoryTests
         room.IsElevator.Should().BeFalse();
 
         room.Price.Should().HaveCount(2).And
-            .ContainEquivalentOf(new KeyValuePair<ResourceType, int>(ResourceType.Water, 2)).And
-            .ContainEquivalentOf(new KeyValuePair<ResourceType, int>(ResourceType.Energy, 3));
+            .ContainEquivalentOf(new Resource(ResourceType.Water, 2)).And
+            .ContainEquivalentOf(new Resource(ResourceType.Energy, 3));
 
         room.Sectors.Should().HaveCount(2);
 

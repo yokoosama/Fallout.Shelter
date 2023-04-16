@@ -13,8 +13,9 @@ public class RewardFactoryTests
     {
         var reward = RewardFactory.CreateWithResources(type, amount);
 
-        reward.GiveResourceOfType.Should().Be(type);
-        reward.GiveResourceAmount.Should().Be(amount);
+        reward.GiveResource.Should().NotBeNull();
+        reward.GiveResource.Type.Should().Be(type);
+        reward.GiveResource.Amount.Should().Be(amount);
         reward.GiveHappiness.Should().BeNull();
         reward.GiveNewDweller.Should().BeFalse();
         reward.GiveFirstPlayerToken.Should().BeFalse();
@@ -35,8 +36,7 @@ public class RewardFactoryTests
     {
         var reward = RewardFactory.CreateWithItem();
 
-        reward.GiveResourceOfType.Should().BeNull();
-        reward.GiveResourceAmount.Should().BeNull();
+        reward.GiveResource.Should().BeNull();
         reward.GiveHappiness.Should().BeNull();
         reward.GiveNewDweller.Should().BeFalse();
         reward.GiveFirstPlayerToken.Should().BeFalse();
@@ -57,8 +57,7 @@ public class RewardFactoryTests
     {
         var reward = RewardFactory.CreateWithItemPoolRefresh();
 
-        reward.GiveResourceOfType.Should().BeNull();
-        reward.GiveResourceAmount.Should().BeNull();
+        reward.GiveResource.Should().BeNull();
         reward.GiveHappiness.Should().BeNull();
         reward.GiveNewDweller.Should().BeFalse();
         reward.GiveFirstPlayerToken.Should().BeFalse();
@@ -79,8 +78,7 @@ public class RewardFactoryTests
     {
         var reward = RewardFactory.CreateWithFirstPlayerToken();
 
-        reward.GiveResourceOfType.Should().BeNull();
-        reward.GiveResourceAmount.Should().BeNull();
+        reward.GiveResource.Should().BeNull();
         reward.GiveHappiness.Should().BeNull();
         reward.GiveNewDweller.Should().BeFalse();
         reward.GiveFirstPlayerToken.Should().BeTrue();
@@ -108,8 +106,7 @@ public class RewardFactoryTests
     {
         var reward = RewardFactory.CreateWithSpecialStat(stat);
 
-        reward.GiveResourceOfType.Should().BeNull();
-        reward.GiveResourceAmount.Should().BeNull();
+        reward.GiveResource.Should().BeNull();
         reward.GiveHappiness.Should().BeNull();
         reward.GiveNewDweller.Should().BeFalse();
         reward.GiveFirstPlayerToken.Should().BeFalse();
@@ -130,8 +127,7 @@ public class RewardFactoryTests
     {
         var reward = RewardFactory.CreateWithDweller();
 
-        reward.GiveResourceOfType.Should().BeNull();
-        reward.GiveResourceAmount.Should().BeNull();
+        reward.GiveResource.Should().BeNull();
         reward.GiveHappiness.Should().BeNull();
         reward.GiveNewDweller.Should().BeTrue();
         reward.GiveFirstPlayerToken.Should().BeFalse();
@@ -152,8 +148,7 @@ public class RewardFactoryTests
     {
         var reward = RewardFactory.CreateWithDwellerHeal();
 
-        reward.GiveResourceOfType.Should().BeNull();
-        reward.GiveResourceAmount.Should().BeNull();
+        reward.GiveResource.Should().BeNull();
         reward.GiveHappiness.Should().BeNull();
         reward.GiveNewDweller.Should().BeFalse();
         reward.GiveFirstPlayerToken.Should().BeFalse();
@@ -174,8 +169,7 @@ public class RewardFactoryTests
     {
         var reward = RewardFactory.CreateWithBuild();
 
-        reward.GiveResourceOfType.Should().BeNull();
-        reward.GiveResourceAmount.Should().BeNull();
+        reward.GiveResource.Should().BeNull();
         reward.GiveHappiness.Should().BeNull();
         reward.GiveNewDweller.Should().BeFalse();
         reward.GiveFirstPlayerToken.Should().BeFalse();
@@ -196,8 +190,7 @@ public class RewardFactoryTests
     {
         var reward = RewardFactory.CreateWithHappiness(5);
 
-        reward.GiveResourceOfType.Should().BeNull();
-        reward.GiveResourceAmount.Should().BeNull();
+        reward.GiveResource.Should().BeNull();
         reward.GiveHappiness.Should().NotBeNull().And.Be(5);
         reward.GiveNewDweller.Should().BeFalse();
         reward.GiveFirstPlayerToken.Should().BeFalse();
@@ -218,8 +211,7 @@ public class RewardFactoryTests
     {
         var reward = RewardFactory.CreateWithActivateItem();
 
-        reward.GiveResourceOfType.Should().BeNull();
-        reward.GiveResourceAmount.Should().BeNull();
+        reward.GiveResource.Should().BeNull();
         reward.GiveHappiness.Should().BeNull();
         reward.GiveNewDweller.Should().BeFalse();
         reward.GiveFirstPlayerToken.Should().BeFalse();
@@ -238,11 +230,10 @@ public class RewardFactoryTests
     [Test]
     public void CreateWithExchange_CreateValidReward()
     {
-        var reward = RewardFactory.CreateWithExchange(new KeyValuePair<ResourceType, int>(ResourceType.Water, 4),
-            new KeyValuePair<ResourceType, int>(ResourceType.Random, 3));
+        var reward = RewardFactory.CreateWithExchange(new Resource(ResourceType.Water, 4),
+            new Resource(ResourceType.Random, 3));
 
-        reward.GiveResourceOfType.Should().BeNull();
-        reward.GiveResourceAmount.Should().BeNull();
+        reward.GiveResource.Should().BeNull();
         reward.GiveHappiness.Should().BeNull();
         reward.GiveNewDweller.Should().BeFalse();
         reward.GiveFirstPlayerToken.Should().BeFalse();
@@ -254,7 +245,7 @@ public class RewardFactoryTests
         reward.GiveActivateItemPossibility.Should().BeFalse();
         reward.GiveRoomPoolRefreshPossibility.Should().BeFalse();
         reward.GiveItemPoolRefreshPossibility.Should().BeFalse();
-        reward.ExchangeFrom.Should().NotBeNull().And.Be(new KeyValuePair<ResourceType, int>(ResourceType.Water, 4));
-        reward.ExchangeTo.Should().NotBeNull().And.Be(new KeyValuePair<ResourceType, int>(ResourceType.Random, 3));
+        reward.ExchangeFrom.Should().NotBeNull().And.Be(new Resource(ResourceType.Water, 4));
+        reward.ExchangeTo.Should().NotBeNull().And.Be(new Resource(ResourceType.Random, 3));
     }
 }

@@ -509,7 +509,7 @@ public class RoomFactory : IRoomFactory
             },
             Spaces =
             {
-                [0] = new Space()
+                [0] = new Space
                 {
                     SpecialStat = SpecialStat.Agility
                 }
@@ -992,7 +992,7 @@ public class RoomFactory : IRoomFactory
             },
             Spaces =
             {
-                [0] = new Space()
+                [0] = new Space
                 {
                     SpecialStat = SpecialStat.Charisma
                 }
@@ -1067,7 +1067,7 @@ public class RoomFactory : IRoomFactory
         };
     }
 
-    public Room CreateThemeWorkshopRoom()
+    public Room CreateThemeWorkshop()
     {
         var leftSpace = new RoomSector
         {
@@ -1113,7 +1113,7 @@ public class RoomFactory : IRoomFactory
         };
     }
 
-    public Room CreateOutfitWorkshopRoom()
+    public Room CreateOutfitWorkshop()
     {
         var leftSpace = new RoomSector
         {
@@ -1128,7 +1128,7 @@ public class RoomFactory : IRoomFactory
             },
             Spaces =
             {
-                [0] = new Space()
+                [0] = new Space
                 {
                     SpecialStat = SpecialStat.Intelligence
                 }
@@ -1147,7 +1147,7 @@ public class RoomFactory : IRoomFactory
             },
             Spaces =
             {
-                [0] = new Space()
+                [0] = new Space
                 {
                     SpecialStat = SpecialStat.Intelligence
                 }
@@ -1169,7 +1169,7 @@ public class RoomFactory : IRoomFactory
         };
     }
 
-    public Room CreateWeaponWorkshopRoom()
+    public Room CreateWeaponWorkshop()
     {
         var leftSpace = new RoomSector
         {
@@ -1184,7 +1184,7 @@ public class RoomFactory : IRoomFactory
             },
             Spaces =
             {
-                [0] = new Space()
+                [0] = new Space
                 {
                     SpecialStat = SpecialStat.Intelligence
                 }
@@ -1199,7 +1199,7 @@ public class RoomFactory : IRoomFactory
             },
             Spaces =
             {
-                [0] = new Space()
+                [0] = new Space
                 {
                     SpecialStat = SpecialStat.Intelligence
                 }
@@ -1210,7 +1210,8 @@ public class RoomFactory : IRoomFactory
         {
             Price = new Dictionary<ResourceType, int>
             {
-                { ResourceType.Energy, 5 }
+                { ResourceType.Water, 2 },
+                { ResourceType.Energy, 3 }
             },
             Sectors =
             {

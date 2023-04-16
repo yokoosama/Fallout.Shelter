@@ -9,7 +9,7 @@ public class ConditionFactoryTests
     [TestCase(ResourceType.Food, 2)]
     [TestCase(ResourceType.Energy, 3)]
     [TestCase(ResourceType.Random, 5)]
-    public void CreateWithResources_CreateValidReward(ResourceType type, int amount)
+    public void CreateWithResources_CreateValidCondition(ResourceType type, int amount)
     {
         var reward = ConditionFactory.CreateWithResources(type, amount);
 
@@ -22,7 +22,7 @@ public class ConditionFactoryTests
     }
 
     [Test]
-    public void CreateWithInjuredDweller_CreateValidReward()
+    public void CreateWithInjuredDweller_CreateValidCondition()
     {
         var reward = ConditionFactory.CreateWithInjuredDweller();
 
@@ -33,7 +33,7 @@ public class ConditionFactoryTests
     }
 
     [Test]
-    public void CreateWithItem_CreateValidReward()
+    public void CreateWithItem_CreateValidCondition()
     {
         var reward = ConditionFactory.CreateWithItem();
 
@@ -44,7 +44,7 @@ public class ConditionFactoryTests
     }
 
     [Test]
-    public void CreateWithBuild_CreateValidReward()
+    public void CreateWithBuild_CreateValidCondition()
     {
         var reward = ConditionFactory.CreateWithBuild();
 

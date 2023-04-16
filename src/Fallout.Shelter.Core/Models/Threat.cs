@@ -3,8 +3,8 @@ namespace Fallout.Shelter.Core.Models;
 public class Threat
 {
     public string Name { get; set; }
-    public Space[] Spaces { get; set; }
     public List<Reward> Rewards { get; set; }
+    public Space[] Spaces { get; set; }
     public int? Roll { get; set; }
     public Resource? Resource { get; set; }
 

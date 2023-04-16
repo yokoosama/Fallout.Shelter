@@ -6,7 +6,7 @@ namespace Fallout.Shelter.Utilities.Tests;
 public class ItemFactoryTests
 {
     [Test]
-    public void CreateGoldenRetriever_CreateValidReward()
+    public void CreateGoldenRetriever_CreateValidItem()
     {
         var reward = ItemFactory.CreateGoldenRetriever();
 
@@ -33,7 +33,7 @@ public class ItemFactoryTests
     }
 
     [Test]
-    public void CreateStimpak_CreateValidReward()
+    public void CreateStimpak_CreateValidItem()
     {
         var reward = ItemFactory.CreateStimpak();
 
@@ -60,7 +60,7 @@ public class ItemFactoryTests
     }
 
     [Test]
-    public void CreateShotgun_CreateValidReward()
+    public void CreateShotgun_CreateValidItem()
     {
         var reward = ItemFactory.CreateShotgun();
 
@@ -87,7 +87,7 @@ public class ItemFactoryTests
     }
 
     [Test]
-    public void CreateLaserRifle_CreateValidReward()
+    public void CreateLaserRifle_CreateValidItem()
     {
         var reward = ItemFactory.CreateLaserRifle();
 
@@ -114,7 +114,7 @@ public class ItemFactoryTests
     }
 
     [Test]
-    public void CreatePlasmaPistol_CreateValidReward()
+    public void CreatePlasmaPistol_CreateValidItem()
     {
         var reward = ItemFactory.CreatePlasmaPistol();
 
@@ -141,7 +141,7 @@ public class ItemFactoryTests
     }
 
     [Test]
-    public void CreateMinigun_CreateValidReward()
+    public void CreateMinigun_CreateValidItem()
     {
         var reward = ItemFactory.CreateMinigun();
 
@@ -168,7 +168,7 @@ public class ItemFactoryTests
     }
 
     [Test]
-    public void CreatePistol_CreateValidReward()
+    public void CreatePistol_CreateValidItem()
     {
         var reward = ItemFactory.CreatePistol();
 
@@ -195,7 +195,7 @@ public class ItemFactoryTests
     }
 
     [Test]
-    public void CreateWastelandGear_CreateValidReward()
+    public void CreateWastelandGear_CreateValidItem()
     {
         var reward = ItemFactory.CreateWastelandGear();
 
@@ -222,7 +222,7 @@ public class ItemFactoryTests
     }
 
     [Test]
-    public void CreateNightwear_CreateValidReward()
+    public void CreateNightwear_CreateValidItem()
     {
         var reward = ItemFactory.CreateNightwear();
 
@@ -249,7 +249,7 @@ public class ItemFactoryTests
     }
 
     [Test]
-    public void CreateFormalWear_CreateValidReward()
+    public void CreateFormalWear_CreateValidItem()
     {
         var reward = ItemFactory.CreateFormalWear();
 
@@ -276,7 +276,7 @@ public class ItemFactoryTests
     }
 
     [Test]
-    public void CreateMilitaryFatigues_CreateValidReward()
+    public void CreateMilitaryFatigues_CreateValidItem()
     {
         var reward = ItemFactory.CreateMilitaryFatigues();
 
@@ -303,7 +303,7 @@ public class ItemFactoryTests
     }
 
     [Test]
-    public void CreateHandymanJumpsuit_CreateValidReward()
+    public void CreateHandymanJumpsuit_CreateValidItem()
     {
         var reward = ItemFactory.CreateHandymanJumpsuit();
 
@@ -330,7 +330,7 @@ public class ItemFactoryTests
     }
 
     [Test]
-    public void CreateArmoredVaultSuit_CreateValidReward()
+    public void CreateArmoredVaultSuit_CreateValidItem()
     {
         var reward = ItemFactory.CreateArmoredVaultSuit();
 
@@ -357,7 +357,7 @@ public class ItemFactoryTests
     }
 
     [Test]
-    public void CreateLabCoat_CreateValidReward()
+    public void CreateLabCoat_CreateValidItem()
     {
         var reward = ItemFactory.CreateLabCoat();
 
@@ -384,7 +384,7 @@ public class ItemFactoryTests
     }
 
     [Test]
-    public void CreateScottishFold_CreateValidReward()
+    public void CreateScottishFold_CreateValidItem()
     {
         var reward = ItemFactory.CreateScottishFold();
 
@@ -411,7 +411,7 @@ public class ItemFactoryTests
     }
 
     [Test]
-    public void CreateFatMan_CreateValidReward()
+    public void CreateFatMan_CreateValidItem()
     {
         var reward = ItemFactory.CreateFatMan();
 
@@ -438,7 +438,7 @@ public class ItemFactoryTests
     }
 
     [Test]
-    public void CreateMissileLauncher_CreateValidReward()
+    public void CreateMissileLauncher_CreateValidItem()
     {
         var reward = ItemFactory.CreateMissileLauncher();
 
@@ -465,7 +465,7 @@ public class ItemFactoryTests
     }
 
     [Test]
-    public void CreateGiddyupButtercup_CreateValidReward()
+    public void CreateGiddyupButtercup_CreateValidItem()
     {
         var reward = ItemFactory.CreateGiddyupButtercup();
 
@@ -492,7 +492,7 @@ public class ItemFactoryTests
     }
 
     [Test]
-    public void CreateYaoGuaiHide_CreateValidReward()
+    public void CreateYaoGuaiHide_CreateValidItem()
     {
         var reward = ItemFactory.CreateYaoGuaiHide();
 
@@ -519,7 +519,7 @@ public class ItemFactoryTests
     }
 
     [Test]
-    public void CreateMilitaryDuctTape_CreateValidReward()
+    public void CreateMilitaryDuctTape_CreateValidItem()
     {
         var reward = ItemFactory.CreateMilitaryDuctTape();
 
@@ -546,7 +546,7 @@ public class ItemFactoryTests
     }
 
     [Test]
-    public void CreateChemistryFlask_CreateValidReward()
+    public void CreateChemistryFlask_CreateValidItem()
     {
         var reward = ItemFactory.CreateChemistryFlask();
 
@@ -573,7 +573,7 @@ public class ItemFactoryTests
     }
 
     [Test]
-    public void CreateMilitaryCircuitBoard_CreateValidReward()
+    public void CreateMilitaryCircuitBoard_CreateValidItem()
     {
         var reward = ItemFactory.CreateMilitaryCircuitBoard();
 
@@ -600,7 +600,7 @@ public class ItemFactoryTests
     }
 
     [Test]
-    public void CreateGoldWatch_CreateValidReward()
+    public void CreateGoldWatch_CreateValidItem()
     {
         var reward = ItemFactory.CreateGoldWatch();
 
@@ -627,7 +627,7 @@ public class ItemFactoryTests
     }
 
     [Test]
-    public void CreateGlobe_CreateValidReward()
+    public void CreateGlobe_CreateValidItem()
     {
         var reward = ItemFactory.CreateGlobe();
 
@@ -654,7 +654,7 @@ public class ItemFactoryTests
     }
 
     [Test]
-    public void CreateCamera_CreateValidReward()
+    public void CreateCamera_CreateValidItem()
     {
         var reward = ItemFactory.CreateCamera();
 
@@ -681,7 +681,7 @@ public class ItemFactoryTests
     }
 
     [Test]
-    public void CreateCollie_CreateValidReward()
+    public void CreateCollie_CreateValidItem()
     {
         var reward = ItemFactory.CreateCollie();
 
@@ -708,7 +708,7 @@ public class ItemFactoryTests
     }
 
     [Test]
-    public void CreateHusky_CreateValidReward()
+    public void CreateHusky_CreateValidItem()
     {
         var reward = ItemFactory.CreateHusky();
 
@@ -735,7 +735,7 @@ public class ItemFactoryTests
     }
 
     [Test]
-    public void CreateGermanShepherd_CreateValidReward()
+    public void CreateGermanShepherd_CreateValidItem()
     {
         var reward = ItemFactory.CreateGermanShepherd();
 
@@ -762,7 +762,7 @@ public class ItemFactoryTests
     }
 
     [Test]
-    public void CreatePowerArmor_CreateValidReward()
+    public void CreatePowerArmor_CreateValidItem()
     {
         var reward = ItemFactory.CreatePowerArmor();
 
@@ -789,7 +789,7 @@ public class ItemFactoryTests
     }
 
     [Test]
-    public void CreateParrot_CreateValidReward()
+    public void CreateParrot_CreateValidItem()
     {
         var reward = ItemFactory.CreateParrot();
 
@@ -816,7 +816,7 @@ public class ItemFactoryTests
     }
 
     [Test]
-    public void CreateMaineCoon_CreateValidReward()
+    public void CreateMaineCoon_CreateValidItem()
     {
         var reward = ItemFactory.CreateMaineCoon();
 

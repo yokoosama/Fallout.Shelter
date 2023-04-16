@@ -262,7 +262,7 @@ public static class ItemFactory
         {
             GiveResourceExchange = true,
             ExchangeFrom = new Resource(ResourceType.Food, 1),
-            ExchangeTo = new Resource(ResourceType.Energy,1)
+            ExchangeTo = new Resource(ResourceType.Energy, 1)
         };
 
         return item;
@@ -274,7 +274,7 @@ public static class ItemFactory
         {
             GiveResourceExchange = true,
             ExchangeFrom = new Resource(ResourceType.Water, 1),
-            ExchangeTo = new Resource(ResourceType.Energy,2)
+            ExchangeTo = new Resource(ResourceType.Energy, 2)
         };
 
         return item;
@@ -286,7 +286,37 @@ public static class ItemFactory
         {
             GiveResourceExchange = true,
             ExchangeFrom = new Resource(ResourceType.Water, 1),
-            ExchangeTo = new Resource(ResourceType.Food,2)
+            ExchangeTo = new Resource(ResourceType.Food, 2)
+        };
+
+        return item;
+    }
+
+    public static Item CreateParrot()
+    {
+        var item = new Item("Parrot", ItemType.Pet)
+        {
+            GiveAdditionalResourceForBuilding = true
+        };
+
+        return item;
+    }
+
+    public static Item CreateMaineCoon()
+    {
+        var item = new Item("Maine Coon", ItemType.Pet)
+        {
+            GiveItemChangePossibility = true
+        };
+
+        return item;
+    }
+
+    public static Item CreatePowerArmor()
+    {
+        var item = new Item("T-45 Power Armor", ItemType.Armor)
+        {
+            GiveNeededStatInFight = new Resource(ResourceType.Energy, 1)
         };
 
         return item;

@@ -1,4 +1,4 @@
-namespace Fallout.Shelter.Core.Models;
+namespace Fallout.Shelter.Core.Enums;
 
 public enum SpecialStat
 {

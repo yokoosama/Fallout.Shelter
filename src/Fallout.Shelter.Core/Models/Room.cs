@@ -1,3 +1,5 @@
+using Fallout.Shelter.Core.Enums;
+
 namespace Fallout.Shelter.Core.Models;
 
 public class Room
@@ -13,12 +15,5 @@ public class Room
         IsElevator = isElevator;
         Price = new Dictionary<ResourceType, int>();
         Sectors = new RoomSector[isElevator ? 1 : 2];
-    }
-
-    public Room(string name, Dictionary<ResourceType, int> price)
-    {
-        Price = price;
-        Name = name;
-        Sectors = new RoomSector[2];
     }
 }

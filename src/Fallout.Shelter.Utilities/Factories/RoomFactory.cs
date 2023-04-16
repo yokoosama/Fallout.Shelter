@@ -1,3 +1,4 @@
+using Fallout.Shelter.Core.Enums;
 using Fallout.Shelter.Core.Models;
 
 namespace Fallout.Shelter.Utilities.Factories;
@@ -1090,7 +1091,7 @@ public class RoomFactory : IRoomFactory
         {
             Rewards = new List<Reward>
             {
-                RewardFactory.CreateWithItemPoolRefresh(),
+                RewardFactory.CreateWithRoomPoolRefresh(),
                 RewardFactory.CreateWithSpecialStat(SpecialStat.Any)
             },
             Spaces =

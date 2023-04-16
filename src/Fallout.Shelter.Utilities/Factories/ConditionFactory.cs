@@ -1,3 +1,4 @@
+using Fallout.Shelter.Core.Enums;
 using Fallout.Shelter.Core.Models;
 
 namespace Fallout.Shelter.Utilities.Factories;
@@ -8,8 +9,8 @@ public static class ConditionFactory
     {
         var condition = new Condition
         {
-            ResourceType = type,
-            ResourceAmount = amount
+            ShouldThrowResourceOfType = type,
+            ShouldThrowResourceAmount = amount
         };
 
         return condition;
@@ -19,7 +20,7 @@ public static class ConditionFactory
     {
         var condition = new Condition
         {
-            InjureDweller = true
+            ShouldInjureDweller = true
         };
 
         return condition;
@@ -29,7 +30,7 @@ public static class ConditionFactory
     {
         var condition = new Condition
         {
-            Item = true
+            ShouldThrowItem = true
         };
 
         return condition;
@@ -39,7 +40,7 @@ public static class ConditionFactory
     {
         var condition = new Condition
         {
-            Build = true
+            ShouldBuild = true
         };
 
         return condition;

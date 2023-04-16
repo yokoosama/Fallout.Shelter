@@ -1,3 +1,4 @@
+using Fallout.Shelter.Core.Enums;
 using Fallout.Shelter.Core.Models;
 
 namespace Fallout.Shelter.Utilities.Factories;
@@ -8,8 +9,8 @@ public static class RewardFactory
     {
         var reward = new Reward
         {
-            ResourceType = type,
-            ResourceAmount = amount
+            GiveResourceOfType = type,
+            GiveResourceAmount = amount
         };
 
         return reward;
@@ -19,7 +20,7 @@ public static class RewardFactory
     {
         var reward = new Reward
         {
-            NewItem = true
+            GiveNewItem = true
         };
 
         return reward;
@@ -29,7 +30,17 @@ public static class RewardFactory
     {
         var reward = new Reward
         {
-            ItemPoolRefresh = true
+            GiveItemPoolRefreshPossibility = true
+        };
+
+        return reward;
+    }
+
+    public static Reward CreateWithRoomPoolRefresh()
+    {
+        var reward = new Reward
+        {
+            GiveRoomPoolRefreshPossibility = true
         };
 
         return reward;
@@ -39,7 +50,7 @@ public static class RewardFactory
     {
         var reward = new Reward
         {
-            FirstPlayerToken = true
+            GiveFirstPlayerToken = true
         };
 
         return reward;
@@ -49,7 +60,7 @@ public static class RewardFactory
     {
         var reward = new Reward
         {
-            SpecialStat = stat
+            GiveSpecialStatToDweller = stat
         };
 
         return reward;
@@ -59,7 +70,7 @@ public static class RewardFactory
     {
         var reward = new Reward
         {
-            NewDweller = true
+            GiveNewDweller = true
         };
 
         return reward;
@@ -79,7 +90,7 @@ public static class RewardFactory
     {
         var reward = new Reward
         {
-            Build = true
+            GiveBuildPossibility = true
         };
 
         return reward;
@@ -89,7 +100,7 @@ public static class RewardFactory
     {
         var reward = new Reward
         {
-            Happiness = amount
+            GiveHappiness = amount
         };
 
         return reward;
@@ -101,7 +112,7 @@ public static class RewardFactory
         {
             ExchangeFrom = from,
             ExchangeTo = to,
-            ResourceExchange = true
+            GiveResourceExchangePossibility = true
         };
 
         return reward;
@@ -111,7 +122,7 @@ public static class RewardFactory
     {
         var reward = new Reward
         {
-            ActivateItem = true
+            GiveActivateItemPossibility = true
         };
 
         return reward;

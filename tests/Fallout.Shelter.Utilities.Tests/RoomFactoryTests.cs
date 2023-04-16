@@ -1,3 +1,4 @@
+using Fallout.Shelter.Core.Enums;
 using Fallout.Shelter.Utilities.Factories;
 
 namespace Fallout.Shelter.Utilities.Tests;
@@ -1018,7 +1019,7 @@ public class RoomFactoryTests
             });
 
         room.Sectors[1].Rewards.Should().HaveCount(2).And
-            .ContainInOrder(RewardFactory.CreateWithItemPoolRefresh()).And
+            .ContainInOrder(RewardFactory.CreateWithRoomPoolRefresh()).And
             .ContainInOrder(RewardFactory.CreateWithSpecialStat(SpecialStat.Any));
 
         room.Sectors[1].Conditions.Should().BeEmpty();

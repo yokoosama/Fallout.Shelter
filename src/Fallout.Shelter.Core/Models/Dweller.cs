@@ -1,3 +1,5 @@
+using Fallout.Shelter.Core.Enums;
+
 namespace Fallout.Shelter.Core.Models;
 
 public class Dweller

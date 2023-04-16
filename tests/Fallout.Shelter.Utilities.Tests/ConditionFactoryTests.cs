@@ -1,3 +1,4 @@
+using Fallout.Shelter.Core.Enums;
 using Fallout.Shelter.Utilities.Factories;
 
 namespace Fallout.Shelter.Utilities.Tests;
@@ -12,12 +13,11 @@ public class ConditionFactoryTests
     {
         var reward = ConditionFactory.CreateWithResources(type, amount);
 
-        reward.ResourceType.Should().Be(type);
-        reward.ResourceAmount.Should().Be(amount);
-        reward.Item.Should().BeFalse();
-        reward.Build.Should().BeFalse();
-        reward.InjureDweller.Should().BeFalse();
-        reward.Roll.Should().BeNull();
+        reward.ShouldThrowResourceOfType.Should().Be(type);
+        reward.ShouldThrowResourceAmount.Should().Be(amount);
+        reward.ShouldThrowItem.Should().BeFalse();
+        reward.ShouldBuild.Should().BeFalse();
+        reward.ShouldInjureDweller.Should().BeFalse();
     }
 
     [Test]
@@ -25,12 +25,11 @@ public class ConditionFactoryTests
     {
         var reward = ConditionFactory.CreateWithInjuredDweller();
 
-        reward.ResourceType.Should().BeNull();
-        reward.ResourceAmount.Should().BeNull();
-        reward.Item.Should().BeFalse();
-        reward.Build.Should().BeFalse();
-        reward.InjureDweller.Should().BeTrue();
-        reward.Roll.Should().BeNull();
+        reward.ShouldThrowResourceOfType.Should().BeNull();
+        reward.ShouldThrowResourceAmount.Should().BeNull();
+        reward.ShouldThrowItem.Should().BeFalse();
+        reward.ShouldBuild.Should().BeFalse();
+        reward.ShouldInjureDweller.Should().BeTrue();
     }
 
     [Test]
@@ -38,12 +37,11 @@ public class ConditionFactoryTests
     {
         var reward = ConditionFactory.CreateWithItem();
 
-        reward.ResourceType.Should().BeNull();
-        reward.ResourceAmount.Should().BeNull();
-        reward.Item.Should().BeTrue();
-        reward.Build.Should().BeFalse();
-        reward.InjureDweller.Should().BeFalse();
-        reward.Roll.Should().BeNull();
+        reward.ShouldThrowResourceOfType.Should().BeNull();
+        reward.ShouldThrowResourceAmount.Should().BeNull();
+        reward.ShouldThrowItem.Should().BeTrue();
+        reward.ShouldBuild.Should().BeFalse();
+        reward.ShouldInjureDweller.Should().BeFalse();
     }
 
     [Test]
@@ -51,11 +49,10 @@ public class ConditionFactoryTests
     {
         var reward = ConditionFactory.CreateWithBuild();
 
-        reward.ResourceType.Should().BeNull();
-        reward.ResourceAmount.Should().BeNull();
-        reward.Item.Should().BeFalse();
-        reward.Build.Should().BeTrue();
-        reward.InjureDweller.Should().BeFalse();
-        reward.Roll.Should().BeNull();
+        reward.ShouldThrowResourceOfType.Should().BeNull();
+        reward.ShouldThrowResourceAmount.Should().BeNull();
+        reward.ShouldThrowItem.Should().BeFalse();
+        reward.ShouldBuild.Should().BeTrue();
+        reward.ShouldInjureDweller.Should().BeFalse();
     }
 }

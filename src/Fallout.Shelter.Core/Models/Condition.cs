@@ -1,21 +1,21 @@
+using Fallout.Shelter.Core.Enums;
+
 namespace Fallout.Shelter.Core.Models;
 
 public class Condition
 {
-    public ResourceType? ResourceType { get; set; }
-    public int? ResourceAmount { get; set; }
-    public bool Item { get; set; }
-    public bool Build { get; set; }
-    public bool InjureDweller { get; set; }
-    public int? Roll { get; set; }
+    public ResourceType? ShouldThrowResourceOfType { get; set; }
+    public int? ShouldThrowResourceAmount { get; set; }
+    public bool ShouldThrowItem { get; set; }
+    public bool ShouldBuild { get; set; }
+    public bool ShouldInjureDweller { get; set; }
 
     protected bool Equals(Condition other)
     {
-        return ResourceType == other.ResourceType &&
-               ResourceAmount == other.ResourceAmount &&
-               Item == other.Item && Build == other.Build &&
-               InjureDweller == other.InjureDweller &&
-               Roll == other.Roll;
+        return ShouldThrowResourceOfType == other.ShouldThrowResourceOfType &&
+               ShouldThrowResourceAmount == other.ShouldThrowResourceAmount &&
+               ShouldThrowItem == other.ShouldThrowItem && ShouldBuild == other.ShouldBuild &&
+               ShouldInjureDweller == other.ShouldInjureDweller;
     }
 
     public override bool Equals(object? obj)
@@ -40,7 +40,8 @@ public class Condition
 
     public override int GetHashCode()
     {
-        return HashCode.Combine(ResourceType, ResourceAmount, Item, Build, InjureDweller, Roll);
+        return HashCode.Combine(ShouldThrowResourceOfType, ShouldThrowResourceAmount, ShouldThrowItem, ShouldBuild,
+            ShouldInjureDweller);
     }
 
     public static bool operator ==(Condition? left, Condition? right)

@@ -464,6 +464,86 @@ public class ItemFactoryTests
         reward.GiveSpecialStatToDweller.Should().BeNull();
     }
     
+    [Test]
+    public void CreateGiddyupButtercup_CreateValidReward()
+    {
+        var reward = ItemFactory.CreateGiddyupButtercup();
+    
+        reward.Name.Should().Be("Giddyup Buttercup");
+        reward.Type.Should().Be(ItemType.Other);
+        reward.IsActive.Should().BeTrue();
+        reward.IsAlwaysActive.Should().BeFalse();
+        reward.IsEndGameItem.Should().BeFalse();
+        reward.GiveActivateItemPossibility.Should().BeFalse();
+        reward.GiveAdditionalDamage.Should().BeNull();
+        reward.GiveReRollPossibility.Should().BeFalse();
+        reward.HealDweller.Should().BeFalse();
+        reward.GiveHappinessPerItem.Should().Be(ItemType.Pet);
+        reward.GiveHappinessPerResources.Should().BeNull();
+        reward.GiveHappinessPerDwellers.Should().BeFalse();
+        reward.GiveHappinessPerRooms.Should().BeFalse();
+        reward.GiveAdditionalResourceForBuilding.Should().BeFalse();
+        reward.GiveItemChangePossibility.Should().BeFalse();
+        reward.GiveResourceExchange.Should().BeFalse();
+        reward.GiveNeededStatInFight.Should().BeNull();
+        reward.ExchangeFrom.Should().BeNull();
+        reward.ExchangeTo.Should().BeNull();
+        reward.GiveSpecialStatToDweller.Should().BeNull();
+    }
+    
+    [Test]
+    public void CreateYaoGuaiHide_CreateValidReward()
+    {
+        var reward = ItemFactory.CreateYaoGuaiHide();
+    
+        reward.Name.Should().Be("Yao Guai Hide");
+        reward.Type.Should().Be(ItemType.Other);
+        reward.IsActive.Should().BeTrue();
+        reward.IsAlwaysActive.Should().BeFalse();
+        reward.IsEndGameItem.Should().BeFalse();
+        reward.GiveActivateItemPossibility.Should().BeFalse();
+        reward.GiveAdditionalDamage.Should().BeNull();
+        reward.GiveReRollPossibility.Should().BeFalse();
+        reward.HealDweller.Should().BeFalse();
+        reward.GiveHappinessPerItem.Should().Be(ItemType.Armor);
+        reward.GiveHappinessPerResources.Should().BeNull();
+        reward.GiveHappinessPerDwellers.Should().BeFalse();
+        reward.GiveHappinessPerRooms.Should().BeFalse();
+        reward.GiveAdditionalResourceForBuilding.Should().BeFalse();
+        reward.GiveItemChangePossibility.Should().BeFalse();
+        reward.GiveResourceExchange.Should().BeFalse();
+        reward.GiveNeededStatInFight.Should().BeNull();
+        reward.ExchangeFrom.Should().BeNull();
+        reward.ExchangeTo.Should().BeNull();
+        reward.GiveSpecialStatToDweller.Should().BeNull();
+    }
+    
+    [Test]
+    public void CreateMilitaryDuctTape_CreateValidReward()
+    {
+        var reward = ItemFactory.CreateMilitaryDuctTape();
+    
+        reward.Name.Should().Be("Military Duct Tape");
+        reward.Type.Should().Be(ItemType.Other);
+        reward.IsActive.Should().BeTrue();
+        reward.IsAlwaysActive.Should().BeFalse();
+        reward.IsEndGameItem.Should().BeFalse();
+        reward.GiveActivateItemPossibility.Should().BeFalse();
+        reward.GiveAdditionalDamage.Should().BeNull();
+        reward.GiveReRollPossibility.Should().BeFalse();
+        reward.HealDweller.Should().BeFalse();
+        reward.GiveHappinessPerItem.Should().Be(ItemType.Weapon);
+        reward.GiveHappinessPerResources.Should().BeNull();
+        reward.GiveHappinessPerDwellers.Should().BeFalse();
+        reward.GiveHappinessPerRooms.Should().BeFalse();
+        reward.GiveAdditionalResourceForBuilding.Should().BeFalse();
+        reward.GiveItemChangePossibility.Should().BeFalse();
+        reward.GiveResourceExchange.Should().BeFalse();
+        reward.GiveNeededStatInFight.Should().BeNull();
+        reward.ExchangeFrom.Should().BeNull();
+        reward.ExchangeTo.Should().BeNull();
+        reward.GiveSpecialStatToDweller.Should().BeNull();
+    }
     // [Test]
     // public void CreateGoldenRetriever_CreateValidReward()
     // {

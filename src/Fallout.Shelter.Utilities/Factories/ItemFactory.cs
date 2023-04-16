@@ -175,4 +175,34 @@ public static class ItemFactory
 
         return item;
     }
+
+    public static Item CreateGiddyupButtercup()
+    {
+        var item = new Item("Giddyup Buttercup", ItemType.Other)
+        {
+            GiveHappinessPerItem = ItemType.Pet
+        };
+
+        return item;
+    }
+
+    public static Item CreateYaoGuaiHide()
+    {
+        var item = new Item("Yao Guai Hide", ItemType.Other)
+        {
+            GiveHappinessPerItem = ItemType.Armor
+        };
+
+        return item;
+    }
+
+    public static Item CreateMilitaryDuctTape()
+    {
+        var item = new Item("Military Duct Tape", ItemType.Other)
+        {
+            GiveHappinessPerItem = ItemType.Weapon
+        };
+
+        return item;
+    }
 }

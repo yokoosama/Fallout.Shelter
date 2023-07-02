@@ -1,4 +1,5 @@
 using Fallout.Shelter.Core.Models;
+using Fallout.Shelter.Utilities.Extensions;
 
 namespace Fallout.Shelter.Utilities.Factories;
 
@@ -18,6 +19,10 @@ public class GameFieldFactory : IGameFieldFactory
             ItemPool = CreateItemPool(),
             ThreatPool = CreateThreatPool()
         };
+
+        field.RoomPool.Shuffle();
+        field.ItemPool.Shuffle();
+        field.ThreatPool.Shuffle();
 
         return field;
     }

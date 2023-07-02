@@ -8,4 +8,9 @@ public class Dweller
     public bool IsPlaced { get; set; }
     public bool IsInjured { get; set; }
     public SpecialStat? Special { get; set; }
+
+    public Dweller(int ownerId)
+    {
+        OwnerId = ownerId;
+    }
 }

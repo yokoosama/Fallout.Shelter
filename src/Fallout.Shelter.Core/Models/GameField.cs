@@ -25,4 +25,12 @@ public class GameField
         DiscardedItems = new Stack<Item>(31);
         DiscardedThreats = new Stack<Threat>(18);
     }
+
+    public Threat GetThreat()
+    {
+        var threat = ThreatPool.Pop();
+        DiscardedThreats.Push(threat);
+
+        return threat;
+    }
 }

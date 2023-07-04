@@ -6,7 +6,7 @@ public static class ListExtensions
     {
         var random = new Random();
 
-        for(var i= list.Count - 1; i > 1; i--)
+        for (var i = list.Count - 1; i > 1; i--)
         {
             var rnd = random.Next(i + 1);
 

@@ -5,7 +5,7 @@ namespace Fallout.Shelter.Utilities.Factories;
 
 public class GameFieldFactory
 {
-    public GameField CreateGameField(int playersCount)
+    public static GameField CreateGameField(int playersCount)
     {
         if (playersCount is > 4 or < 2)
         {
@@ -23,7 +23,7 @@ public class GameFieldFactory
         return field;
     }
 
-    private Room[,] CreateDefaultRooms(int playersCount)
+    private static Room[,] CreateDefaultRooms(int playersCount)
     {
         var field = new Room[playersCount + 1, 7];
         field[0, 0] = RoomFactory.CreateWasteland();
@@ -115,7 +115,7 @@ public class GameFieldFactory
         return itemPool;
     }
 
-    private List<Threat> CreateThreatPool()
+    private static List<Threat> CreateThreatPool()
     {
         var roomPool = new List<Threat>(18)
         {

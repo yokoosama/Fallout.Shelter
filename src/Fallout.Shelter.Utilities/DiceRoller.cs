@@ -11,4 +11,12 @@ public static class DiceRoller
 
         return new Tuple<int, int>(firstDice, secondDice);
     }
+
+    public static int RollSum()
+    {
+        var firstDice = RandomNumberGenerator.GetInt32(1, 7);
+        var secondDice = RandomNumberGenerator.GetInt32(1, 7);
+
+        return firstDice + secondDice;
+    }
 }

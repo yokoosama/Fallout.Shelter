@@ -15,14 +15,10 @@ public class GameFieldFactory
         var field = new GameField(playersCount)
         {
             Field = CreateDefaultRooms(playersCount),
-            RoomPool = CreateRoomPool(),
-            ItemPool = CreateItemPool(),
-            ThreatPool = CreateThreatPool()
+            RoomPool = CreateRoomPool().Shuffle().ToStack(),
+            ItemPool = CreateItemPool().Shuffle().ToStack(),
+            ThreatPool = CreateThreatPool().Shuffle().ToStack()
         };
-
-        field.RoomPool.Shuffle();
-        field.ItemPool.Shuffle();
-        field.ThreatPool.Shuffle();
 
         return field;
     }

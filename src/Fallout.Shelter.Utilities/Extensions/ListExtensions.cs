@@ -2,7 +2,7 @@ namespace Fallout.Shelter.Utilities.Extensions;
 
 public static class ListExtensions
 {
-    public static void Shuffle<T>(this IList<T> list)
+    public static IList<T> Shuffle<T>(this IList<T> list)
     {
         var random = new Random();
 
@@ -12,5 +12,19 @@ public static class ListExtensions
 
             (list[rnd], list[i]) = (list[i], list[rnd]);
         }
+
+        return list;
+    }
+
+    public static Stack<T> ToStack<T>(this IList<T> list)
+    {
+        var stack = new Stack<T>(list.Count);
+
+        foreach (var element in list)
+        {
+            stack.Push(element);
+        }
+
+        return stack;
     }
 }

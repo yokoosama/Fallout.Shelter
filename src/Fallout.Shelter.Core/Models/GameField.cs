@@ -3,12 +3,12 @@ namespace Fallout.Shelter.Core.Models;
 public class GameField
 {
     public Room[,] Field { get; set; }
-    public List<Room> RoomPool { get; set; }
-    public List<Item> ItemPool { get; set; }
-    public List<Threat> ThreatPool { get; set; }
-    public List<Room> DiscardedRooms { get; set; }
-    public List<Item> DiscardedItems { get; set; }
-    public List<Threat> DiscardedThreats { get; set; }
+    public Stack<Room> RoomPool { get; set; }
+    public Stack<Item> ItemPool { get; set; }
+    public Stack<Threat> ThreatPool { get; set; }
+    public Stack<Room> DiscardedRooms { get; set; }
+    public Stack<Item> DiscardedItems { get; set; }
+    public Stack<Threat> DiscardedThreats { get; set; }
 
     public GameField(int playersCount)
     {
@@ -18,11 +18,11 @@ public class GameField
         }
 
         Field = new Room[playersCount + 1, 7];
-        RoomPool = new List<Room>(30);
-        ItemPool = new List<Item>(31);
-        ThreatPool = new List<Threat>(18);
-        DiscardedRooms = new List<Room>(30);
-        DiscardedItems = new List<Item>(31);
-        DiscardedThreats = new List<Threat>(18);
+        RoomPool = new Stack<Room>(30);
+        ItemPool = new Stack<Item>(31);
+        ThreatPool = new Stack<Threat>(18);
+        DiscardedRooms = new Stack<Room>(30);
+        DiscardedItems = new Stack<Item>(31);
+        DiscardedThreats = new Stack<Threat>(18);
     }
 }

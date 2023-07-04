@@ -12,9 +12,10 @@ public class FalloutShelterEngine
 
     private readonly StateMachine<GameState, GameTrigger> _stateMachine;
 
-    public FalloutShelterEngine(List<Player> players, IGameFieldFactory gameFieldFactory)
+    public FalloutShelterEngine(List<Player> players)
     {
-        GameField = gameFieldFactory.CreateGameField(players.Count);
+        var factory = new GameFieldFactory();
+        GameField = factory.CreateGameField(players.Count);
         Players = players;
 
         _stateMachine = CreateAndConfigureStateMachine();

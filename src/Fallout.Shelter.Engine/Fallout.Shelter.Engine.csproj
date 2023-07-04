@@ -11,4 +11,8 @@
         <ProjectReference Include="..\Fallout.Shelter.Utilities\Fallout.Shelter.Utilities.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <PackageReference Include="Stateless" Version="5.13.0" />
+    </ItemGroup>
+
 </Project>

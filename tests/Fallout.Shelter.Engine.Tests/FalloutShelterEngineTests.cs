@@ -87,4 +87,37 @@ public class FalloutShelterEngineTests
         action.Should().Throw<InvalidOperationException>()
               .WithMessage("Cannot start round when game is not in RoundStarting state");
     }
+
+    [Test]
+    public void SpawnThreats_GameNotStarted_ThrowsException()
+    {
+        var action = new Action(() => _falloutShelterEngine.SpawnThreats());
+
+        action.Should().Throw<InvalidOperationException>()
+              .WithMessage("Cannot spawn threats when game is not in SpawningThreats state");
+    }
+
+    [Test]
+    public void SpawnThreats_RoundStarted_ThreatsSpawned()
+    {
+        _falloutShelterEngine.StartGame();
+        _falloutShelterEngine.StartRound();
+        _falloutShelterEngine.SpawnThreats();
+
+        _falloutShelterEngine.GameState.Should().Be(GameState.PlacingDwellers);
+        _falloutShelterEngine.Round.Should().Be(1);
+    }
+
+    [Test]
+    public void SpawnThreats_ThreatsSpawned_ThrowsException()
+    {
+        _falloutShelterEngine.StartGame();
+        _falloutShelterEngine.StartRound();
+        _falloutShelterEngine.SpawnThreats();
+
+        var action = new Action(() => _falloutShelterEngine.SpawnThreats());
+
+        action.Should().Throw<InvalidOperationException>()
+              .WithMessage("Cannot spawn threats when game is not in SpawningThreats state");
+    }
 }

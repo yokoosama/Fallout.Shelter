@@ -2,7 +2,7 @@ namespace Fallout.Shelter.Core.Models;
 
 public class GameField
 {
-    public Room[,] Field { get; set; }
+    public Room?[,] Field { get; set; }
     public Stack<Room> RoomPool { get; set; }
     public Stack<Item> ItemPool { get; set; }
     public Stack<Threat> ThreatPool { get; set; }

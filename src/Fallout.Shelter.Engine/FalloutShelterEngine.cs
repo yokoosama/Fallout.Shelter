@@ -11,7 +11,7 @@ public class FalloutShelterEngine
     public List<Player> Players { get; }
     public GameField GameField { get; }
     private Queue<Player> PlayersQueue { get; }
-    public int Round { get; set; }
+    public int Round { get; private set; }
     public GameState GameState => _stateMachine.State;
 
     private readonly StateMachine<GameState, GameTrigger> _stateMachine;
@@ -70,11 +70,16 @@ public class FalloutShelterEngine
             throw new InvalidOperationException("Cannot spawn threats when game is not in SpawningThreats state");
         }
 
-        for (var i = 0; i < GameField.Field.Rank; i++)
+        for (var i = 0; i < Players.Count + 1; i++)
         {
             var diceSum = DiceRoller.RollSum();
             var roomIndex = diceSum / 2;
             var room = GameField.Field[i, roomIndex];
+
+            if (room == null)
+            {
+                continue;
+            }
 
             if (room.IsElevator)
             {

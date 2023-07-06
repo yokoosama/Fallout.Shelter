@@ -10,7 +10,10 @@ public class StateMachineCreator
         var stateMachine = new StateMachine<GameState, GameTrigger>(GameState.Initialization);
 
         stateMachine.Configure(GameState.Initialization)
-                    .Permit(GameTrigger.Initialized, GameState.RoundStarting);
+                    .Permit(GameTrigger.Initialized, GameState.GameStarting);
+
+        stateMachine.Configure(GameState.GameStarting)
+                    .Permit(GameTrigger.GameStarted, GameState.RoundStarting);
 
         stateMachine.Configure(GameState.RoundStarting)
                     .Permit(GameTrigger.RoundStarted, GameState.SpawningThreats);
@@ -28,7 +31,7 @@ public class StateMachineCreator
                     .Permit(GameTrigger.RoundEnded, GameState.RoundStarting);
 
         stateMachine.Configure(GameState.RoundEnding)
-                    .Permit(GameTrigger.Finished, GameState.Finished);
+                    .Permit(GameTrigger.Finished, GameState.GameFinished);
 
         return stateMachine;
     }

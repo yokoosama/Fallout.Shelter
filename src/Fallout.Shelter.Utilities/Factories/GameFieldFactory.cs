@@ -36,7 +36,7 @@ public class GameFieldFactory
 
         for (var i = 1; i < playersCount; i++)
         {
-            field[i, 7] = RoomFactory.CreatePlayerElevator();
+            field[i, 3] = RoomFactory.CreatePlayerElevator();
         }
 
         return field;

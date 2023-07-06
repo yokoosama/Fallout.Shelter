@@ -10,26 +10,37 @@ public class FalloutShelterEngine
 {
     public List<Player> Players { get; }
     public GameField GameField { get; }
-    private Queue<Player> PlayersQueue { get; set; }
+    private Queue<Player> PlayersQueue { get; }
     public int Round { get; set; }
+    public GameState GameState => _stateMachine.State;
 
     private readonly StateMachine<GameState, GameTrigger> _stateMachine;
     private StateMachine<GameState, GameTrigger>.TriggerWithParameters<FalloutShelterEngine> _spawnThreatsTrigger;
 
     public FalloutShelterEngine(List<Player> players)
     {
+        ValidatePlayers(players);
         Players = players;
         PlayersQueue = new Queue<Player>();
         GameField = GameFieldFactory.CreateGameField(players.Count);
         _stateMachine = StateMachineCreator.CreateAndConfigureStateMachine();
         _spawnThreatsTrigger = _stateMachine.SetTriggerParameters<FalloutShelterEngine>(GameTrigger.Initialized);
+    }
+
+    public void StartGame()
+    {
+        if (_stateMachine.State != GameState.Initialization)
+        {
+            throw new InvalidOperationException("Cannot start game when game is not in Initialization state");
+        }
 
         _stateMachine.Fire(GameTrigger.Initialized);
+        _stateMachine.Fire(GameTrigger.GameStarted);
     }
 
     public void StartRound()
     {
-        if (_stateMachine.State != GameState.RoundStarting)
+        if (_stateMachine.State != GameState.RoundStarting && _stateMachine.State != GameState.GameStarting)
         {
             throw new InvalidOperationException("Cannot start round when game is not in RoundStarting state");
         }
@@ -82,5 +93,13 @@ public class FalloutShelterEngine
         }
 
         _stateMachine.Fire(GameTrigger.ThreatsSpawned);
+    }
+
+    private static void ValidatePlayers(List<Player> players)
+    {
+        if (players.Select(x=>x.Id).Distinct().Count() != players.Count)
+        {
+            throw new ArgumentException("Players must have unique ids");
+        }
     }
 }
